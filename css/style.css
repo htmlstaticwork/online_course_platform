@@ -21,11 +21,26 @@
 
 .dark-mode .bg-white { background-color: var(--white) !important; }
 .dark-mode .bg-light { background-color: #1e1e2d !important; }
-.dark-mode .text-dark { color: #f8f9fa !important; }
-.dark-mode .card, .dark-mode .shadow { background-color: var(--white); box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5) !important; }
+.dark-mode .text-dark, 
+.dark-mode h1, .dark-mode h2, .dark-mode h3, 
+.dark-mode h4, .dark-mode h5, .dark-mode h6,
+.dark-mode p, .dark-mode span, .dark-mode li, .dark-mode label { color: #f8f9fa !important; }
+
+.dark-mode .card, .dark-mode .shadow, .dark-mode .service-item, .dark-mode .course-item, .dark-mode .content { 
+    background-color: var(--white) !important; 
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5) !important; 
+}
+
 .dark-mode .form-control { background-color: #1e1e2d; color: #fff; border-color: #333; }
 .dark-mode .navbar { background-color: var(--white) !important; }
 .dark-mode .footer { background-color: #050505 !important; }
+.dark-mode .accordion-item { background-color: var(--white) !important; border-color: #333; }
+.dark-mode .accordion-button { background-color: #1e1e2d !important; color: #fff !important; }
+.dark-mode .accordion-button:not(.collapsed) { background-color: var(--primary) !important; color: #fff !important; }
+.dark-mode .testimonial-text { background-color: #1e1e2d !important; color: #fff !important; }
+.dark-mode .modal-content { background-color: var(--white) !important; color: #fff; border-color: #333; }
+.dark-mode .modal-header, .dark-mode .modal-footer { border-color: #333; }
+.dark-mode .btn-close { filter: invert(1) grayscale(100%) brightness(200%); }
 
 /* Global Centering */
 h1 { text-align: center !important; }
@@ -109,7 +124,7 @@ h1 { text-align: center !important; }
 .back-to-top {
     position: fixed;
     display: none;
-    left: 45px;
+    right: 45px;
     bottom: 45px;
     z-index: 99;
 }
@@ -215,8 +230,10 @@ h1 { text-align: center !important; }
 }
 
 .navbar-light.sticky-top {
-    top: -100px;
+    top: 0 !important;
     transition: .5s;
+    z-index: 1050;
+    position: sticky !important;
 }
 
 .navbar-toggler-icon {
@@ -360,7 +377,7 @@ h1 { text-align: center !important; }
 }
 
 .breadcrumb-item+.breadcrumb-item::before {
-    color: var(--light);
+    color: var(--primary) !important;
 }
 
 
@@ -393,14 +410,21 @@ h1 { text-align: center !important; }
     z-index: -1;
 }
 
-.section-title.text-start::before {
-    width: calc(100% + 40px);
-    left: 0;
+.text-center .section-title::before {
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% + 80px);
 }
 
+.text-center .section-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% + 120px);
+}
+
+.section-title.text-start::before,
 .section-title.text-start::after {
-    width: calc(100% + 60px);
-    left: 0;
+    left: -40px;
 }
 
 
@@ -530,6 +554,16 @@ h1 { text-align: center !important; }
     background: var(--primary) !important;
 }
 
+.testimonial-carousel .owl-item:not(.center) .testimonial-text {
+    background: #f8f9fa !important;
+    color: #181d38 !important;
+}
+
+.dark-mode .testimonial-carousel .owl-item:not(.center) .testimonial-text {
+    background: #1e1e2d !important;
+    color: #f8f9fa !important;
+}
+
 .testimonial-carousel .owl-item.center .testimonial-text * {
     color: #FFFFFF !important;
 }
@@ -623,6 +657,13 @@ h1 { text-align: center !important; }
     border-right: none;
 }
 
+/* Edge-to-Edge Footer */
+.footer .container {
+    max-width: 100% !important;
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+}
+
 /* Mobile & Tablet Centering (Robust Fix) */
 @media (max-width: 991.98px) {
     /* Headings & Text Alignment */
@@ -635,9 +676,29 @@ h1 { text-align: center !important; }
     .section-title::before {
         text-align: center !important;
         display: block !important;
-        width: 100% !important;
+        width: fit-content !important;
         margin-left: auto !important;
         margin-right: auto !important;
+    }
+
+    /* Stack images on mobile */
+    .row.g-5, .row.g-4 {
+        flex-direction: column !important;
+    }
+    
+    .col-lg-6 {
+        width: 100% !important;
+    }
+
+    .img-fluid {
+        display: block !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        margin-bottom: 20px !important;
+        position: relative !important;
+        width: auto !important;
+        max-width: 100% !important;
+        height: auto !important;
     }
 
     /* Buttons */
@@ -649,6 +710,16 @@ h1 { text-align: center !important; }
         margin-bottom: 10px !important;
         float: none !important;
         text-align: center !important;
+    }
+
+    /* Navbar Mobile Fix */
+    .navbar-brand {
+        margin-right: auto !important;
+        margin-left: 15px !important;
+    }
+    [dir="rtl"] .navbar-brand {
+        margin-left: auto !important;
+        margin-right: 15px !important;
     }
 
     /* Overriding Bootstrap & Template Utility Classes */
@@ -667,10 +738,16 @@ h1 { text-align: center !important; }
         justify-content: center !important;
     }
 
+    /* Auth Page Spacing */
+    .auth-page .d-flex.justify-content-between {
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+
     /* Removing Side Padding/Margins that prevent centering */
     .pe-3, .ps-3, .pe-4, .ps-4, .pe-5, .ps-5, .pe-lg-5, .ps-lg-5 {
-        padding-right: 0 !important;
-        padding-left: 0 !important;
+        padding-right: 15px !important;
+        padding-left: 15px !important;
     }
 
     .me-3, .ms-3, .me-4, .ms-4 {
@@ -687,4 +764,40 @@ h1 { text-align: center !important; }
     .service-item, .course-item, .category-item {
         text-align: center !important;
     }
+
+    .course-item .d-flex small a {
+        float: none !important;
+        display: inline-block !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    .course-item .d-flex small {
+        float: none !important;
+        text-align: center !important;
+    }
+}
+
+/* Auth Page Dark Mode Contrast Fix */
+.dark-mode .auth-card {
+    background: #1e1e2d !important;
+    color: #f8f9fa !important;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.dark-mode .auth-card label, 
+.dark-mode .auth-card h1, 
+.dark-mode .auth-card h2, 
+.dark-mode .auth-card p, 
+.dark-mode .auth-card span,
+.dark-mode .auth-card .form-check-label {
+    color: #f8f9fa !important;
+}
+
+/* Footer Edge-to-Edge truly */
+.footer .container-fluid {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
 }

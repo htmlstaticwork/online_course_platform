@@ -70,13 +70,17 @@
                 </div>
                 <a href="contact.html" class="nav-item nav-link">Contact</a>
                 <a href="dashboard.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt"></i></a>
-                <a href="login.html" class="nav-item nav-link"><i class="fa fa-user"></i></a>
-                <button onclick="toggleDarkMode()" class="btn nav-item nav-link border-0 bg-transparent" title="Toggle Dark Mode">
-                    <i data-lucide="moon"></i>
-                </button>
-                <button onclick="toggleRTL()" class="btn nav-item nav-link border-0 bg-transparent" title="Toggle RTL">
-                    <i data-lucide="languages"></i>
-                </button>
+                <div class="nav-item nav-link d-flex flex-column align-items-center gap-1 py-2">
+                    <a href="login.html" class="btn btn-primary text-white py-1 px-4 rounded-pill mb-1" style="min-width: 100px;">Login</a>
+                    <div class="d-flex gap-2">
+                        <button onclick="toggleDarkMode()" class="btn btn-sm btn-outline-dark border-0 bg-transparent p-0" title="Toggle Dark Mode">
+                            <i data-lucide="moon" size="18"></i>
+                        </button>
+                        <button onclick="toggleRTL()" class="btn btn-sm btn-outline-dark border-0 bg-transparent p-0" title="Toggle RTL">
+                            <i data-lucide="languages" size="18"></i>
+                        </button>
+                    </div>
+                </div>
                 <div class="nav-item nav-link" id="google_translate_element"></div>
             </div>
         </div>
@@ -111,8 +115,9 @@
                 
             </div>
             <div class="row g-4">
-                <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.1s">
-                    <h5>Welcome to E-Learning Academy - Where Knowledge Meets Innovation</h5>
+                <div class="col-lg-12 wow fadeInUp text-center" data-wow-delay="0.1s">
+                    <h5 class="section-title bg-white text-center px-3">Teaching at Global Academy</h5>
+                    <h2 class="mb-4">Where Knowledge Meets Innovation</h2>
                     <p class="mb-4">Are you passionate about sharing your expertise and making a real impact on learners worldwide? If so, we invite you to become an instructor on our dynamic e-learning platform! Join a community of educators dedicated to fostering a love for learning and empowering individuals to achieve their goals.</p>
                    
                     
@@ -235,19 +240,20 @@
                     <img class="img-fluid" src="img/ready.jpg" alt="">
                 </div>
                
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                    
+                <div class="col-lg-8 mx-auto wow fadeInUp text-center" data-wow-delay="0.3s">
+                    <h5 class="section-title bg-white text-center px-3">Join Our Faculty</h5>
                     <h1 style="color: #fb873f;">Ready to Join Us?</h1>
                     <p class="mb-4">Here's How to Get Started</p>
                     
-                    <div class="row gy-2 gx-4 mb-4">
-                        <ul style="list-style: none;">
-                            <li><i class="fa fa-check"></i> Familiarize yourself with E-Learning Academy and the diverse range of courses we offer.</li>
-                            <li><i class="fa fa-check"></i> Craft a compelling application that showcases your passion, expertise, and proposed course offerings.</li>
-                           
+                    <div class="mb-4 text-center">
+                        <ul style="list-style: none; display: inline-block; text-align: left;" class="p-0">
+                            <li><i class="fa fa-check text-primary me-2"></i> Familiarize yourself with E-Learning Academy and our diverse courses.</li>
+                            <li><i class="fa fa-check text-primary me-2"></i> Craft a compelling application showcasing your expertise.</li>
                         </ul>
                     </div>
-                    <button type="button" class="btn text-white" data-bs-toggle="modal" data-bs-target="#exampleModal">Apply Now</button>
+                    <div class="w-100">
+                        <button type="button" class="btn btn-primary text-white py-3 px-5 mt-2 rounded-pill shadow" data-bs-toggle="modal" data-bs-target="#exampleModal">Apply Now</button>
+                    </div>
                 </div>
 
                 
@@ -342,7 +348,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn text-white">Apply</button>
+          <button type="submit" class="btn btn-primary text-white px-4 rounded-pill shadow">Apply</button>
         </div>
       </div>
     </div>
@@ -375,7 +381,7 @@
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container py-5">
+        <div class="container-fluid py-5 px-5">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
                     <img src="image/logo.png" alt="Logo" style="height: 60px;" class="mb-4">
@@ -415,7 +421,7 @@
         <div class="container">
             <div class="copyright">
                 <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <div class="col-md-12 text-center mb-3 mb-md-0">
                         &copy; <a class="border-bottom" href="index.html">Global Academy</a>, All Right Reserved.
                     </div>
                 </div>

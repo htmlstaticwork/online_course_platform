@@ -157,7 +157,7 @@
     <!-- Main Content Start -->
     <div class="main-content">
         <!-- Dash Header -->
-        <div class="dash-header">
+        <div class="dash-header bg-white shadow-sm">
             <div class="d-flex align-items-center">
                 <button class="btn d-lg-none p-0 me-3" onclick="document.getElementById('sidebar').classList.toggle('active')">
                     <i data-lucide="menu"></i>
@@ -165,9 +165,11 @@
                 <h4 class="m-0 fw-bold">User Dashboard</h4>
             </div>
             <div class="d-flex align-items-center gap-3">
-                <button onclick="toggleDarkMode()" class="btn btn-light rounded-circle p-2"><i data-lucide="moon"></i></button>
-                <button onclick="toggleRTL()" class="btn btn-light rounded-circle p-2"><i data-lucide="languages"></i></button>
-                <div class="position-relative">
+                <div class="d-flex gap-2">
+                    <button onclick="toggleDarkMode()" class="btn btn-outline-primary rounded-circle p-2" title="Toggle Dark Mode"><i data-lucide="moon"></i></button>
+                    <button onclick="toggleRTL()" class="btn btn-outline-primary rounded-circle p-2" title="Toggle RTL"><i data-lucide="languages"></i></button>
+                </div>
+                <div class="position-relative d-none d-sm-block">
                     <i data-lucide="bell" class="text-muted"></i>
                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger border border-light" style="font-size: 8px;">2</span>
                 </div>
@@ -194,40 +196,40 @@
         <!-- Metrics Cards -->
         <div class="row g-4 mb-4">
             <div class="col-md-3">
-                <div class="bg-white p-4 rounded-3 shadow-sm h-100">
-                    <div class="d-flex justify-content-between mb-3">
-                        <div class="stat-icon"><i data-lucide="play-circle"></i></div>
-                        <span class="text-success small">+12%</span>
+                <div class="bg-white p-4 rounded-3 shadow-sm h-100 text-center">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="stat-icon mx-auto"><i data-lucide="play-circle"></i></div>
+                        <span class="text-success small fw-bold">+12%</span>
                     </div>
                     <h3 class="fw-bold">12</h3>
                     <p class="text-muted small mb-0">Active Courses</p>
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="bg-white p-4 rounded-3 shadow-sm h-100">
-                    <div class="d-flex justify-content-between mb-3">
-                        <div class="stat-icon" style="background: rgba(14, 212, 76, 0.1); color: var(--secondary);"><i data-lucide="check-circle"></i></div>
-                        <span class="text-success small">+5%</span>
+                <div class="bg-white p-4 rounded-3 shadow-sm h-100 text-center">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="stat-icon mx-auto" style="background: rgba(14, 212, 76, 0.1); color: var(--secondary);"><i data-lucide="check-circle"></i></div>
+                        <span class="text-success small fw-bold">+5%</span>
                     </div>
                     <h3 class="fw-bold">48</h3>
                     <p class="text-muted small mb-0">Completed Lessons</p>
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="bg-white p-4 rounded-3 shadow-sm h-100">
-                    <div class="d-flex justify-content-between mb-3">
-                        <div class="stat-icon" style="background: rgba(25, 118, 210, 0.1); color: #1976d2;"><i data-lucide="clock"></i></div>
-                        <span class="text-danger small">-2%</span>
+                <div class="bg-white p-4 rounded-3 shadow-sm h-100 text-center">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="stat-icon mx-auto" style="background: rgba(25, 118, 210, 0.1); color: #1976d2;"><i data-lucide="clock"></i></div>
+                        <span class="text-danger small fw-bold">-2%</span>
                     </div>
                     <h3 class="fw-bold">124</h3>
                     <p class="text-muted small mb-0">Study Hours</p>
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="bg-white p-4 rounded-3 shadow-sm h-100">
-                    <div class="d-flex justify-content-between mb-3">
-                        <div class="stat-icon" style="background: rgba(156, 39, 176, 0.1); color: #9c27b0;"><i data-lucide="award"></i></div>
-                        <span class="text-success small">New!</span>
+                <div class="bg-white p-4 rounded-3 shadow-sm h-100 text-center">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="stat-icon mx-auto" style="background: rgba(156, 39, 176, 0.1); color: #9c27b0;"><i data-lucide="award"></i></div>
+                        <span class="text-success small fw-bold">New!</span>
                     </div>
                     <h3 class="fw-bold">8</h3>
                     <p class="text-muted small mb-0">Certificates Earned</p>

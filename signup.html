@@ -32,12 +32,13 @@
             --primary-gradient: linear-gradient(135deg, #ff7a18, #ffb347);
         }
         body {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             margin: 0;
+            padding: 40px 0;
             font-family: 'Heebo', sans-serif;
         }
         .auth-container {
@@ -160,6 +161,7 @@
     </div>
 
     <div class="auth-container">
+        <div class="auth-card wow fadeInUp" data-wow-delay="0.1s">
             <div class="text-center mb-4 auth-header">
                 <a href="index.html">
                     <img src="image/logo.png" alt="Logo" style="height: 100px; object-fit: contain;" class="mb-3">
@@ -188,7 +190,7 @@
                     <div class="form-check d-flex align-items-center gap-2 m-0">
                         <input class="form-check-input m-0" type="checkbox" id="terms" required>
                         <label class="form-check-label small text-muted mb-0" for="terms">
-                            I agree to the <a href="#" class="text-decoration-none fw-bold" style="color: #ff7a18;">Terms & Conditions</a>
+                            I agree to the <a href="#" class="text-decoration-none fw-bold text-primary">Terms & Conditions</a>
                         </label>
                     </div>
                 </div>
@@ -205,9 +207,10 @@
                     <a href="#" class="social-btn" title="Sign up with Facebook"><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png" alt="Facebook"></a>
                 </div>
 
-                <p class="text-center text-muted mb-0">Already have an account? <a href="login.html" class="fw-bold text-decoration-none" style="color: #ff7a18;">Login</a></p>
+                <p class="text-center text-muted mb-0">Already have an account? <a href="login.html" class="fw-bold text-decoration-none text-primary">Login</a></p>
             </form>
         </div>
+    </div>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

@@ -67,15 +67,19 @@
                         <a href="instructor.html" class="dropdown-item">Become Instructor</a>
                     </div>
                 </div>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="contact.html" class="nav-item nav-link active">Contact</a>
                 <a href="dashboard.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt"></i></a>
-                <a href="login.html" class="nav-item nav-link"><i class="fa fa-user"></i></a>
-                <button onclick="toggleDarkMode()" class="btn nav-item nav-link border-0 bg-transparent" title="Toggle Dark Mode">
-                    <i data-lucide="moon"></i>
-                </button>
-                <button onclick="toggleRTL()" class="btn nav-item nav-link border-0 bg-transparent" title="Toggle RTL">
-                    <i data-lucide="languages"></i>
-                </button>
+                <div class="nav-item nav-link d-flex align-items-center gap-2">
+                    <a href="login.html" class="btn btn-primary text-white py-2 px-4 rounded-pill">Login</a>
+                </div>
+                <div class="nav-item nav-link d-flex align-items-center gap-1">
+                    <button onclick="toggleDarkMode()" class="btn btn-sm btn-outline-dark border-0 bg-transparent" title="Toggle Dark Mode">
+                        <i data-lucide="moon"></i>
+                    </button>
+                    <button onclick="toggleRTL()" class="btn btn-sm btn-outline-dark border-0 bg-transparent" title="Toggle RTL">
+                        <i data-lucide="languages"></i>
+                    </button>
+                </div>
                 <div class="nav-item nav-link" id="google_translate_element"></div>
             </div>
         </div>
@@ -107,40 +111,37 @@
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h1 class="mb-5 bg-white text-center px-3">Contact Us</h1>
-
             </div>
             <div class="row g-4">
-                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <h5>Get In Touch</h5>
-                    <p class="mb-4">I'm happy to help! If you're looking for contact information or details about
-                        e-learning's online free courses website for e-learning, I don't have real-time browsing
-                        capabilities to access current websites or specific contact details.</p>
-                    <div class="d-flex align-items-center mb-3">
-                        <div class="d-flex align-items-center justify-content-center flex-shrink-0"
+                <div class="col-lg-6 col-md-12 wow fadeInUp text-center" data-wow-delay="0.1s">
+                    <h5 class="section-title bg-white text-center px-3">Get In Touch</h5>
+                    <p class="mb-4">We're here to help! If you have any questions about our free online courses or certifications, feel free to reach out to us through any of the channels below.</p>
+                    <div class="d-flex flex-column align-items-center mb-3">
+                        <div class="d-flex align-items-center justify-content-center mb-2"
                             style="width: 50px; height: 50px; background-color: #fb873f;">
                             <i class="fa fa-map-marker-alt text-white"></i>
                         </div>
-                        <div class="ms-3">
+                        <div class="text-center">
                             <h5>Office</h5>
                             <p class="mb-0">123 Street, Chennai, Tamil Nadu</p>
                         </div>
                     </div>
-                    <div class="d-flex align-items-center mb-3">
-                        <div class="d-flex align-items-center justify-content-center flex-shrink-0"
+                    <div class="d-flex flex-column align-items-center mb-3">
+                        <div class="d-flex align-items-center justify-content-center mb-2"
                             style="width: 50px; height: 50px; background-color: #fb873f;">
                             <i class="fa fa-phone-alt text-white"></i>
                         </div>
-                        <div class="ms-3">
+                        <div class="text-center">
                             <h5>Mobile</h5>
                             <p class="mb-0">+91 8683045908</p>
                         </div>
                     </div>
-                    <div class="d-flex align-items-center">
-                        <div class="d-flex align-items-center justify-content-center flex-shrink-0"
+                    <div class="d-flex flex-column align-items-center mb-3">
+                        <div class="d-flex align-items-center justify-content-center mb-2"
                             style="width: 50px; height: 50px; background-color: #fb873f;">
                             <i class="fa fa-envelope-open text-white"></i>
                         </div>
-                        <div class="ms-3">
+                        <div class="text-center">
                             <h5>Email</h5>
                             <p class="mb-0">info@elearning.com</p>
                         </div>
@@ -177,12 +178,22 @@
                                 </div>
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-primary w-100 py-3" type="submit"><a
-                                        href="mailto:info@elearning.com" class="text-decoration-none"
-                                        style="color: #fff;" type="submit">Send Message</a></button>
+                                <button class="btn btn-primary w-100 py-3" type="submit">
+                                    <a href="mailto:info@elearning.com" class="text-decoration-none" style="color: #fff;">Send Message</a>
+                                </button>
                             </div>
                         </div>
                     </form>
+                </div>
+            </div>
+            
+            <!-- Google Map -->
+            <div class="row g-4 mt-5">
+                <div class="col-12 wow fadeInUp" data-wow-delay="0.1s">
+                    <iframe class="position-relative rounded w-100 h-100"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124403.24250284214!2d80.134345!3d13.047525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265ea4f7d333f%3A0x6d3e707106324905!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1711880000000!5m2!1sen!2sin"
+                        frameborder="0" style="min-height: 400px; border:0;" allowfullscreen="" aria-hidden="false"
+                        tabindex="0"></iframe>
                 </div>
             </div>
         </div>
@@ -192,7 +203,7 @@
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container py-5">
+        <div class="container-fluid py-5 px-5">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
                     <img src="image/logo.png" alt="Logo" style="height: 60px;" class="mb-4">
@@ -232,7 +243,7 @@
         <div class="container">
             <div class="copyright">
                 <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <div class="col-md-12 text-center mb-3 mb-md-0">
                         &copy; <a class="border-bottom" href="index.html">Global Academy</a>, All Right Reserved.
                     </div>
                 </div>
