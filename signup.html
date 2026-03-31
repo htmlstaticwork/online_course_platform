@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Global Academy : Sign Up</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="image/logo.png" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #ff7a18, #ffb347);
+        }
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            margin: 0;
+            font-family: 'Heebo', sans-serif;
+        }
+        .auth-container {
+            width: 100%;
+            max-width: 450px;
+            padding: 20px;
+        }
+        .auth-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            transition: 0.3s ease;
+        }
+        .form-label {
+            font-size: 0.85rem;
+            color: #777;
+            font-weight: 500;
+            margin-bottom: 8px;
+            transition: 0.3s ease;
+        }
+        .dark-mode .form-label {
+            color: #ccc;
+        }
+        .form-control {
+            border-radius: 8px;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            transition: 0.3s ease;
+        }
+        .form-control:focus {
+            border-color: #ff7a18;
+            box-shadow: 0 0 0 3px rgba(255, 122, 24, 0.1);
+            outline: none;
+        }
+        .btn-primary {
+            background: var(--primary-gradient) !important;
+            border: none !important;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: 0.3s ease !important;
+        }
+        .btn-primary:hover {
+            transform: scale(1.02);
+            filter: brightness(0.95);
+            box-shadow: 0 5px 15px rgba(255, 122, 24, 0.3);
+        }
+        .social-login {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 25px;
+        }
+        .social-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #eee;
+            transition: 0.3s ease;
+            background: white;
+            padding: 0;
+            overflow: hidden;
+        }
+        .social-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-color: #ddd;
+        }
+        .social-btn img {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+        }
+        .auth-header h1 {
+            font-weight: 700;
+            color: var(--dark);
+            letter-spacing: -0.5px;
+        }
+        .password-field {
+            position: relative;
+        }
+        .password-toggle {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #999;
+            z-index: 10;
+        }
+        .top-controls {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        .top-controls button {
+            background: none;
+            border: none;
+            color: var(--gray);
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+        .top-controls button:hover {
+            color: #ff7a18;
+        }
+    </style>
+</head>
+
+<body class="auth-page">
+    <!-- Theme & RTL Toggles (Top Right) -->
+    <div class="top-controls">
+        <button onclick="toggleRTL()" title="Toggle RTL"><i data-lucide="languages"></i></button>
+        <button onclick="toggleDarkMode()" title="Toggle Dark Mode"><i data-lucide="moon"></i></button>
+    </div>
+
+    <div class="auth-container">
+            <div class="text-center mb-4 auth-header">
+                <a href="index.html">
+                    <img src="image/logo.png" alt="Logo" style="height: 100px; object-fit: contain;" class="mb-3">
+                </a>
+                <h1 class="h2 mb-2">Create Account</h1>
+            </div>
+
+            <form>
+                <div class="mb-4">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" class="form-control" placeholder="John Doe" required>
+                </div>
+                <div class="mb-4">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" class="form-control" placeholder="name@example.com" required>
+                </div>
+                <div class="mb-4">
+                    <label class="form-label">Password</label>
+                    <div class="password-field">
+                        <input type="password" class="form-control" placeholder="••••••••" required>
+                        <span class="password-toggle"><i data-lucide="eye"></i></span>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <div class="form-check d-flex align-items-center gap-2 m-0">
+                        <input class="form-check-input m-0" type="checkbox" id="terms" required>
+                        <label class="form-check-label small text-muted mb-0" for="terms">
+                            I agree to the <a href="#" class="text-decoration-none fw-bold" style="color: #ff7a18;">Terms & Conditions</a>
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100 py-3 mb-4">Sign Up</button>
+
+                <div class="text-center mb-1">
+                    <span class="text-muted small">Or sign up with</span>
+                </div>
+
+                <div class="social-login mb-4">
+                    <a href="#" class="social-btn" title="Sign up with Google"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google"></a>
+                    <a href="#" class="social-btn" title="Sign up with Apple"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple"></a>
+                    <a href="#" class="social-btn" title="Sign up with Facebook"><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png" alt="Facebook"></a>
+                </div>
+
+                <p class="text-center text-muted mb-0">Already have an account? <a href="login.html" class="fw-bold text-decoration-none" style="color: #ff7a18;">Login</a></p>
+            </form>
+        </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Template Javascript -->
+    <script src="js/theme-control.js"></script>
+</body>
+
+</html>

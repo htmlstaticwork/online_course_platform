@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Global Academy : Student Dashboard</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="image/logo.png" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --sidebar-width: 250px;
+        }
+        body {
+            background-color: var(--light);
+            overflow-x: hidden;
+            display: flex;
+        }
+        .sidebar {
+            width: var(--sidebar-width);
+            height: 100vh;
+            background: var(--white);
+            border-right: 1px solid rgba(0,0,0,0.05);
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: var(--transition);
+        }
+        [dir="rtl"] .sidebar {
+            left: auto;
+            right: 0;
+            border-right: none;
+            border-left: 1px solid rgba(0,0,0,0.05);
+        }
+        .main-content {
+            margin-left: var(--sidebar-width);
+            width: calc(100% - var(--sidebar-width));
+            min-height: 100vh;
+            padding: 20px;
+            transition: var(--transition);
+        }
+        [dir="rtl"] .main-content {
+            margin-left: 0;
+            margin-right: var(--sidebar-width);
+        }
+        .nav-item-dash {
+            display: flex;
+            align-items: center;
+            padding: 12px 25px;
+            color: var(--gray);
+            text-decoration: none;
+            transition: var(--transition);
+            border-left: 4px solid transparent;
+        }
+        [dir="rtl"] .nav-item-dash {
+            border-left: none;
+            border-right: 4px solid transparent;
+        }
+        .nav-item-dash:hover, .nav-item-dash.active {
+            color: var(--primary);
+            background: rgba(251, 135, 63, 0.05);
+            border-left-color: var(--primary);
+        }
+        [dir="rtl"] .nav-item-dash:hover, [dir="rtl"] .nav-item-dash.active {
+            border-right-color: var(--primary);
+        }
+        .nav-item-dash i {
+            margin-right: 15px;
+        }
+        [dir="rtl"] .nav-item-dash i {
+            margin-right: 0;
+            margin-left: 15px;
+        }
+        .dash-header {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            margin-bottom: 30px;
+        }
+        .profile-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+        }
+        .stat-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(251, 135, 63, 0.1);
+            color: var(--primary);
+        }
+        @media (max-width: 991.98px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+            .sidebar.active {
+                transform: translateX(0);
+            }
+            .main-content {
+                margin-left: 0;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar Start -->
+    <div class="sidebar" id="sidebar">
+        <div class="px-4 mb-4">
+            <img src="image/logo.png" alt="Logo" style="height: 50px;" class="mb-2">
+            <br>
+            <small class="text-muted">Student Panel</small>
+        </div>
+        <nav>
+            <a href="#" class="nav-item-dash active"><i data-lucide="layout-dashboard"></i> Overview</a>
+            <a href="#" class="nav-item-dash"><i data-lucide="book-open"></i> My Courses</a>
+            <a href="#" class="nav-item-dash"><i data-lucide="message-square"></i> Community Forum</a>
+            <a href="#" class="nav-item-dash"><i data-lucide="download"></i> Resources</a>
+            <a href="#" class="nav-item-dash"><i data-lucide="settings"></i> Settings</a>
+            <hr class="mx-3 my-4">
+            <a href="index.html" class="nav-item-dash text-danger"><i data-lucide="log-out"></i> Logout</a>
+        </nav>
+    </div>
+    <!-- Sidebar End -->
+
+    <!-- Main Content Start -->
+    <div class="main-content">
+        <!-- Dash Header -->
+        <div class="dash-header">
+            <div class="d-flex align-items-center">
+                <button class="btn d-lg-none p-0 me-3" onclick="document.getElementById('sidebar').classList.toggle('active')">
+                    <i data-lucide="menu"></i>
+                </button>
+                <h4 class="m-0 fw-bold">User Dashboard</h4>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+                <button onclick="toggleDarkMode()" class="btn btn-light rounded-circle p-2"><i data-lucide="moon"></i></button>
+                <button onclick="toggleRTL()" class="btn btn-light rounded-circle p-2"><i data-lucide="languages"></i></button>
+                <div class="position-relative">
+                    <i data-lucide="bell" class="text-muted"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger border border-light" style="font-size: 8px;">2</span>
+                </div>
+                <div class="d-flex align-items-center gap-2 border-start ps-3">
+                    <div class="text-end d-none d-md-block">
+                        <p class="m-0 small fw-bold">Alex M.</p>
+                        <small class="text-muted" style="font-size: 10px;">Student</small>
+                    </div>
+                    <img src="img/testimonial-1.jpg" alt="Profile" class="profile-img">
+                </div>
+            </div>
+        </div>
+
+        <!-- Welcome Message -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="bg-white p-4 rounded-3 shadow-sm">
+                    <h2 class="fw-bold">Welcome back, Alex! 👋</h2>
+                    <p class="text-muted mb-0">You've completed 75% of your target this week. Keep it up!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Metrics Cards -->
+        <div class="row g-4 mb-4">
+            <div class="col-md-3">
+                <div class="bg-white p-4 rounded-3 shadow-sm h-100">
+                    <div class="d-flex justify-content-between mb-3">
+                        <div class="stat-icon"><i data-lucide="play-circle"></i></div>
+                        <span class="text-success small">+12%</span>
+                    </div>
+                    <h3 class="fw-bold">12</h3>
+                    <p class="text-muted small mb-0">Active Courses</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="bg-white p-4 rounded-3 shadow-sm h-100">
+                    <div class="d-flex justify-content-between mb-3">
+                        <div class="stat-icon" style="background: rgba(14, 212, 76, 0.1); color: var(--secondary);"><i data-lucide="check-circle"></i></div>
+                        <span class="text-success small">+5%</span>
+                    </div>
+                    <h3 class="fw-bold">48</h3>
+                    <p class="text-muted small mb-0">Completed Lessons</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="bg-white p-4 rounded-3 shadow-sm h-100">
+                    <div class="d-flex justify-content-between mb-3">
+                        <div class="stat-icon" style="background: rgba(25, 118, 210, 0.1); color: #1976d2;"><i data-lucide="clock"></i></div>
+                        <span class="text-danger small">-2%</span>
+                    </div>
+                    <h3 class="fw-bold">124</h3>
+                    <p class="text-muted small mb-0">Study Hours</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="bg-white p-4 rounded-3 shadow-sm h-100">
+                    <div class="d-flex justify-content-between mb-3">
+                        <div class="stat-icon" style="background: rgba(156, 39, 176, 0.1); color: #9c27b0;"><i data-lucide="award"></i></div>
+                        <span class="text-success small">New!</span>
+                    </div>
+                    <h3 class="fw-bold">8</h3>
+                    <p class="text-muted small mb-0">Certificates Earned</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Progress & Forums -->
+        <div class="row g-4">
+            <div class="col-lg-8">
+                <div class="bg-white p-4 rounded-3 shadow-sm h-100">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h5 class="fw-bold m-0">Continue Learning</h5>
+                        <a href="#" class="text-primary small text-decoration-none">View All</a>
+                    </div>
+                    <div class="list-group list-group-flush">
+                        <div class="list-group-item px-0 py-3 d-flex align-items-center border-0 border-bottom">
+                            <img src="image/course-1.jpg" alt="" class="rounded-3 me-3" width="80" height="50" style="object-fit: cover;">
+                            <div class="flex-grow-1">
+                                <h6 class="m-0 fw-bold">Advanced Web Design</h6>
+                                <div class="progress mt-2" style="height: 6px;">
+                                    <div class="progress-bar" style="width: 85%;"></div>
+                                </div>
+                                <small class="text-muted">85% Complete</small>
+                            </div>
+                            <button class="btn btn-sm btn-primary ms-3 rounded-pill">Resume</button>
+                        </div>
+                        <div class="list-group-item px-0 py-3 d-flex align-items-center border-0">
+                            <img src="image/course-2.jpg" alt="" class="rounded-3 me-3" width="80" height="50" style="object-fit: cover;">
+                            <div class="flex-grow-1">
+                                <h6 class="m-0 fw-bold">Python for Data Science</h6>
+                                <div class="progress mt-2" style="height: 6px;">
+                                    <div class="progress-bar bg-success" style="width: 45%;"></div>
+                                </div>
+                                <small class="text-muted">45% Complete</small>
+                            </div>
+                            <button class="btn btn-sm btn-primary ms-3 rounded-pill">Resume</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="bg-white p-4 rounded-3 shadow-sm h-100">
+                    <h5 class="fw-bold mb-4">Community Forum</h5>
+                    <div class="d-flex gap-3 mb-4">
+                        <img src="img/testimonial-2.jpg" alt="" width="40" height="40" class="rounded-circle">
+                        <div>
+                            <h6 class="m-0 small fw-bold">New Post: React Hooks</h6>
+                            <p class="text-muted small mb-0">Help with useEffect cleanup...</p>
+                            <small class="text-primary fw-bold" style="font-size: 10px;">12 Replies</small>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-3 mb-4">
+                        <img src="img/testimonial-3.jpg" alt="" width="40" height="40" class="rounded-circle">
+                        <div>
+                            <h6 class="m-0 small fw-bold">Job Alert: UX Junior</h6>
+                            <p class="text-muted small mb-0">Multiple openings at Global Academy...</p>
+                            <small class="text-primary fw-bold" style="font-size: 10px;">5 Replies</small>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline-primary w-100 rounded-pill py-2 mt-2">Join Discussion</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Main Content End -->
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/theme-control.js"></script>
+</body>
+
+</html>
