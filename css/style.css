@@ -21,7 +21,7 @@
 
 .dark-mode .bg-white { background-color: var(--white) !important; }
 .dark-mode .bg-light { background-color: #1e1e2d !important; }
-.dark-mode .text-dark, 
+.dark-mode .text-dark,  
 .dark-mode h1, .dark-mode h2, .dark-mode h3, 
 .dark-mode h4, .dark-mode h5, .dark-mode h6,
 .dark-mode p, .dark-mode span, .dark-mode li, .dark-mode label { color: #f8f9fa !important; }
@@ -241,6 +241,389 @@ h1 { text-align: center !important; }
 .navbar-light .navbar-nav .nav-link {
     color: var(--dark);
     font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+/* Fix navbar alignment for all items */
+.navbar-nav .nav-item {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-nav .nav-link {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+/* Ensure buttons and icons in navbar are aligned */
+.navbar-nav .btn {
+    display: flex;
+    align-items: center;
+    height: auto;
+    margin: 0;
+}
+
+.navbar-nav button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Specific styling for navbar icon buttons */
+.navbar-nav button[onclick="toggleDarkMode()"],
+.navbar-nav button[onclick="toggleRTL()"] {
+    padding: 25px 0;
+    color: var(--dark);
+    font-size: 15px;
+    outline: none;
+    background: transparent;
+    border: none;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav button[onclick="toggleDarkMode()"]:hover,
+.navbar-nav button[onclick="toggleRTL()"]:hover {
+    color: var(--primary);
+}
+
+/* Ensure Login button is properly aligned */
+.navbar-nav .btn-primary {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    padding: 6px 16px !important;
+    font-size: 13px;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 4px rgba(251, 135, 63, 0.3) !important;
+    transition: all 0.3s ease !important;
+    border: 2px solid #fb873f !important;
+    background: linear-gradient(135deg, #fb873f 0%, #ff9558 100%) !important;
+}
+
+.navbar-nav .btn-primary:hover {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 8px rgba(251, 135, 63, 0.4) !important;
+    background: linear-gradient(135deg, #ff9558 0%, #fb873f 100%) !important;
+}
+
+.navbar-nav .btn-primary:active {
+    transform: translateY(0) !important;
+    box-shadow: 0 2px 4px rgba(251, 135, 63, 0.3) !important;
+}
+
+/* Fix theme and RTL buttons alignment - move them below login button */
+@media (min-width: 992px) {
+    .navbar-nav .nav-item:nth-last-child(3),
+    .navbar-nav .nav-item:nth-last-child(2) {
+        position: relative;
+        top: 2px;
+    }
+}
+
+/* Reduce gap between Read More and Join Now buttons on mobile and tablet */
+@media (max-width: 991.98px) {
+    .d-flex.justify-content-center.gap-2 {
+        gap: 0.5rem !important;
+    }
+    
+    .d-flex.justify-content-center.gap-2 .btn {
+        margin: 0 2px !important;
+    }
+    
+    /* Mobile navbar fixes */
+    .navbar-toggler {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        border: 2px solid #fb873f;
+    }
+    
+    .navbar-brand {
+        margin-left: 15px !important;
+        margin-right: auto !important;
+    }
+    
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        z-index: 1000;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+    
+    .navbar-nav {
+        text-align: center;
+        padding: 20px 0 !important;
+        width: 100%;
+    }
+    
+    .navbar-nav .nav-item {
+        display: block;
+        text-align: center;
+        margin: 10px 0;
+        width: 100%;
+    }
+    
+    .navbar-nav .nav-link {
+        display: inline-block;
+        text-align: center;
+        justify-content: center;
+        padding: 10px 20px !important;
+        width: 100%;
+    }
+    
+    .navbar-nav .btn {
+        display: inline-block;
+        text-align: center;
+        margin: 10px auto;
+        justify-content: center;
+        width: auto;
+        min-width: 120px;
+    }
+    
+    .navbar-nav button {
+        display: inline-block;
+        text-align: center;
+        margin: 5px 10px;
+        justify-content: center;
+        width: auto;
+        min-width: 50px;
+        padding: 10px 15px !important;
+        background: transparent;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+    
+    .navbar-nav button:hover {
+        background: rgba(251, 135, 63, 0.1);
+        border-color: #fb873f;
+    }
+    
+    /* Center the dropdown menu */
+    .navbar-nav .dropdown-menu {
+        position: static;
+        background: transparent;
+        box-shadow: none;
+        border: none;
+        text-align: center;
+        margin-top: 10px;
+    }
+    
+    .navbar-nav .dropdown-item {
+        text-align: center;
+        padding: 10px 20px;
+    }
+    
+    /* Fix category cards alignment and equal size in tablet view */
+    .category .row.g-2.m-2 {
+        margin: 0 auto !important;
+        gap: 1rem !important;
+        justify-content: center;
+        max-width: 100%;
+    }
+    
+    .category .col-lg-3.col-md-6 {
+        padding: 0 0.5rem !important;
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .category .content {
+        height: 100% !important;
+        min-height: 180px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        transition: all 0.3s ease;
+        width: 100%;
+        max-width: 250px;
+    }
+    
+    .category .content img {
+        max-height: 60px;
+        width: auto;
+        margin-bottom: 1rem;
+    }
+    
+    .category .content h5 {
+        margin: 0;
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+    
+    .category .content h5 a {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+@media (max-width: 576px) {
+    .d-flex.justify-content-center.gap-2 {
+        gap: 0.25rem !important;
+        flex-wrap: nowrap;
+    }
+    
+    .d-flex.justify-content-center.gap-3 {
+        gap: 0.5rem !important;
+        flex-wrap: nowrap;
+    }
+    
+    .d-flex.justify-content-center.gap-2 .btn {
+        padding: 0.5rem 1rem !important;
+        font-size: 0.875rem !important;
+        margin: 0 1px !important;
+    }
+    
+    /* Fix instructor page icon-text alignment in mobile/tablet */
+    .instructor .d-flex.align-items-center {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        text-align: left !important;
+        min-height: 50px;
+    }
+    
+    .instructor .btn-sm-square.bg-primary-light {
+        flex-shrink: 0;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin-right: 12px !important;
+        width: 40px !important;
+        height: 40px !important;
+    }
+    
+    .instructor .d-flex.align-items-center span {
+        line-height: 1.2;
+        vertical-align: middle;
+        flex: 1;
+    }
+    
+    @media (max-width: 768px) {
+        .instructor .col-sm-6 {
+            margin-bottom: 15px;
+        }
+        
+        .instructor .d-flex.align-items-center {
+            padding: 10px 0;
+        }
+    }
+
+/* Keep form elements in straight line across all views */
+.auth-controls {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important;
+    margin-bottom: 1rem !important;
+    width: 100% !important;
+    flex-direction: row !important;
+}
+
+.auth-controls .form-check {
+    flex-shrink: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    order: 1 !important;
+}
+
+.auth-controls .form-check-input {
+    margin: 0 4px 0 0 !important;
+    flex-shrink: 0;
+}
+
+.auth-controls .form-check-label {
+    margin: 0 !important;
+    white-space: nowrap;
+    line-height: 1.2;
+}
+
+.auth-controls a {
+    flex-shrink: 0 !important;
+    white-space: nowrap;
+    margin: 0 !important;
+    text-align: right !important;
+    order: 2 !important;
+    margin-left: auto !important;
+}
+
+/* Override any conflicting styles */
+@media (max-width: 480px) {
+    .auth-controls {
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        text-align: left !important;
+    }
+}
+
+/* Terms & Conditions checkbox alignment */
+.form-check.d-flex.align-items-center {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+    margin: 0 !important;
+    white-space: nowrap;
+}
+
+.form-check.d-flex.align-items-center .form-check-input {
+    margin: 0 !important;
+    flex-shrink: 0;
+}
+
+.form-check.d-flex.align-items-center .form-check-label {
+    margin: 0 !important;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+@media (max-width: 576px) {
+    .auth-controls {
+        gap: 0.5rem !important;
+    }
+    
+    .auth-controls .form-check-label,
+    .auth-controls a {
+        font-size: 0.875rem !important;
+    }
+}
+    
+    /* Keep "Already have an account? Login" links in straight line */
+    .text-center.text-muted.mb-0 {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 5px !important;
+        flex-wrap: nowrap !important;
+        white-space: nowrap !important;
+        margin: 0 !important;
+        padding: 15px 0 !important;
+    }
+    
+    .text-center.text-muted.mb-0 a {
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
+    }
+    
+    .text-center.text-muted.mb-0 .text-muted {
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
+    }
 }
 
 .navbar-light.sticky-top {
