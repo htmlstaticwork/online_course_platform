@@ -101,13 +101,17 @@
                 </div>
                 <a href="contact.html" class="nav-item nav-link">Contact</a>
                 <a href="dashboard.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt"></i></a>
-                <a href="login.html" class="nav-item nav-link"><i class="fa fa-user"></i></a>
-                <button onclick="toggleDarkMode()" class="btn nav-item nav-link border-0 bg-transparent" title="Toggle Dark Mode">
-                    <i data-lucide="moon"></i>
-                </button>
-                <button onclick="toggleRTL()" class="btn nav-item nav-link border-0 bg-transparent" title="Toggle RTL">
-                    <i data-lucide="languages"></i>
-                </button>
+                <div class="nav-item nav-link d-flex align-items-center gap-3">
+                    <div class="d-flex gap-3 me-2">
+                        <button onclick="toggleDarkMode()" class="btn btn-sm btn-outline-dark border-0 bg-transparent p-0" title="Toggle Dark Mode">
+                            <i data-lucide="moon" size="20"></i>
+                        </button>
+                        <button onclick="toggleRTL()" class="btn btn-sm btn-outline-dark border-0 bg-transparent p-0" title="Toggle RTL">
+                            <i data-lucide="languages" size="20"></i>
+                        </button>
+                    </div>
+                    <a href="login.html" class="btn btn-primary text-white rounded-pill px-4">Login</a>
+                </div>
                 <div class="nav-item nav-link" id="google_translate_element"></div>
             </div>
         </div>
@@ -137,7 +141,7 @@
 <!-- Course Detail Start -->
 <div class="container-xxl py-2">
     <div class="container">
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col-lg-9 wow fadeInUp">
 
                 <div class="container">
@@ -374,7 +378,7 @@
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container py-5">
+        <div class="container-fluid py-5 px-5">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
                     <img src="image/logo.png" alt="Logo" style="height: 60px;" class="mb-4">
