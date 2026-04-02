@@ -83,7 +83,6 @@
             transition: 0.3s ease !important;
         }
         .btn-primary:hover {
-            transform: scale(1.02);
             filter: brightness(0.95);
             box-shadow: 0 5px 15px rgba(255, 122, 24, 0.3);
         }
@@ -150,23 +149,38 @@
         .top-controls button:hover {
             color: #ff7a18;
         }
+        .auth-controls {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+            gap: 8px;
+            margin-bottom: 1.5rem;
+        }
+        .auth-controls .form-check {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin: 0;
+            padding: 0;
+            flex-shrink: 0;
+        }
+        .auth-controls .form-check-input {
+            margin: 0;
+            flex-shrink: 0;
+        }
+        .auth-controls .form-check-label {
+            margin: 0;
+            white-space: nowrap;
+        }
+        .auth-controls a {
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
         @media (max-width: 480px) {
             .auth-controls {
-                flex-direction: column;
-                align-items: center !important;
-                text-align: center;
-            }
-            .form-check {
-                padding-left: 0 !important;
-                margin-left: 0 !important;
-                display: flex;
-                align-items: center;
-                gap: 8px;
-            }
-            .form-check-input {
-                float: none;
-                margin-left: 0;
-                margin-top: 0;
+                flex-wrap: wrap;
+                justify-content: space-between;
             }
         }
     </style>
@@ -206,7 +220,7 @@
                         <input class="form-check-input" type="checkbox" id="remember">
                         <label class="form-check-label small text-muted" for="remember">Remember Me</label>
                     </div>
-                    <a href="#" class="small text-decoration-none fw-bold text-primary">Forgot Password</a>
+                    <a href="#" class="small text-decoration-none fw-bold text-primary">Forgot Password?</a>
                 </div>
 
                 <button type="submit" class="btn btn-primary w-100 py-3 mb-4">Login</button>
