@@ -163,6 +163,7 @@ h1 {
 /* Premium UI Utilities */
 .glass {
     background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -796,7 +797,308 @@ h1 {
     }
 }
 
-/*** Header carousel ***/
+
+/*** Custom Fixes & Enhancements ***/
+:root {
+  --primary-color: var(--primary, #fb873f);
+}
+
+[data-theme="dark"] .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+[data-theme="dark"] .navbar-toggler {
+  border-color: rgba(255,255,255,0.4) !important;
+}
+[data-theme="dark"] .navbar-collapse .nav-link {
+  color: #ffffff !important;
+}
+[data-theme="dark"] .navbar-collapse .nav-link:hover,
+[data-theme="dark"] .navbar-collapse .nav-link.active {
+  color: var(--primary-color) !important;
+  background-color: rgba(255,255,255,0.07);
+  border-radius: 6px;
+}
+[data-theme="dark"] .navbar-collapse {
+  background-color: var(--bg-dark, #1a1a2e);
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+.popular-courses .course-card .card-body {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  text-align: left;
+}
+.popular-courses .course-card .card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+.popular-courses .course-card .card-text {
+  flex-grow: 1;
+  font-size: 0.875rem;
+  margin-bottom: 12px;
+}
+.popular-courses .course-card .course-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.8rem;
+  margin-top: auto;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .popular-topics [class*="col-"],
+  .topics-grid [class*="col-"],
+  .categories-section [class*="col-"] {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .faq-section .accordion-button {
+    padding: 16px 20px;
+    font-size: 0.95rem;
+    text-align: left;
+    align-items: flex-start;
+  }
+  .faq-section .accordion-button::after {
+    margin-left: auto;
+    flex-shrink: 0;
+    align-self: flex-start;
+    margin-top: 3px;
+  }
+  .faq-section .accordion-item {
+    margin-bottom: 8px;
+  }
+}
+
+.categories-section .category-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 24px 20px 20px;
+  position: relative;
+  overflow: hidden;
+  min-height: 160px;
+}
+.categories-section .category-card .category-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  line-height: 1.3;
+  position: relative;
+  z-index: 2;
+  text-align: left;
+}
+.categories-section .category-card .course-count {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  position: relative;
+  z-index: 2;
+}
+
+.success-stories-section {
+  background-color: #f4f6f9 !important;
+}
+.success-stories-section .story-card {
+  background-color: #ffffff;
+  border: 1px solid #e8ecf0;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+[data-theme="dark"] .success-stories-section {
+  background-color: #12121e !important;
+}
+[data-theme="dark"] .success-stories-section .story-card {
+  background-color: #1e1e32;
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #e0e0e0;
+}
+[data-theme="dark"] .success-stories-section .story-card p,
+[data-theme="dark"] .success-stories-section .story-card span {
+  color: #c8c8d8 !important;
+}
+[data-theme="dark"] .success-stories-section h2,
+[data-theme="dark"] .success-stories-section h3 {
+  color: #ffffff !important;
+}
+
+/* --- New Home Sections CSS --- */
+
+/* Stats Counter Bar */
+.stats-bar {
+  background: var(--light);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  margin-top: -50px;
+  position: relative;
+  z-index: 20;
+}
+[data-theme="dark"] .stats-bar {
+  background: #1e1e32;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+.stat-item h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+
+/* Featured Categories Grid */
+.category-card-premium {
+  padding: 30px;
+  border-radius: 15px;
+  background: var(--white);
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-align: center;
+}
+.category-card-premium:hover {
+  transform: translateY(-10px);
+  border-color: var(--primary);
+  box-shadow: 0 15px 35px rgba(251, 135, 63, 0.15);
+}
+.category-card-premium i {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+/* How It Works */
+.how-it-works-step {
+  position: relative;
+  padding: 20px;
+}
+.step-number {
+  width: 60px;
+  height: 60px;
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0 auto 20px;
+  box-shadow: 0 10px 20px rgba(251, 135, 63, 0.3);
+}
+@media (min-width: 992px) {
+  .how-it-works-step::after {
+    content: '';
+    position: absolute;
+    top: 50px;
+    left: 70%;
+    width: 60%;
+    height: 2px;
+    border-top: 2px dashed #ddd;
+    z-index: -1;
+  }
+  .how-it-works-step:last-child::after { display: none; }
+}
+
+/* Top Instructors Grid */
+.instructor-card-premium {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--white);
+  transition: all 0.3s ease;
+}
+.instructor-card-premium:hover {
+  transform: translateY(-10px);
+}
+.instructor-card-premium .view-profile {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.instructor-card-premium:hover .view-profile {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Learning Paths */
+.learning-path-section {
+  background: #0f172a;
+  color: white;
+}
+.path-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+.path-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+.progress {
+  height: 8px;
+  background: rgba(255,255,255,0.1);
+}
+
+/* Newsletter CTA Banner */
+.newsletter-banner {
+  background: linear-gradient(135deg, #fb873f 0%, #ff5e3a 100%);
+  background-size: 200% 200%;
+  animation: gradientBG 10s ease infinite;
+  border-radius: 30px;
+  color: white;
+  overflow: hidden;
+  position: relative;
+}
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.newsletter-banner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(rgba(255,255,255,0.1), transparent);
+  transform: rotate(45deg);
+  animation: shimmer 4s linear infinite;
+}
+@keyframes shimmer {
+  0% { transform: rotate(45deg) translateX(-100%); }
+  100% { transform: rotate(45deg) translateX(100%); }
+}
+
+/* Dashboard Navbar Mobile Fixes */
+@media (max-width: 991px) {
+  .dashboard .navbar,
+  #dashboardNavbar {
+    flex-wrap: nowrap;
+  }
+  .dashboard .navbar-toggler,
+  #dashboardNavbar .navbar-toggler,
+  .dashboard .sidebar-toggle,
+  #sidebarToggle {
+    order: -1;
+    margin-right: auto;
+    margin-left: 0;
+    padding: 6px 10px;
+  }
+  .dashboard .navbar-brand,
+  #dashboardNavbar .navbar-brand {
+    margin-left: 12px;
+  }
+}
 
 .header-carousel .owl-carousel-item {
     position: relative;
@@ -1396,16 +1698,83 @@ h1 {
     text-align: center !important;
 }
 
-/* ===== FIX 13: Testimonials — Reduce white contrast in Success Stories ===== */
-.container-xxl.py-5 .testimonial-item .testimonial-text.bg-light {
-    background-color: #f0eff4 !important;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.07) !important;
+/* ===== FIX 13.1: Success Stories Section Polish (Visibility Fix) ===== */
+.success-stories-section .story-card {
+    border: none !important;
+    background: transparent !important;
+    padding: 15px;
 }
 
-.testimonial-carousel .owl-item:not(.center) .testimonial-text {
+.success-stories-section .testimonial-text {
+    position: relative;
     background: #f0eff4 !important;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    border-radius: 12px !important;
+    padding: 25px !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05) !important;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
 }
+
+.success-stories-section .testimonial-text p {
+    color: #333333 !important; /* Forces dark text in light mode */
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Success Stories Carousel Indicators */
+.testimonial-carousel .owl-dots {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.testimonial-carousel .owl-dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 5px;
+    background: #fb873f !important;
+    border-radius: 50%;
+    opacity: 0.3;
+}
+
+.testimonial-carousel .owl-dot.active {
+    opacity: 1;
+    width: 25px;
+    border-radius: 10px;
+}
+
+/* Success Stories Heading robust fix */
+.success-stories-section .section-title-wrapper {
+    position: relative;
+    display: inline-block;
+    padding: 0 20px;
+    background: var(--white) !important;
+    z-index: 1;
+}
+
+/* Dark Mode Overrides for Success Stories */
+.dark-mode .success-stories-section .testimonial-text {
+    background: #1e1e2d !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3) !important;
+}
+
+.dark-mode .success-stories-section .testimonial-text p {
+    color: #f8f9fa !important; /* Forces white text in dark mode */
+}
+
+.dark-mode .success-stories-section h1 {
+    color: var(--primary) !important;
+}
+
+/* Mobile Alignment Fix for Success Stories */
+@media (max-width: 768px) {
+    .success-stories-section .testimonial-text {
+        padding: 20px !important;
+    }
+}
+
 
 /* Mobile & Tablet Centering (Robust Fix) */
 @media (max-width: 991.98px) {
@@ -1488,6 +1857,21 @@ h1 {
     .justify-content-end,
     .justify-content-between {
         justify-content: center !important;
+    }
+
+    /* FAQ Alignment Fix (Questions should be left-aligned, not centered) */
+    .accordion-header,
+    .accordion-button {
+        text-align: left !important;
+        width: 100% !important;
+        margin: 0 !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+    }
+
+    .accordion-body {
+        text-align: left !important;
     }
 
     /* Auth Page Spacing */
@@ -1612,4 +1996,198 @@ h1 {
 #confirmPasswordFeedback {
     font-size: 0.82rem;
     min-height: 1.2em;
+}
+
+/* ===== FIX 16: Premium Home Page (home2.html) New Sections Styles ===== */
+.premium-home-section {
+    padding: 100px 0;
+}
+
+.bg-dark-premium {
+    background-color: #11111d !important;
+    color: #ffffff;
+}
+
+/* Partner Logos */
+.partner-logo-strip {
+    opacity: 0.6;
+    transition: var(--transition);
+    filter: grayscale(100%);
+    max-width: 140px;
+    height: auto;
+}
+
+.partner-logo-strip:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+}
+
+/* Pricing Cards */
+.pricing-card {
+    border: none;
+    border-radius: 20px;
+    padding: 40px;
+    background: var(--white);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+.pricing-card.featured {
+    background: var(--primary);
+    color: #fff;
+    transform: scale(1.05);
+    z-index: 2;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+}
+
+.pricing-card h2 {
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.pricing-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0;
+}
+
+.pricing-card ul li {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* App Showcase */
+.app-showcase-img {
+    max-width: 100%;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+}
+
+.app-feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.app-feature-icon {
+    background: rgba(251, 135, 63, 0.1);
+    color: var(--primary);
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.premium-app-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 40px;
+    padding: 60px 40px;
+    height: 100%;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.app-feature-item.centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.app-feature-item.centered .app-feature-icon {
+    margin-bottom: 20px;
+}
+
+/* FAQ Premium */
+.faq-premium .accordion-item {
+    border: none;
+    background: transparent;
+    margin-bottom: 15px;
+}
+
+.faq-premium .accordion-header button {
+    background: var(--white);
+    border-radius: 15px !important;
+    padding: 20px 25px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.faq-premium .accordion-button:not(.collapsed) {
+    background: var(--primary);
+    color: #fff;
+    border-radius: 15px 15px 0 0 !important;
+}
+
+/* Why Choose Us Icons */
+.benefit-icon-box {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--primary), #e0701e);
+    color: #fff;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+}
+
+/* Projects Showcase */
+.project-card {
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.1);
+}
+
+.project-card img {
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.1);
+}
+
+.project-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: #fff;
+}
+
+/* Dark Mode Overrides for New Sections */
+.dark-mode .pricing-card:not(.featured) {
+    background: #1e1e2d !important;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.dark-mode .faq-premium .accordion-header button {
+    background: #1e1e2d !important;
+    color: #fff;
+}
+
+.dark-mode .app-feature-icon {
+    background: rgba(251, 135, 63, 0.2);
 }

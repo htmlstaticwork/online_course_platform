@@ -9,7 +9,13 @@ document.addEventListener('DOMContentLoaded', function() {
     
     window.toggleDarkMode = function() {
         body.classList.toggle('dark-mode');
-        localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
+        const isDark = body.classList.contains('dark-mode');
+        if (isDark) {
+            body.setAttribute('data-theme', 'dark');
+        } else {
+            body.removeAttribute('data-theme');
+        }
+        localStorage.setItem('darkMode', isDark);
     };
 
     window.toggleRTL = function() {
@@ -22,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Load saved preferences
     if (localStorage.getItem('darkMode') === 'true') {
         body.classList.add('dark-mode');
+        body.setAttribute('data-theme', 'dark');
     }
     if (localStorage.getItem('rtlMode')) {
         document.documentElement.setAttribute('dir', localStorage.getItem('rtlMode'));

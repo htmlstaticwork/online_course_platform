@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Global Academy : Premium Home</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="image/logo.png" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        .premium-hero {
+            background: linear-gradient(rgba(24, 29, 56, 0.6), rgba(24, 29, 56, 0.6)), url('image/carousel-1.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            color: #fff;
+        }
+
+        .premium-card {
+            border: none;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: var(--transition);
+            background: var(--white);
+        }
+
+        .premium-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-card {
+            background: var(--primary);
+            color: #fff;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .category-badge {
+            background: rgba(251, 135, 63, 0.1);
+            color: var(--primary);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <img src="image/logo.png" alt="Logo" style="height: 75px;">
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link">Classic</a>
+                <a href="home2.html" class="nav-item nav-link active">Premium</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="courses.html" class="nav-item nav-link">Courses</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu fade-down m-0">
+
+                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                        <a href="instructor.html" class="dropdown-item">Become Instructor</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="dashboard.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt"></i></a>
+                <button onclick="toggleDarkMode()"
+                    class="nav-item nav-link btn btn-sm btn-outline-dark border-0 bg-transparent p-0"
+                    title="Toggle Dark Mode" aria-label="Toggle Dark Mode">
+                    <i data-lucide="moon" size="20"></i>
+                </button>
+                <button onclick="toggleRTL()"
+                    class="nav-item nav-link btn btn-sm btn-outline-dark border-0 bg-transparent p-0" title="Toggle RTL"
+                    aria-label="Toggle RTL">
+                    <i data-lucide="languages" size="20"></i>
+                </button>
+
+                <a href="login.html" class="nav-item nav-link btn btn-sm btn-outline-dark border-0 bg-transparent p-0"
+                    title="Login" aria-label="Login"><i data-lucide="user" size="20"></i></a>
+                <div class="nav-item nav-link" id="google_translate_element"></div>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Hero Start -->
+    <div class="premium-hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-3 text-white mb-4 animated slideInDown">Master New Skills with <br><span
+                            style="color: #fb873f;">E-Learning Academy</span></h1>
+                    <p class="fs-5 mb-4 pb-2">Join over 5 million learners worldwide. Experience premium courses
+                        designed by industry experts with personalized learning paths.</p>
+                    <div class="d-flex justify-content-center gap-3 btn-center-container">
+                        <a href="courses.html" class="btn btn-primary py-3 px-5">Get Started</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+
+    <!-- Section 7: Trusted Partners -->
+    <div class="container-fluid bg-light py-5">
+        <div class="container">
+            <div class="row align-items-center g-4 text-center">
+                <div class="col-12 mb-4">
+                    <h6 class="text-uppercase text-primary fw-bold" style="letter-spacing: 2px;">Trusted by 500+
+                        Companies Worldwide</h6>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="partner-logo-strip mb-0">GOOGLE</h3>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="partner-logo-strip mb-0">AMAZON</h3>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="partner-logo-strip mb-0">MICROSOFT</h3>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="400">
+                    <h3 class="partner-logo-strip mb-0">NETFLIX</h3>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="500">
+                    <h3 class="partner-logo-strip mb-0">ADOBE</h3>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="600">
+                    <h3 class="partner-logo-strip mb-0">IBM</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 1: Stats Counter Bar -->
+    <div class="container container-xxl pb-5">
+        <div class="row stats-bar p-4 g-4 text-center mx-1" data-aos="fade-up">
+            <div class="col-md-3 col-6 stat-item">
+                <i data-lucide="users" class="text-primary mb-2"></i>
+                <h2 class="stat-count text-primary" data-target="50000">0</h2>
+                <p class="mb-0 text-muted">Students</p>
+            </div>
+            <div class="col-md-3 col-6 stat-item">
+                <i data-lucide="book-open" class="text-primary mb-2"></i>
+                <h2 class="stat-count text-primary" data-target="300">0</h2>
+                <p class="mb-0 text-muted">Courses</p>
+            </div>
+            <div class="col-md-3 col-6 stat-item">
+                <i data-lucide="award" class="text-primary mb-2"></i>
+                <h2 class="stat-count text-primary" data-target="120">0</h2>
+                <p class="mb-0 text-muted">Instructors</p>
+            </div>
+            <div class="col-md-3 col-6 stat-item">
+                <i data-lucide="star" class="text-primary mb-2"></i>
+                <h2 class="stat-count text-primary" data-target="4.9">0</h2>
+                <p class="mb-0 text-muted">Rating</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 2: Featured Categories Grid -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5" style="max-width: 600px;" data-aos="fade-up">
+                <h6 class="category-badge mb-2">Categories</h6>
+                <h1 class="mb-4">Explore Top Categories</h1>
+            </div>
+            <div class="row g-4 categories-section">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="category-card-premium">
+                        <i data-lucide="code"></i>
+                        <h4 class="mb-2">Web Development</h4>
+                        <span class="badge bg-primary-light text-primary">120+ Courses</span>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="category-card-premium">
+                        <i data-lucide="layout"></i>
+                        <h4 class="mb-2">UI/UX Design</h4>
+                        <span class="badge bg-primary-light text-primary">85+ Courses</span>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="category-card-premium">
+                        <i data-lucide="briefcase"></i>
+                        <h4 class="mb-2">Business</h4>
+                        <span class="badge bg-primary-light text-primary">200+ Courses</span>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="category-card-premium">
+                        <i data-lucide="camera"></i>
+                        <h4 class="mb-2">Photography</h4>
+                        <span class="badge bg-primary-light text-primary">45+ Courses</span>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="category-card-premium">
+                        <i data-lucide="music"></i>
+                        <h4 class="mb-2">Music</h4>
+                        <span class="badge bg-primary-light text-primary">60+ Courses</span>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="category-card-premium">
+                        <i data-lucide="globe"></i>
+                        <h4 class="mb-2">Languages</h4>
+                        <span class="badge bg-primary-light text-primary">150+ Courses</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 8: Why Choose Us (Benefits) -->
+    <section class="container-xxl py-5 premium-home-section" id="benefits">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 text-center text-lg-start" data-aos="fade-right">
+                    <h6 class="category-badge mb-2 mx-auto ms-lg-0" style="width: fit-content;">Why Choose Us</h6>
+                    <h1 class="mb-4">Premium Learning Experience Tailored for Success</h1>
+                    <p class="mb-4">We provide more than just video lessons. Our platform is built on years of industry
+                        experience and pedagogical research.</p>
+                    <div class="row g-4 mb-4">
+                        <div class="col-sm-6 text-start">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="benefit-icon-box me-3"
+                                    style="width: 40px; height: 40px; font-size: 1rem; margin-bottom: 0;">
+                                    <i class="fa fa-check"></i>
+                                </div>
+                                <span class="fw-bold">1-on-1 Mentorship</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="benefit-icon-box me-3"
+                                    style="width: 40px; height: 40px; font-size: 1rem; margin-bottom: 0;">
+                                    <i class="fa fa-check"></i>
+                                </div>
+                                <span class="fw-bold">Job Linkage Support</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 text-start">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="benefit-icon-box me-3"
+                                    style="width: 40px; height: 40px; font-size: 1rem; margin-bottom: 0;">
+                                    <i class="fa fa-check"></i>
+                                </div>
+                                <span class="fw-bold">Lifetime Access</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="benefit-icon-box me-3"
+                                    style="width: 40px; height: 40px; font-size: 1rem; margin-bottom: 0;">
+                                    <i class="fa fa-check"></i>
+                                </div>
+                                <span class="fw-bold">Industry Projects</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <a class="btn btn-primary py-3 px-5 mt-2 rounded-pill" href="about.html"
+                            title="Learn more about our premium benefits">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="zoom-in">
+                    <div class="row g-3">
+                        <div class="col-6 text-end">
+                            <img class="img-fluid rounded-3 w-75" data-aos="zoom-in" data-aos-delay="100"
+                                src="image/about.jpg" style="margin-top: 25%;" alt="Learning Experience">
+                        </div>
+                        <div class="col-6 text-start">
+                            <img class="img-fluid rounded-3 w-100" data-aos="zoom-in" data-aos-delay="200"
+                                src="image/course-1.jpg" alt="Mentorship">
+                        </div>
+                        <div class="col-6 text-end">
+                            <img class="img-fluid rounded-3 w-50" data-aos="zoom-in" data-aos-delay="300"
+                                src="image/course-2.jpg" alt="Projects">
+                        </div>
+                        <div class="col-6 text-start">
+                            <img class="img-fluid rounded-3 w-75" data-aos="zoom-in" data-aos-delay="400"
+                                src="image/course-3.jpg" alt="Success">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: How It Works -->
+    <div class="container-xxl py-5 bg-light-soft">
+        <div class="container">
+            <div class="text-center mx-auto mb-5" style="max-width: 600px;" data-aos="fade-up">
+                <h1 class="mb-4">How It Works</h1>
+                <p>Start your journey today with three simple steps.</p>
+            </div>
+            <div class="row g-4 text-center">
+                <div class="col-lg-4" data-aos="fade-right" data-aos-delay="100">
+                    <div class="how-it-works-step">
+                        <div class="step-number">1</div>
+                        <h4>Browse Courses</h4>
+                        <p class="text-muted">Explore our catalog of thousands of courses from industry experts.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="how-it-works-step border-connect">
+                        <div class="step-number">2</div>
+                        <h4>Enroll & Learn</h4>
+                        <p class="text-muted">Get lifetime access to premium content and practice materials.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-left" data-aos-delay="300">
+                    <div class="how-it-works-step">
+                        <div class="step-number">3</div>
+                        <h4>Get Certified</h4>
+                        <p class="text-muted">Pass assessments and receive your industry-recognized certificate.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 4: Top Instructors Grid -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5" style="max-width: 600px;" data-aos="fade-up">
+                <h1 class="mb-4">Meet Our Top Instructors</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="instructor-card-premium shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&h=200&fit=crop"
+                            class="card-img-top p-4 rounded-circle" alt="Instructor">
+                        <div class="card-body text-center mt-n4">
+                            <h5 class="mb-0">Dr. Sarah Johnson</h5>
+                            <small class="text-primary">Data Science Expert</small>
+                            <div class="d-flex justify-content-center mt-2 text-warning small">
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                                    class="fa fa-star"></i><i class="fa fa-star"></i>
+                            </div>
+                            <small class="text-muted">45.2k Students</small>
+                            <a href="#" class="view-profile btn btn-primary btn-sm rounded-pill px-3">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="instructor-card-premium shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&h=200&fit=crop"
+                            class="card-img-top p-4 rounded-circle" alt="Instructor">
+                        <div class="card-body text-center mt-n4">
+                            <h5 class="mb-0">Prof. Michael Chen</h5>
+                            <small class="text-primary">Full Stack Architect</small>
+                            <div class="d-flex justify-content-center mt-2 text-warning small">
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                                    class="fa fa-star"></i><i class="fa fa-star-half-alt"></i>
+                            </div>
+                            <small class="text-muted">32.8k Students</small>
+                            <a href="#" class="view-profile btn btn-primary btn-sm rounded-pill px-3">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="instructor-card-premium shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&h=200&fit=crop"
+                            class="card-img-top p-4 rounded-circle" alt="Instructor">
+                        <div class="card-body text-center mt-n4">
+                            <h5 class="mb-0">Alex Rivera</h5>
+                            <small class="text-primary">UI/UX Strategy</small>
+                            <div class="d-flex justify-content-center mt-2 text-warning small">
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                                    class="fa fa-star"></i><i class="fa fa-star"></i>
+                            </div>
+                            <small class="text-muted">18.5k Students</small>
+                            <a href="#" class="view-profile btn btn-primary btn-sm rounded-pill px-3">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="instructor-card-premium shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&h=200&fit=crop"
+                            class="card-img-top p-4 rounded-circle" alt="Instructor">
+                        <div class="card-body text-center mt-n4">
+                            <h5 class="mb-0">Emma Wilson</h5>
+                            <small class="text-primary">Business Growth</small>
+                            <div class="d-flex justify-content-center mt-2 text-warning small">
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                                    class="fa fa-star"></i><i class="fa fa-star-half-alt"></i>
+                            </div>
+                            <small class="text-muted">27.1k Students</small>
+                            <a href="#" class="view-profile btn btn-primary btn-sm rounded-pill px-3">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 5: Learning Paths -->
+    <div class="container-xxl py-5 learning-path-section">
+        <div class="container">
+            <div class="text-center mx-auto mb-5" style="max-width: 600px;" data-aos="fade-up">
+                <h2 class="text-white">Professional Learning Paths</h2>
+                <p>Guided curriculum from start to career success.</p>
+            </div>
+            <div class="path-card d-flex flex-wrap align-items-center" data-aos="fade-right">
+                <div class="path-icon me-lg-4 mb-3 mb-lg-0">
+                    <i data-lucide="brain" size="48" class="text-primary"></i>
+                </div>
+                <div class="flex-grow-1 me-lg-4">
+                    <div class="d-flex align-items-center mb-2">
+                        <h4 class="text-white mb-0 me-3">Data Scientist Professional</h4>
+                        <span class="badge bg-primary small">Intermediate</span>
+                    </div>
+                    <p class="mb-2 opacity-75">12 Courses • 8-10 Months • Job Ready</p>
+                    <div class="progress">
+                        <div class="progress-bar bg-primary" role="progressbar" aria-label="Learning Progress"></div>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-primary px-4 rounded-pill mt-3 mt-lg-0">Learn More</a>
+            </div>
+            <div class="path-card d-flex flex-wrap align-items-center" data-aos="fade-right" data-aos-delay="100">
+                <div class="path-icon me-lg-4 mb-3 mb-lg-0">
+                    <i data-lucide="layout" size="48" class="text-primary"></i>
+                </div>
+                <div class="flex-grow-1 me-lg-4">
+                    <div class="d-flex align-items-center mb-2">
+                        <h4 class="text-white mb-0 me-3">Frontend Developer Masterclass</h4>
+                        <span class="badge bg-primary small">Beginner</span>
+                    </div>
+                    <p class="mb-2 opacity-75">15 Courses • 6-8 Months • Portfolio Ready</p>
+                    <div class="progress">
+                        <div class="progress-bar bg-primary w-50" role="progressbar"></div>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-primary px-4 rounded-pill mt-3 mt-lg-0">Learn More</a>
+            </div>
+            <div class="path-card d-flex flex-wrap align-items-center" data-aos="fade-right" data-aos-delay="200">
+                <div class="path-icon me-lg-4 mb-3 mb-lg-0">
+                    <i data-lucide="zap" size="48" class="text-primary"></i>
+                </div>
+                <div class="flex-grow-1 me-lg-4">
+                    <div class="d-flex align-items-center mb-2">
+                        <h4 class="text-white mb-0 me-3">Agile Business Leadership</h4>
+                        <span class="badge bg-primary small">Expert</span>
+                    </div>
+                    <p class="mb-2 opacity-75">8 Courses • 4-6 Months • Management Ready</p>
+                    <div class="progress">
+                        <div class="progress-bar bg-primary w-25" role="progressbar"></div>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-primary px-4 rounded-pill mt-3 mt-lg-0">Learn More</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 6: Newsletter CTA Banner -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="newsletter-banner p-5 text-center" data-aos="zoom-in">
+                <div class="row justify-content-center py-4">
+                    <div class="col-lg-10">
+                        <h1 class="text-white mb-3">Start Learning Today — Join 50,000+ Students</h1>
+                        <p class="fs-5 mb-4 opacity-100">Get weekly course updates and expert tips delivered to your
+                            inbox.</p>
+                        <form class="row g-2 justify-content-center">
+                            <div class="col-md-6">
+                                <input type="email" class="form-control form-control-lg rounded-pill px-4 border-0"
+                                    placeholder="Your email address">
+                            </div>
+                            <div class="col-md-auto">
+                                <button type="submit" class="btn btn-dark btn-lg rounded-pill px-5">Join Now</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 10: Mobile Learning Experience -->
+    <section class="container-xxl py-5 bg-dark-premium premium-home-section overflow-hidden" id="mobile-app">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="premium-app-card">
+                        <h6 class="text-primary fw-bold mb-3 text-uppercase" style="letter-spacing: 2px;">ARN ANYWHERE</h6>
+                        <h1 class="text-white mb-4">Transform Your Phone Into a Powerhouse Academy</h1>
+                        <p class="text-light opacity-75 mb-5">Download our mobile app to learn on the go, even offline. Sync
+                            your progress across all devices seamlessly.</p>
+
+                        <div class="app-feature-list d-flex flex-column align-items-center">
+                            <div class="app-feature-item centered">
+                                <div class="app-feature-icon"><i data-lucide="download-cloud"></i></div>
+                                <div>
+                                    <h5 class="text-white mb-1">Offline Access</h5>
+                                    <p class="text-light opacity-50 mb-0 small">Download lessons and watch them without
+                                        internet.</p>
+                                </div>
+                            </div>
+                            <div class="app-feature-item centered">
+                                <div class="app-feature-icon"><i data-lucide="bell"></i></div>
+                                <div>
+                                    <h5 class="text-white mb-1">Smart Notifications</h5>
+                                    <p class="text-light opacity-50 mb-0 small">Get reminders for your daily learning
+                                        targets.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex flex-wrap gap-3 mt-4 justify-content-center">
+                            <a href="#" class="btn btn-primary d-flex align-items-center px-4 py-2 rounded-3"
+                                title="Download on App Store">
+                                <i class="fab fa-apple fa-2x me-2"></i>
+                                <div class="text-start">
+                                    <small class="d-block" style="font-size: 10px;">Download on</small>
+                                    <span class="fw-bold">App Store</span>
+                                </div>
+                            </a>
+                            <a href="#" class="btn btn-outline-light d-flex align-items-center px-4 py-2 rounded-3"
+                                title="Get it on Google Play">
+                                <i class="fab fa-google-play fa-2x me-2"></i>
+                                <div class="text-start">
+                                    <small class="d-block" style="font-size: 10px;">Get it on</small>
+                                    <span class="fw-bold">Google Play</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center" data-aos="fade-left">
+                    <img src="image/premium_mockup.png" alt="Premium App Mockup" class="app-showcase-img img-fluid" style="max-height: 650px; width: auto; box-shadow: 0 30px 70px rgba(0,0,0,0.5);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 11: Real-World Student Projects -->
+    <div class="container-xxl py-5 premium-home-section">
+        <div class="container">
+            <div class="text-center mx-auto mb-5" style="max-width: 600px;" data-aos="fade-up">
+                <h6 class="category-badge mb-2">Outcomes</h6>
+                <h1 class="mb-4">Built by Our Students</h1>
+                <p>See the practical skills our learners acquire through hands-on projects.</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-10" data-aos="zoom-in">
+                    <div class="project-card">
+                        <img src="student_projects_showcase_1775317123046.png" class="img-fluid w-100"
+                            alt="Projects Showcase">
+                        <div class="project-overlay text-center">
+                            <h4>Full Portfolio Showcase</h4>
+                            <p class="mb-0">From Financial Dashboards to Fitness Tracking Apps, our students build
+                                real-world software.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 9: Premium Membership Plans -->
+    <div class="container-xxl py-5 bg-light-soft premium-home-section">
+        <div class="container">
+            <div class="text-center mx-auto mb-5" style="max-width: 600px;" data-aos="fade-up">
+                <h6 class="category-badge mb-2">Pricing</h6>
+                <h1 class="mb-4">Flexible Plans for Every Learner</h1>
+            </div>
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-4" data-aos="fade-right" data-aos-delay="100">
+                    <div class="pricing-card">
+                        <h4 class="mb-3">Starter</h4>
+                        <h2>$0<small class="fs-6 text-muted">/mo</small></h2>
+                        <p class="text-muted">Perfect for beginners exploring new skills.</p>
+                        <ul>
+                            <li><i class="fa fa-check text-success"></i> Access to all FREE courses</li>
+                            <li><i class="fa fa-check text-success"></i> Community Forum Access</li>
+                            <li><i class="fa fa-times text-danger"></i> Verified Certificates</li>
+                            <li><i class="fa fa-times text-danger"></i> 1-on-1 Mentorship</li>
+                        </ul>
+                        <a href="login.html" class="btn btn-outline-primary w-100 py-3 rounded-pill">Start for Free</a>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-up">
+                    <div class="pricing-card featured">
+                        <div class="position-absolute top-0 end-0 p-3">
+                            <span class="badge bg-white text-primary">POPULAR</span>
+                        </div>
+                        <h4 class="mb-3">Professional</h4>
+                        <h2>$29<small class="fs-6 text-light">/mo</small></h2>
+                        <p class="text-light opacity-75">Everything you need to master your career.</p>
+                        <ul>
+                            <li><i class="fa fa-check"></i> Unlimited Premium Courses</li>
+                            <li><i class="fa fa-check"></i> Verified Certificates</li>
+                            <li><i class="fa fa-check"></i> 1-on-1 Mentorship (2/mo)</li>
+                            <li><i class="fa fa-check"></i> Resume Review</li>
+                        </ul>
+                        <a href="login.html" class="btn btn-dark w-100 py-3 rounded-pill">Get Pro Access</a>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-left" data-aos-delay="100">
+                    <div class="pricing-card">
+                        <h4 class="mb-3">Enterprise</h4>
+                        <h2>Custom</h2>
+                        <p class="text-muted">Tailored solutions for teams and businesses.</p>
+                        <ul>
+                            <li><i class="fa fa-check text-success"></i> Custom Learning Paths</li>
+                            <li><i class="fa fa-check text-success"></i> Analytics Dashboard</li>
+                            <li><i class="fa fa-check text-success"></i> Priority Support</li>
+                            <li><i class="fa fa-check text-success"></i> Dedicated Account Manager</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-outline-primary w-100 py-3 rounded-pill">Contact Sales</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Stats End -->
+
+    <!-- Popular Courses Start -->
+    <div class="container-xxl py-5 popular-courses">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h6 class="category-badge mb-2">Top Rated</h6>
+                <h1 class="mb-4">Popular Professional Courses</h1>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="premium-card course-card shadow h-100">
+                        <img class="img-fluid" src="image/course-1.jpg" alt="">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="category-badge">Web Development</span>
+                                <span class="text-warning"><i class="fa fa-star me-1"></i>4.9</span>
+                            </div>
+                            <h5 class="card-title mb-3">Mastering Modern HTML5 & CSS3</h5>
+                            <p class="card-text text-muted">Learn the foundation of web development with hands-on
+                                projects.</p>
+                            <hr>
+                            <div class="course-meta d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-primary fs-5">FREE</span>
+                                <a href="login.html" class="btn btn-sm btn-primary px-3 rounded-pill">Enroll Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="premium-card course-card shadow h-100">
+                        <img class="img-fluid" src="image/course-2.jpg" alt="">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="category-badge">Data Science</span>
+                                <span class="text-warning"><i class="fa fa-star me-1"></i>4.8</span>
+                            </div>
+                            <h5 class="card-title mb-3">Python for Advanced Data Analytics</h5>
+                            <p class="card-text text-muted">Master data manipulation and visualization using real
+                                datasets.</p>
+                            <hr>
+                            <div class="course-meta d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-primary fs-5">$49.99</span>
+                                <a href="login.html" class="btn btn-sm btn-primary px-3 rounded-pill">Enroll Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="premium-card course-card shadow h-100">
+                        <img class="img-fluid" src="image/course-3.jpg" alt="">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="category-badge">UI/UX Design</span>
+                                <span class="text-warning"><i class="fa fa-star me-1"></i>4.7</span>
+                            </div>
+                            <h5 class="card-title mb-3">User Experience Design Essentials</h5>
+                            <p class="card-text text-muted">Create stunning interfaces that users will love and enjoy
+                                using.</p>
+                            <hr>
+                            <div class="course-meta d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-primary fs-5">FREE</span>
+                                <a href="login.html" class="btn btn-sm btn-primary px-3 rounded-pill">Enroll Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Popular Courses End -->
+
+    <!-- Section 12: Premium Support FAQs -->
+    <div class="container-xxl py-5 bg-light-soft premium-home-section">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-5 text-center text-lg-start" data-aos="fade-right">
+                    <h6 class="category-badge mb-2 mx-auto ms-lg-0" style="width: fit-content;">FAQs</h6>
+                    <h1 class="mb-4">Common Questions About Our Premium Platform</h1>
+                    <p class="mb-4">Everything you need to know about the platform and how to accelerate your career.</p>
+                    <div class="text-center">
+                        <a href="contact.html" class="btn btn-primary py-3 px-5 rounded-pill">Still Have Questions?</a>
+                    </div>
+                </div>
+                <div class="col-lg-7" data-aos="fade-left">
+                    <div class="accordion faq-premium" id="premiumFaq">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#premOne">
+                                    Are certificates recognized by employers?
+                                </button>
+                            </h2>
+                            <div id="premOne" class="accordion-collapse collapse show" data-bs-parent="#premiumFaq">
+                                <div class="accordion-body">
+                                    Yes! Our certificates are co-branded with industry leading partners and are designed
+                                    to showcase specific, in-demand skills highlighted by recruiters.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#premTwo">
+                                    Can I cancel my Professional subscription?
+                                </button>
+                            </h2>
+                            <div id="premTwo" class="accordion-collapse collapse" data-bs-parent="#premiumFaq">
+                                <div class="accordion-body">
+                                    Absolutely. You can cancel your subscription at any time from your dashboard
+                                    settings with no hidden fees or commitment.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#premThree">
+                                    Do you offer corporate training packages?
+                                </button>
+                            </h2>
+                            <div id="premThree" class="accordion-collapse collapse" data-bs-parent="#premiumFaq">
+                                <div class="accordion-body">
+                                    Yes, our Enterprise plan is specifically designed for teams of 10 or more, featuring
+                                    custom paths and advanced analytics.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container-fluid py-5 px-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <img src="image/logo.png" alt="Logo" style="height: 60px;" class="mb-4">
+                    <h4 class="text-white mb-3">Quick Link</h4>
+                    <p><a class="text-light" href="about.html">About Us</a></p>
+                    <p><a class="text-light" href="contact.html">Contact Us</a></p>
+                    <p><a class="text-light" href="">Privacy Policy</a></p>
+                    <p><a class="text-light" href="">Terms & Condition</a></p>
+                    <p><a class="text-light" href="">FAQs & Help</a></p>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Contact</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, Chennai, Tamil Nadu</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 8683045908</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@elearning.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href="" aria-label="Twitter"><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="" aria-label="Facebook"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="" aria-label="YouTube"><i
+                                class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="" aria-label="LinkedIn"><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Subscribe to our Newsletter</h4>
+                    <p>Subscribe now and join our growing community of learners committed to lifelong education! </p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <form action="#">
+                            <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="email"
+                                placeholder="Your email" required>
+                            <button type="submit" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">
+                                <a href="mailto:info@elearning.com"
+                                    style="color: inherit; text-decoration: none;">Subscribe</a>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-12 text-center mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="index.html">Global Academy</a>, All Right Reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/theme-control.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Stats Intersection Observer
+        const stats = document.querySelectorAll('.stat-count');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = parseFloat(entry.target.getAttribute('data-target'));
+                    let count = 0;
+                    const duration = 2000; // 2 seconds
+                    const steps = 60;
+                    const increment = target / steps;
+                    const stepDuration = duration / steps;
+
+                    const updateCount = () => {
+                        if (count < target) {
+                            count += increment;
+                            if (target % 1 === 0) {
+                                entry.target.innerText = Math.ceil(count).toLocaleString();
+                            } else {
+                                entry.target.innerText = count.toFixed(1);
+                            }
+                            setTimeout(updateCount, stepDuration);
+                        } else {
+                            if (target % 1 === 0) {
+                                entry.target.innerText = target.toLocaleString();
+                            } else {
+                                entry.target.innerText = target.toFixed(1);
+                            }
+                        }
+                    };
+                    updateCount();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        stats.forEach(s => observer.observe(s));
+    </script>
+</body>
+
+</html>

@@ -51,13 +51,13 @@
         <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
             <img src="image/logo.png" alt="Logo" style="height: 75px;">
         </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" title="Toggle Navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="index.html" class="nav-item nav-link">Classic</a>
-                <a href="index2.html" class="nav-item nav-link">Premium</a>
+                <a href="home2.html" class="nav-item nav-link">Premium</a>
                 <a href="about.html" class="nav-item nav-link">About</a>
                 <a href="courses.html" class="nav-item nav-link active">Courses</a>
                 <div class="nav-item dropdown">
@@ -69,7 +69,7 @@
                     </div>
                 </div>
                 <a href="contact.html" class="nav-item nav-link">Contact</a>
-                <a href="dashboard.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt"></i></a>
+                <a href="dashboard.html" class="nav-item nav-link" title="Dashboard"><i class="fa fa-tachometer-alt"></i></a>
                 <button onclick="toggleDarkMode()" class="nav-item nav-link btn btn-sm btn-outline-dark border-0 bg-transparent p-0" title="Toggle Dark Mode">
                     <i data-lucide="moon" size="20"></i>
                 </button>
@@ -104,7 +104,7 @@
 
 
     <!-- Categories Start -->
-    <div class="container-xxl py-5 category">
+    <div class="container-xxl py-5 category categories-section">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center px-3">Categories</h6>
@@ -112,7 +112,7 @@
             </div>
             <div class="row g-2 m-2">
                 <div class="col-lg-3 col-md-6  text-center">
-                    <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="content category-card shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
 
                         <img src="img/cat1.png" class="img-fluid" alt="categories"></i>
 
@@ -122,7 +122,7 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6  text-center">
-                    <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="content category-card shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
 
                         <img src="img/cat2.png" class="img-fluid" alt="categories"></i>
 
@@ -132,7 +132,7 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6  text-center">
-                    <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="content category-card shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
 
                         <img src="img/cat3.png" class="img-fluid" alt="categories"></i>
 
@@ -206,374 +206,252 @@
                 <h1 class="mb-5" style="color: #fb873f;">Explore new and trending free online courses</h1>
             </div>
             <div class="row g-4 py-2 justify-content-center">
-                <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <!-- Row 1 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="course-item shadow h-100">
                         <div class="position-relative overflow-hidden text-light image">
-                            <img class="img-fluid" src="img/course-1.jpg" alt="">
+                            <img class="img-fluid w-100" src="img/course-1.jpg" alt="">
                             <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
                                 class="px-2 py-1 fw-bold text-uppercase">FREE</div>
-
                         </div>
-                        <div class="p-2 pb-0">
-
-                            <h5 class="mb-1"><a href="single.html" class="text-dark">HTML Course for Beginners</a> </h5>
+                        <div class="p-4 pb-0">
+                            <h5 class="mb-1"><a href="single.html" class="text-dark">HTML Course for Beginners</a></h5>
                         </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>
-                                4.55</small>
-                            <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>5.8L+
-                                Learners
-                            </small>
-                            <small class="flex-fill text-center py-1 px-2"><i
-                                    class="fa fa-user me-2"></i>Beginner</small>
+                        <div class="d-flex border-top border-bottom mt-3">
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-star text-warning me-2"></i>4.55</small>
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-graduate me-2"></i>5.8L+ Learners</small>
+                            <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>Beginner</small>
                         </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>2.0
-                                Hrs</small>
-                            <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 0</small>
-                            <small class=" text-primary py-1 px-2 fw-bold fs-6 text-center"><a href="#">Enroll Now </a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+                        <div class="d-flex p-4">
+                            <small class="flex-fill text-left"><i class="fa fa-clock me-2"></i>2.0 Hrs</small>
+                            <small class="flex-fill text-center fw-bold fs-6">₹ 0</small>
+                            <small class="flex-fill text-right text-primary fw-bold fs-6"><a href="single.html">Enroll Now <i class="fa fa-chevron-right ms-1 fs-10"></i></a></small>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="course-item shadow h-100">
                         <div class="position-relative overflow-hidden text-light image">
-                            <img class="img-fluid" src="img/course-2.jpg" alt="">
+                            <img class="img-fluid w-100" src="img/course-2.jpg" alt="">
                             <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#0ed44c;"
                                 class="px-2 py-1 fw-bold text-uppercase">PAID</div>
-
                         </div>
-                        <div class="p-2 pb-0">
-
-                            <h5 class="mb-1">Front End Development-CSS
-                            </h5>
+                        <div class="p-4 pb-0">
+                            <h5 class="mb-1"><a href="single.html" class="text-dark">Front End Development-CSS</a></h5>
                         </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>
-                                4.55</small>
-                            <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>5.2L+
-                                Learners
-                            </small>
-                            <small class="flex-fill text-center py-1 px-2"><i
-                                    class="fa fa-user me-2"></i>Beginner</small>
+                        <div class="d-flex border-top border-bottom mt-3">
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-star text-warning me-2"></i>4.55</small>
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-graduate me-2"></i>5.2L+ Learners</small>
+                            <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>Beginner</small>
                         </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>4.0
-                                Hrs</small>
-                            <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 199</small>
-                            <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="#">Enroll
-                                    Now </a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+                        <div class="d-flex p-4">
+                            <small class="flex-fill text-left"><i class="fa fa-clock me-2"></i>4.0 Hrs</small>
+                            <small class="flex-fill text-center fw-bold fs-6">₹ 199</small>
+                            <small class="flex-fill text-right text-primary fw-bold fs-6"><a href="single.html">Enroll Now <i class="fa fa-chevron-right ms-1 fs-10"></i></a></small>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="course-item shadow h-100">
                         <div class="position-relative overflow-hidden text-light image">
-                            <img class="img-fluid" src="img/course-3.jpg" alt="">
+                            <img class="img-fluid w-100" src="img/course-3.jpg" alt="">
                             <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
                                 class="px-2 py-1 fw-bold text-uppercase">FREE</div>
-
                         </div>
-                        <div class="p-2 pb-0">
-
-                            <h5 class="mb-1">Introduction to JavaScript
-                            </h5>
+                        <div class="p-4 pb-0">
+                            <h5 class="mb-1"><a href="single.html" class="text-dark">Introduction to JavaScript</a></h5>
                         </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>
-                                4.46</small>
-                            <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>76L+
-                                Learners
-                            </small>
-                            <small class="flex-fill text-center py-1 px-2"><i
-                                    class="fa fa-user me-2"></i>Beginner</small>
+                        <div class="d-flex border-top border-bottom mt-3">
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-star text-warning me-2"></i>4.46</small>
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-graduate me-2"></i>76L+ Learners</small>
+                            <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>Beginner</small>
                         </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>2.5
-                                Hrs</small>
-                            <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 0</small>
-                            <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="#">Enroll
-                                    Now </a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+                        <div class="d-flex p-4">
+                            <small class="flex-fill text-left"><i class="fa fa-clock me-2"></i>2.5 Hrs</small>
+                            <small class="flex-fill text-center fw-bold fs-6">₹ 0</small>
+                            <small class="flex-fill text-right text-primary fw-bold fs-6"><a href="single.html">Enroll Now <i class="fa fa-chevron-right ms-1 fs-10"></i></a></small>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+
+                <!-- Row 2 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="course-item shadow h-100">
                         <div class="position-relative overflow-hidden text-light image">
-                            <img class="img-fluid" src="img/course-4.jpg" alt="">
+                            <img class="img-fluid w-100" src="img/course-4.jpg" alt="">
                             <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#0ed44c;"
                                 class="px-2 py-1 fw-bold text-uppercase">PAID</div>
-
                         </div>
-                        <div class="p-2 pb-0">
-
-                            <h5 class="mb-1">Python Programming
-                            </h5>
+                        <div class="p-4 pb-0">
+                            <h5 class="mb-1"><a href="single.html" class="text-dark">Python Programming</a></h5>
                         </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>
-                                3.54</small>
-                            <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>3.3L+
-                                Learners
-                            </small>
-                            <small class="flex-fill text-center py-1 px-2"><i
-                                    class="fa fa-user me-2"></i>Beginner</small>
+                        <div class="d-flex border-top border-bottom mt-3">
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-star text-warning me-2"></i>3.54</small>
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-graduate me-2"></i>3.3L+ Learners</small>
+                            <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>Beginner</small>
                         </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>3.0
-                                Hrs</small>
-                            <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 299</small>
-                            <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="#">Enroll
-                                    Now </a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+                        <div class="d-flex p-4">
+                            <small class="flex-fill text-left"><i class="fa fa-clock me-2"></i>3.0 Hrs</small>
+                            <small class="flex-fill text-center fw-bold fs-6">₹ 299</small>
+                            <small class="flex-fill text-right text-primary fw-bold fs-6"><a href="single.html">Enroll Now <i class="fa fa-chevron-right ms-1 fs-10"></i></a></small>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="course-item shadow h-100">
                         <div class="position-relative overflow-hidden text-light image">
-                            <img class="img-fluid" src="img/course-5.jpg" alt="">
+                            <img class="img-fluid w-100" src="img/course-5.jpg" alt="">
                             <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
                                 class="px-2 py-1 fw-bold text-uppercase">FREE</div>
-
                         </div>
-                        <div class="p-2 pb-0">
-
-                            <h5 class="mb-1">SQL for Data Science
-                            </h5>
+                        <div class="p-4 pb-0">
+                            <h5 class="mb-1"><a href="single.html" class="text-dark">SQL for Data Science</a></h5>
                         </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-center py-1 px-1"><i class="fa fa-star text-warning me-2"></i>
-                                4.54</small>
-                            <small class="flex-fill text-center py-1 px-1"><i class="fa fa-user-graduate me-2"></i>1.3L+
-                                Learners
-                            </small>
-                            <small class="flex-fill text-center py-1 px-1"><i
-                                    class="fa fa-user me-2"></i>Intermediate</small>
+                        <div class="d-flex border-top border-bottom mt-3">
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-star text-warning me-2"></i>4.54</small>
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-graduate me-2"></i>1.3L+ Learners</small>
+                            <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>Intermediate</small>
                         </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>5.0
-                                Hrs</small>
-                            <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 0</small>
-                            <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="#">Enroll
-                                    Now </a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+                        <div class="d-flex p-4">
+                            <small class="flex-fill text-left"><i class="fa fa-clock me-2"></i>5.0 Hrs</small>
+                            <small class="flex-fill text-center fw-bold fs-6">₹ 0</small>
+                            <small class="flex-fill text-right text-primary fw-bold fs-6"><a href="single.html">Enroll Now <i class="fa fa-chevron-right ms-1 fs-10"></i></a></small>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="course-item shadow h-100">
                         <div class="position-relative overflow-hidden text-light image">
-                            <img class="img-fluid" src="img/course-6.jpg" alt="">
+                            <img class="img-fluid w-100" src="img/course-6.jpg" alt="">
                             <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
                                 class="px-2 py-1 fw-bold text-uppercase">FREE</div>
-
                         </div>
-                        <div class="p-2 pb-0">
-
-                            <h5 class="mb-1">ChatGPT for Beginners
-                            </h5>
+                        <div class="p-4 pb-0">
+                            <h5 class="mb-1"><a href="single.html" class="text-dark">ChatGPT for Beginners</a></h5>
                         </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>
-                                3.55</small>
-                            <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>3.5L+
-                                Learners
-                            </small>
-                            <small class="flex-fill text-center py-1 px-2"><i
-                                    class="fa fa-user me-2"></i>Beginner</small>
+                        <div class="d-flex border-top border-bottom mt-3">
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-star text-warning me-2"></i>3.55</small>
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-graduate me-2"></i>3.5L+ Learners</small>
+                            <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>Beginner</small>
                         </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>4.5
-                                Hrs</small>
-                            <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 0</small>
-                            <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="#">Enroll
-                                    Now </a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+                        <div class="d-flex p-4">
+                            <small class="flex-fill text-left"><i class="fa fa-clock me-2"></i>4.5 Hrs</small>
+                            <small class="flex-fill text-center fw-bold fs-6">₹ 0</small>
+                            <small class="flex-fill text-right text-primary fw-bold fs-6"><a href="single.html">Enroll Now <i class="fa fa-chevron-right ms-1 fs-10"></i></a></small>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+
+                <!-- Row 3 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="course-item shadow h-100">
                         <div class="position-relative overflow-hidden text-light image">
-                            <img class="img-fluid" src="img/course-7.jpg" alt="">
+                            <img class="img-fluid w-100" src="img/course-7.jpg" alt="">
                             <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
                                 class="px-2 py-1 fw-bold text-uppercase">FREE</div>
-
                         </div>
-                        <div class="p-2 pb-0">
-
-                            <h5 class="mb-1">AWS for Beginners
-                            </h5>
+                        <div class="p-4 pb-0">
+                            <h5 class="mb-1"><a href="single.html" class="text-dark">AWS for Beginners</a></h5>
                         </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>
-                                4.53</small>
-                            <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>1L+
-                                Learners
-                            </small>
-                            <small class="flex-fill text-center py-1 px-2"><i
-                                    class="fa fa-user me-2"></i>Beginner</small>
+                        <div class="d-flex border-top border-bottom mt-3">
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-star text-warning me-2"></i>4.53</small>
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-graduate me-2"></i>1L+ Learners</small>
+                            <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>Beginner</small>
                         </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>3.0
-                                Hrs</small>
-                            <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 0</small>
-                            <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="#">Enroll
-                                    Now </a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+                        <div class="d-flex p-4">
+                            <small class="flex-fill text-left"><i class="fa fa-clock me-2"></i>3.0 Hrs</small>
+                            <small class="flex-fill text-center fw-bold fs-6">₹ 0</small>
+                            <small class="flex-fill text-right text-primary fw-bold fs-6"><a href="single.html">Enroll Now <i class="fa fa-chevron-right ms-1 fs-10"></i></a></small>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="course-item shadow h-100">
                         <div class="position-relative overflow-hidden text-light image">
-                            <img class="img-fluid" src="img/course-8.jpg" alt="">
+                            <img class="img-fluid w-100" src="img/course-8.jpg" alt="">
                             <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#0ed44c;"
                                 class="px-2 py-1 fw-bold text-uppercase">PAID</div>
-
                         </div>
-                        <div class="p-2 pb-0">
-
-                            <h5 class="mb-1">Microsoft Azure Essentials
-                            </h5>
+                        <div class="p-4 pb-0">
+                            <h5 class="mb-1"><a href="single.html" class="text-dark">Microsoft Azure Essentials</a></h5>
                         </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-center py-1 px-1"><i class="fa fa-star text-warning me-2"></i>
-                                4.64</small>
-                            <small class="flex-fill text-center py-1 px-1"><i class="fa fa-user-graduate me-2"></i>4.4L+
-                                Learners
-                            </small>
-                            <small class="flex-fill text-center py-1 px-1"><i
-                                    class="fa fa-user me-2"></i>Intermediate</small>
+                        <div class="d-flex border-top border-bottom mt-3">
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-star text-warning me-2"></i>4.64</small>
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-graduate me-2"></i>4.4L+ Learners</small>
+                            <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>Intermediate</small>
                         </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>3.5
-                                Hrs</small>
-                            <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 149</small>
-                            <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="#">Enroll
-                                    Now </a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+                        <div class="d-flex p-4">
+                            <small class="flex-fill text-left"><i class="fa fa-clock me-2"></i>3.5 Hrs</small>
+                            <small class="flex-fill text-center fw-bold fs-6">₹ 149</small>
+                            <small class="flex-fill text-right text-primary fw-bold fs-6"><a href="single.html">Enroll Now <i class="fa fa-chevron-right ms-1 fs-10"></i></a></small>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="course-item shadow h-100">
                         <div class="position-relative overflow-hidden text-light image">
-                            <img class="img-fluid" src="img/course-9.jpg" alt="">
+                            <img class="img-fluid w-100" src="img/course-9.jpg" alt="">
                             <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
                                 class="px-2 py-1 fw-bold text-uppercase">FREE</div>
-
                         </div>
-                        <div class="p-2 pb-0">
-
-                            <h5 class="mb-1">Introduction to MS Excel</h5>
+                        <div class="p-4 pb-0">
+                            <h5 class="mb-1"><a href="single.html" class="text-dark">Introduction to MS Excel</a></h5>
                         </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>
-                                4.6</small>
-                            <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>4.2L+
-                                Learners
-                            </small>
-                            <small class="flex-fill text-center py-1 px-2"><i
-                                    class="fa fa-user me-2"></i>Beginner</small>
+                        <div class="d-flex border-top border-bottom mt-3">
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-star text-warning me-2"></i>4.6</small>
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-graduate me-2"></i>4.2L+ Learners</small>
+                            <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>Beginner</small>
                         </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>3.5
-                                Hrs</small>
-                            <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 0</small>
-                            <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="#">Enroll
-                                    Now </a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+                        <div class="d-flex p-4">
+                            <small class="flex-fill text-left"><i class="fa fa-clock me-2"></i>3.5 Hrs</small>
+                            <small class="flex-fill text-center fw-bold fs-6">₹ 0</small>
+                            <small class="flex-fill text-right text-primary fw-bold fs-6"><a href="single.html">Enroll Now <i class="fa fa-chevron-right ms-1 fs-10"></i></a></small>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+
+                <!-- Row 4 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="course-item shadow h-100">
                         <div class="position-relative overflow-hidden text-light image">
-                            <img class="img-fluid" src="img/course-10.jpg" alt="">
+                            <img class="img-fluid w-100" src="img/course-10.jpg" alt="">
                             <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#0ed44c;"
                                 class="px-2 py-1 fw-bold text-uppercase">PAID</div>
-
                         </div>
-                        <div class="p-2 pb-0">
-
-                            <h5 class="mb-1">Statistics For Data Science
-                               
-                                
-                            </h5>
+                        <div class="p-4 pb-0">
+                            <h5 class="mb-1"><a href="single.html" class="text-dark">Statistics For Data Science</a></h5>
                         </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-center py-1 px-1"><i class="fa fa-star text-warning me-2"></i>
-                                4.55</small>
-                            <small class="flex-fill text-center py-1 px-1"><i class="fa fa-user-graduate me-2"></i>5.3L+
-                                Learners
-                            </small>
-                            <small class="flex-fill text-center py-1 px-1"><i
-                                    class="fa fa-user me-2"></i>Intermediate</small>
+                        <div class="d-flex border-top border-bottom mt-3">
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-star text-warning me-2"></i>4.55</small>
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-graduate me-2"></i>5.3L+ Learners</small>
+                            <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>Intermediate</small>
                         </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>2.5
-                                Hrs</small>
-                            <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 299</small>
-                            <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="#">Enroll
-                                    Now </a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+                        <div class="d-flex p-4">
+                            <small class="flex-fill text-left"><i class="fa fa-clock me-2"></i>2.5 Hrs</small>
+                            <small class="flex-fill text-center fw-bold fs-6">₹ 299</small>
+                            <small class="flex-fill text-right text-primary fw-bold fs-6"><a href="single.html">Enroll Now <i class="fa fa-chevron-right ms-1 fs-10"></i></a></small>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="course-item shadow h-100">
                         <div class="position-relative overflow-hidden text-light image">
-                            <img class="img-fluid" src="img/course-11.jpg" alt="">
+                            <img class="img-fluid w-100" src="img/course-11.jpg" alt="">
                             <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
                                 class="px-2 py-1 fw-bold text-uppercase">FREE</div>
-
                         </div>
-                        <div class="p-2 pb-0">
-
-                            <h5 class="mb-1">Java Programming
-                            </h5>
+                        <div class="p-4 pb-0">
+                            <h5 class="mb-1"><a href="single.html" class="text-dark">Java Programming</a></h5>
                         </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>
-                                4.45</small>
-                            <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>5L+
-                                Learners
-                            </small>
-                            <small class="flex-fill text-center py-1 px-2"><i
-                                    class="fa fa-user me-2"></i>Beginner</small>
+                        <div class="d-flex border-top border-bottom mt-3">
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-star text-warning me-2"></i>4.45</small>
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-graduate me-2"></i>5L+ Learners</small>
+                            <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>Beginner</small>
                         </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>2.0
-                                Hrs</small>
-                            <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 0</small>
-                            <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="#">Enroll
-                                    Now </a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="course-item shadow h-100">
-                        <div class="position-relative overflow-hidden text-light image">
-                            <img class="img-fluid" src="img/course-12.png" alt="">
-                            <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
-                                class="px-2 py-1 fw-bold text-uppercase">FREE</div>
-
-                        </div>
-                        <div class="p-2 pb-0">
-
-                            <h5 class="mb-1">C for Beginners
-                            </h5>
-                        </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>
-                                4.5</small>
-                            <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>1.1L+
-                                Learners
-                            </small>
-                            <small class="flex-fill text-center py-1 px-2"><i
-                                    class="fa fa-user me-2"></i>Beginner</small>
-                        </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>1.5
-                                Hrs</small>
-                            <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 0</small>
-                            <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="#">Enroll
-                                    Now </a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+                        <div class="d-flex p-4">
+                            <small class="flex-fill text-left"><i class="fa fa-clock me-2"></i>2.0 Hrs</small>
+                            <small class="flex-fill text-center fw-bold fs-6">₹ 0</small>
+                            <small class="flex-fill text-right text-primary fw-bold fs-6"><a href="single.html">Enroll Now <i class="fa fa-chevron-right ms-1 fs-10"></i></a></small>
                         </div>
                     </div>
                 </div>
@@ -603,10 +481,10 @@
                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 8683045908</p>
                     <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@elearning.com</p>
                     <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -637,7 +515,7 @@
 
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top" title="Back to Top"><i class="bi bi-arrow-up"></i></a>
 
 
     <!-- JavaScript Libraries -->
