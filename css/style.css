@@ -1227,6 +1227,186 @@ h1 {
     max-width: 100% !important;
 }
 
+/* ===== FIX 1: Footer Logo — match navbar logo size ===== */
+.footer img.footer-logo {
+    max-height: 75px !important;
+    width: auto !important;
+    height: auto !important;
+}
+
+/* ===== FIX 2: Active Nav Link — primary color highlight ===== */
+.navbar-light .navbar-nav .nav-link.active {
+    color: var(--primary) !important;
+    font-weight: 700 !important;
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 2px;
+}
+
+/* ===== FIX 3: Popular Courses Cards — uniform left-aligned text ===== */
+.course-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.course-item .p-2.pb-0 {
+    text-align: left !important;
+    padding-left: 8px !important;
+}
+
+.course-item .p-2.pb-0 h5 {
+    text-align: left !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
+
+.course-item .d-flex {
+    text-align: left !important;
+}
+
+.course-item .d-flex small {
+    text-align: left !important;
+}
+
+/* ===== FIX 4: Dark Mode — Join Now Button contrast (WCAG AA) ===== */
+[data-theme="dark"] .btn-join,
+.dark-mode .btn-join,
+.dark-mode .owl-carousel-item .btn.btn-light,
+.dark-mode .header-carousel .btn.btn-light {
+    background-color: #1a1a2e !important;
+    color: #ffffff !important;
+    border: 2px solid #ffffff !important;
+}
+
+.dark-mode .header-carousel .btn.btn-light:hover {
+    background-color: rgba(255,255,255,0.15) !important;
+    color: #ffffff !important;
+}
+
+/* ===== FIX 5: Tablet — Reduce space between Read More buttons and carousel nav ===== */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .header-carousel .owl-carousel-item .d-flex.justify-content-center {
+        margin-bottom: 0.5rem !important;
+        padding-bottom: 0.25rem !important;
+    }
+    .header-carousel .owl-carousel-item .d-flex.justify-content-center .btn {
+        margin-bottom: 0.25rem !important;
+    }
+}
+
+/* ===== FIX 6: Mobile — Reduce space between About image and About Us section ===== */
+@media (max-width: 767px) {
+    .container-xxl .row.g-5 .col-lg-6:first-child {
+        margin-bottom: 0.75rem !important;
+    }
+    /* About Us image column */
+    .container-xxl .position-relative.h-100 {
+        margin-bottom: 0.75rem !important;
+    }
+}
+
+/* ===== FIX 7: Mobile & Tablet — Consistent bullet/list alignment ===== */
+.row.gy-2.gx-4 .col-sm-6 p,
+.row.gy-2.gx-4 p.mb-0 {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 0.5rem !important;
+    text-align: left !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+}
+
+.row.gy-2.gx-4 .col-sm-6 p .fa,
+.row.gy-2.gx-4 p.mb-0 .fa {
+    flex-shrink: 0;
+    margin-top: 3px;
+    margin-right: 0 !important;
+}
+
+@media (max-width: 991.98px) {
+    .row.gy-2.gx-4 {
+        text-align: left !important;
+    }
+    .row.gy-2.gx-4 [class*="col-"] {
+        text-align: left !important;
+    }
+    .row.gy-2.gx-4 p.mb-0 {
+        justify-content: flex-start !important;
+    }
+}
+
+/* ===== FIX 8: Mobile — Reduce space between image/banner and Categories section ===== */
+@media (max-width: 767px) {
+    .container-xxl.py-5.pt-5.bg-light {
+        padding-bottom: 0.75rem !important;
+        margin-bottom: 0 !important;
+    }
+    .container-xxl.py-5.pt-5.bg-light .col-lg-6 {
+        margin-bottom: 0.5rem !important;
+    }
+    /* Banner-1 image section above categories */
+    .container-xxl.py-5.pt-5.bg-light + .container-xxl.py-5.category {
+        padding-top: 1rem !important;
+    }
+}
+
+/* ===== FIX 9 & 12: Tablet — Popular Topics 2x2 Grid ===== */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .category .col-lg-3.col-md-6,
+    .category [class*="col-lg-3"][class*="col-md-6"] {
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+        width: 50% !important;
+    }
+}
+
+/* ===== FIX 10: Tablet — FAQ section uniform alignment ===== */
+.accordion-button {
+    display: flex !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .accordion-button {
+        padding-left: 1.25rem !important;
+        margin-left: 0 !important;
+    }
+    .accordion-item {
+        margin-left: 0 !important;
+    }
+    .accordion-body {
+        padding-left: 1.25rem !important;
+    }
+}
+
+/* ===== FIX 11: Courses page — Category card text alignment ===== */
+.category .content {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+}
+
+.category .content h5 {
+    text-align: center !important;
+    width: 100%;
+}
+
+.category .content h5 a {
+    text-align: center !important;
+}
+
+/* ===== FIX 13: Testimonials — Reduce white contrast in Success Stories ===== */
+.container-xxl.py-5 .testimonial-item .testimonial-text.bg-light {
+    background-color: #f0eff4 !important;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07) !important;
+}
+
+.testimonial-carousel .owl-item:not(.center) .testimonial-text {
+    background: #f0eff4 !important;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+
 /* Mobile & Tablet Centering (Robust Fix) */
 @media (max-width: 991.98px) {
 
@@ -1394,4 +1574,42 @@ h1 {
 .dark-mode .auth-card span,
 .dark-mode .auth-card .form-check-label {
     color: #f8f9fa !important;
+}
+
+/* ===== FIX 14: Contact Page — Social Media Icon Buttons ===== */
+.contact-social-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    color: #ffffff !important;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.contact-social-btn:hover {
+    background-color: #e0701e;
+    color: #ffffff !important;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(251, 135, 63, 0.4);
+    text-decoration: none;
+}
+
+.contact-social-btn i {
+    pointer-events: none;
+}
+
+#contact-social-icons {
+    flex-wrap: wrap;
+}
+
+/* ===== Confirm Password Feedback (signup.html) ===== */
+#confirmPasswordFeedback {
+    font-size: 0.82rem;
+    min-height: 1.2em;
 }
