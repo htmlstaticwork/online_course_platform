@@ -134,16 +134,71 @@
                 padding: 10px;
             }
             .dash-header {
-                padding: 10px 15px 10px 5px !important; /* Reduced left padding for menu button */
-                gap: 5px;
-                border-radius: 0; /* Full width feel on mobile */
+                padding: 10px 15px !important;
+                gap: 15px;
+                border-radius: 10px;
                 margin-bottom: 20px;
+                display: flex !important;
+                justify-content: space-between !important;
+                width: 100%;
+            }
+            .dash-header .d-flex:first-child {
+                flex-grow: 1 !important;
+                justify-content: flex-start !important;
+                align-items: center !important;
+                gap: 10px;
+            }
+            .dash-header button.d-lg-none {
+                width: 40px !important;
+                height: 40px !important;
+                flex: none !important;
+                background: transparent !important;
+                border: none !important;
+                color: var(--primary) !important;
+                padding: 0 !important;
+                margin-right: 15px !important;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
             .dash-header h4 {
-                font-size: 1rem;
+                font-size: 1.25rem;
+                font-weight: 800;
                 white-space: nowrap;
-                margin-left: 5px !important;
+                margin-left: 0 !important;
+                color: var(--dark);
             }
+            .nav-item-dash {
+                padding: 12px 15px;
+            }
+        }
+        
+        .dash-section {
+            display: none;
+            animation: fadeIn 0.4s ease-out;
+        }
+        
+        .dash-section.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .course-progress-card {
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .course-progress-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08) !important;
+        }
+        
+        .resource-card {
+            border-left: 4px solid var(--primary);
         }
     </style>
 </head>
@@ -157,11 +212,11 @@
             <small class="text-muted">Student Panel</small>
         </div>
         <nav>
-            <a href="#" class="nav-item-dash active"><i data-lucide="layout-dashboard"></i> Overview</a>
-            <a href="#" class="nav-item-dash"><i data-lucide="book-open"></i> My Courses</a>
-            <a href="#" class="nav-item-dash"><i data-lucide="message-square"></i> Community Forum</a>
-            <a href="#" class="nav-item-dash"><i data-lucide="download"></i> Resources</a>
-            <a href="#" class="nav-item-dash"><i data-lucide="settings"></i> Settings</a>
+            <a href="javascript:void(0)" onclick="showSection('overview')" class="nav-item-dash active" id="link-overview"><i data-lucide="layout-dashboard"></i> Overview</a>
+            <a href="javascript:void(0)" onclick="showSection('my-courses')" class="nav-item-dash" id="link-my-courses"><i data-lucide="book-open"></i> My Courses</a>
+            <a href="javascript:void(0)" onclick="showSection('community-forum')" class="nav-item-dash" id="link-community-forum"><i data-lucide="message-square"></i> Community Forum</a>
+            <a href="javascript:void(0)" onclick="showSection('resources')" class="nav-item-dash" id="link-resources"><i data-lucide="download"></i> Resources</a>
+            <a href="javascript:void(0)" onclick="showSection('settings')" class="nav-item-dash" id="link-settings"><i data-lucide="settings"></i> Settings</a>
             <hr class="mx-3 my-4">
             <a href="index.html" class="nav-item-dash text-danger"><i data-lucide="log-out"></i> Logout</a>
         </nav>
@@ -182,14 +237,13 @@
     <!-- Main Content Start -->
     <div class="main-content">
         <!-- Dash Header -->
-        <div class="dash-header bg-white shadow-sm">
-            <div class="d-flex align-items-center flex-grow-1">
-                <button class="btn btn-primary text-white d-lg-none me-3 d-flex align-items-center justify-content-center" 
-                        style="width: 40px; height: 40px;"
+        <div class="dash-header bg-white shadow-sm d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+                <button class="d-lg-none" 
                         onclick="document.getElementById('sidebar').classList.toggle('active')">
-                    <i data-lucide="menu" size="20"></i>
+                    <i data-lucide="menu" size="28" stroke-width="2.5"></i>
                 </button>
-                <h4 class="m-0 fw-bold">User Dashboard</h4>
+                <h4 class="m-0 fw-bold">Welcome back,</h4>
             </div>
             <div class="d-flex align-items-center gap-3">
                 <div class="d-flex gap-2">
@@ -199,116 +253,267 @@
             </div>
         </div>
 
-        <!-- Welcome Message -->
-        <div class="row mb-4">
-            <div class="col-12">
-                <div class="bg-white p-4 rounded-3 shadow-sm">
-                    <h2 class="fw-bold">Welcome back, Alex! 👋</h2>
-                    <p class="text-muted mb-0">You've completed 75% of your target this week. Keep it up!</p>
+        <!-- Dashboard Sections Container -->
+        <div id="dashboard-sections">
+            
+            <!-- Overview Section -->
+            <section id="overview" class="dash-section active">
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <div class="bg-white p-4 rounded-3 shadow-sm">
+                            <h2 class="fw-bold">Welcome back, Alex! 👋</h2>
+                            <p class="text-muted mb-0">You've completed 75% of your target this week. Keep it up!</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
 
-        <!-- Metrics Cards -->
-        <div class="row g-4 mb-4 justify-content-center">
-            <div class="col-md-6 col-lg-3">
-                <div class="bg-white p-4 rounded-3 shadow-sm h-100 text-center">
-                    <div class="d-flex justify-content-between align-items-center mb-3">
-                        <div class="stat-icon mx-auto"><i data-lucide="play-circle"></i></div>
-                        <span class="text-success small fw-bold">+12%</span>
+                <div class="row g-4 mb-4 justify-content-center">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="bg-white p-4 rounded-3 shadow-sm h-100 text-center">
+                            <div class="stat-icon mx-auto"><i data-lucide="play-circle"></i></div>
+                            <h3 class="fw-bold mt-3">12</h3>
+                            <p class="text-muted small mb-0">Active Courses</p>
+                        </div>
                     </div>
-                    <h3 class="fw-bold">12</h3>
-                    <p class="text-muted small mb-0">Active Courses</p>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="bg-white p-4 rounded-3 shadow-sm h-100 text-center">
-                    <div class="d-flex justify-content-between align-items-center mb-3">
-                        <div class="stat-icon mx-auto" style="background: rgba(14, 212, 76, 0.1); color: var(--secondary);"><i data-lucide="check-circle"></i></div>
-                        <span class="text-success small fw-bold">+5%</span>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="bg-white p-4 rounded-3 shadow-sm h-100 text-center">
+                            <div class="stat-icon mx-auto" style="background: rgba(14, 212, 76, 0.1); color: var(--secondary);"><i data-lucide="check-circle"></i></div>
+                            <h3 class="fw-bold mt-3">48</h3>
+                            <p class="text-muted small mb-0">Completed Lessons</p>
+                        </div>
                     </div>
-                    <h3 class="fw-bold">48</h3>
-                    <p class="text-muted small mb-0">Completed Lessons</p>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="bg-white p-4 rounded-3 shadow-sm h-100 text-center">
-                    <div class="d-flex justify-content-between align-items-center mb-3">
-                        <div class="stat-icon mx-auto" style="background: rgba(25, 118, 210, 0.1); color: #1976d2;"><i data-lucide="clock"></i></div>
-                        <span class="text-danger small fw-bold">-2%</span>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="bg-white p-4 rounded-3 shadow-sm h-100 text-center">
+                            <div class="stat-icon mx-auto" style="background: rgba(25, 118, 210, 0.1); color: #1976d2;"><i data-lucide="clock"></i></div>
+                            <h3 class="fw-bold mt-3">124</h3>
+                            <p class="text-muted small mb-0">Study Hours</p>
+                        </div>
                     </div>
-                    <h3 class="fw-bold">124</h3>
-                    <p class="text-muted small mb-0">Study Hours</p>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="bg-white p-4 rounded-3 shadow-sm h-100 text-center">
-                    <div class="d-flex justify-content-between align-items-center mb-3">
-                        <div class="stat-icon mx-auto" style="background: rgba(156, 39, 176, 0.1); color: #9c27b0;"><i data-lucide="award"></i></div>
-                        <span class="text-success small fw-bold">New!</span>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="bg-white p-4 rounded-3 shadow-sm h-100 text-center">
+                            <div class="stat-icon mx-auto" style="background: rgba(156, 39, 176, 0.1); color: #9c27b0;"><i data-lucide="award"></i></div>
+                            <h3 class="fw-bold mt-3">8</h3>
+                            <p class="text-muted small mb-0">Certificates Earned</p>
+                        </div>
                     </div>
-                    <h3 class="fw-bold">8</h3>
-                    <p class="text-muted small mb-0">Certificates Earned</p>
                 </div>
-            </div>
-        </div>
 
-        <!-- Recent Progress & Forums -->
-        <div class="row g-4 justify-content-center">
-            <div class="col-lg-8">
-                <div class="bg-white p-4 rounded-3 shadow-sm h-100">
+                <div class="row g-4">
+                    <div class="col-lg-8">
+                        <div class="bg-white p-4 rounded-3 shadow-sm">
+                            <h5 class="fw-bold mb-4">Continue Learning</h5>
+                            <div class="list-group list-group-flush">
+                                <div class="list-group-item px-0 py-3 d-flex align-items-center border-0 border-bottom">
+                                    <img src="image/course-1.jpg" alt="" class="rounded-3 me-3" width="80" height="50" style="object-fit: cover;">
+                                    <div class="flex-grow-1">
+                                        <h6 class="m-0 fw-bold">Advanced Web Design</h6>
+                                        <div class="progress mt-2" style="height: 6px;"><div class="progress-bar" style="width: 85%;"></div></div>
+                                    </div>
+                                    <button class="btn btn-sm btn-primary ms-3 rounded-pill">Resume</button>
+                                </div>
+                                <div class="list-group-item px-0 py-3 d-flex align-items-center border-0">
+                                    <img src="image/course-2.jpg" alt="" class="rounded-3 me-3" width="80" height="50" style="object-fit: cover;">
+                                    <div class="flex-grow-1">
+                                        <h6 class="m-0 fw-bold">Python for Data Science</h6>
+                                        <div class="progress mt-2" style="height: 6px;"><div class="progress-bar bg-success" style="width: 45%;"></div></div>
+                                    </div>
+                                    <button class="btn btn-sm btn-primary ms-3 rounded-pill">Resume</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="bg-white p-4 rounded-3 shadow-sm">
+                            <h5 class="fw-bold mb-4">Community Forum</h5>
+                            <div class="d-flex gap-3 mb-4">
+                                <img src="img/testimonial-2.jpg" alt="" width="40" height="40" class="rounded-circle">
+                                <div class="flex-grow-1">
+                                    <h6 class="m-0 small fw-bold">New Post: React Hooks</h6>
+                                    <p class="text-muted small mb-0">Help with useEffect cleanup...</p>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline-primary w-100 rounded-pill py-2">Join Discussion</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- My Courses Section -->
+            <section id="my-courses" class="dash-section">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h3 class="fw-bold m-0">My Enrolled Courses</h3>
+                    <div class="btn-group">
+                        <button class="btn btn-sm btn-outline-primary active">All</button>
+                        <button class="btn btn-sm btn-outline-primary">Ongoing</button>
+                        <button class="btn btn-sm btn-outline-primary">Completed</button>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="bg-white rounded-3 shadow-sm overflow-hidden course-progress-card">
+                            <img src="image/course-1.jpg" class="w-100" style="height: 160px; object-fit: cover;" alt="">
+                            <div class="p-4">
+                                <span class="badge bg-primary-light text-primary mb-2">Web Design</span>
+                                <h5 class="fw-bold mb-3">UI/UX Masterclass 2026</h5>
+                                <div class="progress mb-2" style="height: 8px;"><div class="progress-bar bg-primary" style="width: 65%;"></div></div>
+                                <div class="d-flex justify-content-between small text-muted mb-4"><span>65% Complete</span><span>12/18 Lessons</span></div>
+                                <button class="btn btn-primary w-100 rounded-pill">Continue Learning</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="bg-white rounded-3 shadow-sm overflow-hidden course-progress-card">
+                            <img src="image/course-2.jpg" class="w-100" style="height: 160px; object-fit: cover;" alt="">
+                            <div class="p-4">
+                                <span class="badge bg-success-light text-success mb-2">Python</span>
+                                <h5 class="fw-bold mb-3">Python for AI & ML</h5>
+                                <div class="progress mb-2" style="height: 8px;"><div class="progress-bar bg-success" style="width: 30%;"></div></div>
+                                <div class="d-flex justify-content-between small text-muted mb-4"><span>30% Complete</span><span>8/24 Lessons</span></div>
+                                <button class="btn btn-primary w-100 rounded-pill">Continue Learning</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="bg-white rounded-3 shadow-sm overflow-hidden course-progress-card">
+                            <img src="image/course-3.jpg" class="w-100" style="height: 160px; object-fit: cover;" alt="">
+                            <div class="p-4">
+                                <span class="badge bg-info-light text-info mb-2">Marketing</span>
+                                <h5 class="fw-bold mb-3">Digital Strategy 101</h5>
+                                <div class="progress mb-2" style="height: 8px;"><div class="progress-bar bg-info" style="width: 100%;"></div></div>
+                                <div class="d-flex justify-content-between small text-muted mb-4"><span>100% Complete</span><span>15/15 Lessons</span></div>
+                                <button class="btn btn-outline-primary w-100 rounded-pill">View Certificate</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Community Forum Section -->
+            <section id="community-forum" class="dash-section">
+                <div class="bg-white rounded-3 shadow-sm p-4 h-100">
                     <div class="d-flex justify-content-between align-items-center mb-4">
-                        <h5 class="fw-bold m-0">Continue Learning</h5>
-                        <a href="#" class="text-primary small text-decoration-none">View All</a>
+                        <h4 class="fw-bold m-0">Community Discussions</h4>
+                        <button class="btn btn-primary rounded-pill px-4"><i data-lucide="plus-circle" class="me-2"></i>New Topic</button>
                     </div>
                     <div class="list-group list-group-flush">
-                        <div class="list-group-item px-0 py-3 d-flex align-items-center border-0 border-bottom">
-                            <img src="image/course-1.jpg" alt="" class="rounded-3 me-3" width="80" height="50" style="object-fit: cover;">
+                        <div class="list-group-item px-0 py-4 d-flex gap-3 border-0 border-bottom">
+                            <img src="img/testimonial-1.jpg" alt="" width="50" height="50" class="rounded-circle shadow-sm">
                             <div class="flex-grow-1">
-                                <h6 class="m-0 fw-bold">Advanced Web Design</h6>
-                                <div class="progress mt-2" style="height: 6px;">
-                                    <div class="progress-bar" style="width: 85%;"></div>
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <h6 class="fw-bold mb-1">How to handle complex API calls in React?</h6>
+                                    <span class="badge bg-light text-dark fw-normal">React.js</span>
                                 </div>
-                                <small class="text-muted">85% Complete</small>
+                                <p class="text-muted small mb-2">I'm having trouble with parallel fetch requests and managing their states effectively. Any tips or best patterns?</p>
+                                <div class="d-flex align-items-center gap-3 small text-muted">
+                                    <span><i data-lucide="message-square" size="14" class="me-1"></i> 24 Replies</span>
+                                    <span><i data-lucide="clock" size="14" class="me-1"></i> 2 hours ago</span>
+                                </div>
                             </div>
-                            <button class="btn btn-sm btn-primary ms-3 rounded-pill">Resume</button>
                         </div>
-                        <div class="list-group-item px-0 py-3 d-flex align-items-center border-0">
-                            <img src="image/course-2.jpg" alt="" class="rounded-3 me-3" width="80" height="50" style="object-fit: cover;">
+                        <div class="list-group-item px-0 py-4 d-flex gap-3 border-0 border-bottom">
+                            <img src="img/testimonial-2.jpg" alt="" width="50" height="50" class="rounded-circle shadow-sm">
                             <div class="flex-grow-1">
-                                <h6 class="m-0 fw-bold">Python for Data Science</h6>
-                                <div class="progress mt-2" style="height: 6px;">
-                                    <div class="progress-bar bg-success" style="width: 45%;"></div>
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <h6 class="fw-bold mb-1">Best Python libraries for Data Cleaning?</h6>
+                                    <span class="badge bg-light text-dark fw-normal">Python</span>
                                 </div>
-                                <small class="text-muted">45% Complete</small>
+                                <p class="text-muted small mb-2">Looking for something more efficient than just standard Pandas for very large datasets (5GB+).</p>
+                                <div class="d-flex align-items-center gap-3 small text-muted">
+                                    <span><i data-lucide="message-square" size="14" class="me-1"></i> 18 Replies</span>
+                                    <span><i data-lucide="clock" size="14" class="me-1"></i> Yesterday</span>
+                                </div>
                             </div>
-                            <button class="btn btn-sm btn-primary ms-3 rounded-pill">Resume</button>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4"><button class="btn btn-link text-primary">Load More Discussions</button></div>
+                </div>
+            </section>
+
+            <!-- Resources Section -->
+            <section id="resources" class="dash-section">
+                <h3 class="fw-bold mb-4">Study Resources</h3>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="bg-white p-4 rounded-3 shadow-sm resource-card">
+                            <div class="d-flex align-items-center mb-3 text-primary"><i data-lucide="file-text" class="me-2"></i><span class="small fw-bold">PDF Guide</span></div>
+                            <h6 class="fw-bold mb-2">Web Design Cheat Sheet</h6>
+                            <p class="text-muted small mb-4">A quick reference guide for CSS Flexbox, Grid, and Color Theory basics.</p>
+                            <div class="d-flex justify-content-between align-items-center"><span class="small text-muted">2.4 MB</span><button class="btn btn-sm btn-outline-primary rounded-circle"><i data-lucide="download"></i></button></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="bg-white p-4 rounded-3 shadow-sm resource-card" style="border-left-color: #28a745;">
+                            <div class="d-flex align-items-center mb-3 text-success"><i data-lucide="code-2" class="me-2"></i><span class="small fw-bold">Source Code</span></div>
+                            <h6 class="fw-bold mb-2">Portfolio Template Pack</h6>
+                            <p class="text-muted small mb-4">Responsive HTML/CSS templates for building a professional portfolio.</p>
+                            <div class="d-flex justify-content-between align-items-center"><span class="small text-muted">15.8 MB</span><button class="btn btn-sm btn-outline-success rounded-circle"><i data-lucide="download"></i></button></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="bg-white p-4 rounded-3 shadow-sm resource-card" style="border-left-color: #ffc107;">
+                            <div class="d-flex align-items-center mb-3 text-warning"><i data-lucide="video" class="me-2"></i><span class="small fw-bold">Video Assets</span></div>
+                            <h6 class="fw-bold mb-2">Motion Graphics Project</h6>
+                            <p class="text-muted small mb-4">Raw assets and project files for the After Effects animation module.</p>
+                            <div class="d-flex justify-content-between align-items-center"><span class="small text-muted">450 MB</span><button class="btn btn-sm btn-outline-warning rounded-circle"><i data-lucide="download"></i></button></div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="bg-white p-4 rounded-3 shadow-sm h-100">
-                    <h5 class="fw-bold mb-4">Community Forum</h5>
-                    <div class="d-flex gap-3 mb-4">
-                        <img src="img/testimonial-2.jpg" alt="" width="40" height="40" class="rounded-circle">
-                        <div>
-                            <h6 class="m-0 small fw-bold">New Post: React Hooks</h6>
-                            <p class="text-muted small mb-0">Help with useEffect cleanup...</p>
-                            <small class="text-primary fw-bold" style="font-size: 10px;">12 Replies</small>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settings" class="dash-section">
+                <div class="row g-4">
+                    <div class="col-lg-8">
+                        <div class="bg-white p-4 rounded-3 shadow-sm">
+                            <h5 class="fw-bold mb-4">Profile Settings</h5>
+                            <form>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label small fw-bold">Full Name</label>
+                                        <input type="text" class="form-control" value="Alex M.">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small fw-bold">Email Address</label>
+                                        <input type="email" class="form-control" value="alex.m@example.com">
+                                    </div>
+                                    <div class="col-12 py-3"><hr></div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small fw-bold">Current Password</label>
+                                        <input type="password" class="form-control" placeholder="********">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small fw-bold">New Password</label>
+                                        <input type="password" class="form-control" placeholder="At least 8 characters">
+                                    </div>
+                                    <div class="col-12 mt-4"><button type="button" class="btn btn-primary px-5 rounded-pill">Save All Changes</button></div>
+                                </div>
+                            </form>
                         </div>
                     </div>
-                    <div class="d-flex gap-3 mb-4">
-                        <img src="img/testimonial-3.jpg" alt="" width="40" height="40" class="rounded-circle">
-                        <div>
-                            <h6 class="m-0 small fw-bold">Job Alert: UX Junior</h6>
-                            <p class="text-muted small mb-0">Multiple openings at Global Academy...</p>
-                            <small class="text-primary fw-bold" style="font-size: 10px;">5 Replies</small>
+                    <div class="col-lg-4">
+                        <div class="bg-white p-4 rounded-3 shadow-sm mb-4">
+                            <h6 class="fw-bold mb-3">Notification Preferences</h6>
+                            <div class="form-check form-switch mb-2">
+                                <input class="form-check-input" type="checkbox" checked id="noti1">
+                                <label class="form-check-label small" for="noti1">Email notifications</label>
+                            </div>
+                            <div class="form-check form-switch mb-2">
+                                <input class="form-check-input" type="checkbox" checked id="noti2">
+                                <label class="form-check-label small" for="noti2">Course progress alerts</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="noti3">
+                                <label class="form-check-label small" for="noti3">Community mentions</label>
+                            </div>
+                        </div>
+                        <div class="bg-danger-light p-3 rounded-3 border border-danger border-opacity-10 text-center">
+                            <p class="small text-danger mb-2">Want to leave Global Academy?</p>
+                            <button class="btn btn-sm btn-outline-danger w-100 rounded-pill">Deactivate Account</button>
                         </div>
                     </div>
-                    <button class="btn btn-outline-primary w-100 rounded-pill py-2 mt-2">Join Discussion</button>
                 </div>
-            </div>
+            </section>
+
         </div>
     </div>
     <!-- Main Content End -->
@@ -317,6 +522,46 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/theme-control.js"></script>
+    
+    <script>
+        // Section Switching Logic
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.dash-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show requested section
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
+            
+            // Update sidebar active state
+            document.querySelectorAll('.nav-item-dash').forEach(link => {
+                link.classList.remove('active');
+            });
+            const activeLink = document.getElementById('link-' + sectionId);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
+            
+            // Update Header Title depending on section
+            const titles = {
+                'overview': 'User Dashboard',
+                'my-courses': 'My Courses',
+                'community-forum': 'Community Forum',
+                'resources': 'Study Resources',
+                'settings': 'Account Settings'
+            };
+            document.querySelector('.dash-header h4').innerText = titles[sectionId] || 'User Dashboard';
+            
+            // Auto-close sidebar on mobile
+            if (window.innerWidth < 992) {
+                document.getElementById('sidebar').classList.remove('active');
+            }
+        }
+    </script>
 </body>
 
 </html>

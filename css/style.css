@@ -1586,23 +1586,45 @@ h1 {
 
 /* ===== FIX 5: Tablet — Reduce space between Read More buttons and carousel nav ===== */
 @media (min-width: 768px) and (max-width: 1024px) {
+    .header-carousel .owl-nav {
+        top: auto !important;
+        bottom: 80px !important;
+        right: 50% !important;
+        transform: translateX(50%) !important;
+        flex-direction: row !important;
+    }
+    
+    .header-carousel .owl-nav .owl-prev,
+    .header-carousel .owl-nav .owl-next {
+        margin: 0 10px !important;
+    }
+
     .header-carousel .owl-carousel-item .d-flex.justify-content-center {
         margin-bottom: 0.5rem !important;
-        padding-bottom: 0.25rem !important;
-    }
-    .header-carousel .owl-carousel-item .d-flex.justify-content-center .btn {
-        margin-bottom: 0.25rem !important;
     }
 }
 
-/* ===== FIX 6: Mobile — Reduce space between About image and About Us section ===== */
-@media (max-width: 767px) {
+/* ===== FIX 6: Mobile & Tablet — Reduce space between About image and About Us section ===== */
+@media (max-width: 991.98px) {
+    /* Set a smaller min-height for the column to override inline style */
     .container-xxl .row.g-5 .col-lg-6:first-child {
-        margin-bottom: 0.75rem !important;
+        min-height: 250px !important;
+        margin-bottom: -20px !important;
     }
-    /* About Us image column */
-    .container-xxl .position-relative.h-100 {
-        margin-bottom: 0.75rem !important;
+    
+    /* Reduce the large row gutter for mobile */
+    .container-xxl .row.g-5 {
+        --bs-gutter-y: 1rem !important;
+    }
+
+    /* Pull the About Us heading closer to the image */
+    .container-xxl .col-lg-6.wow.fadeInUp.text-center {
+        padding-top: 0 !important;
+        margin-top: -15px !important;
+    }
+    
+    .container-xxl .section-title {
+        margin-bottom: 0.5rem !important;
     }
 }
 
@@ -2064,6 +2086,43 @@ h1 {
     gap: 10px;
 }
 
+/* UI Fix: Center Pricing card features on Tablet/Mobile */
+@media (max-width: 991.98px) {
+    .pricing-card {
+        text-align: center;
+    }
+    .pricing-card ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: 20px 0;
+    }
+    .pricing-card ul li {
+        width: fit-content;
+        text-align: left;
+        padding: 5px 0;
+    }
+}
+
+/* UI Fix: Center Vision List features on Tablet */
+@media (max-width: 991.98px) {
+    .vision-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .vision-list li {
+        width: fit-content;
+        text-align: left;
+        margin-bottom: 1rem;
+    }
+}
+
 /* App Showcase */
 .app-showcase-img {
     max-width: 100%;
@@ -2138,16 +2197,47 @@ h1 {
 
 /* Why Choose Us Icons */
 .benefit-icon-box {
-    width: 70px;
-    height: 70px;
+    width: 40px;
+    height: 40px;
     background: linear-gradient(135deg, var(--primary), #e0701e);
     color: #fff;
-    border-radius: 20px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 25px;
-    font-size: 1.5rem;
+    font-size: 1rem;
+    flex-shrink: 0;
+    margin-right: 15px;
+}
+
+.benefit-item {
+    transition: transform 0.3s ease;
+}
+
+.benefit-item:hover {
+    transform: translateX(5px);
+}
+
+@media (max-width: 575.98px) {
+    .benefit-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .benefit-item {
+        width: 100%;
+        max-width: 280px;
+        justify-content: flex-start;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .premium-home-section .text-center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 /* Projects Showcase */
