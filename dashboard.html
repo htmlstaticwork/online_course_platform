@@ -190,6 +190,19 @@
         .course-progress-card {
             transition: var(--transition);
             border: 1px solid rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .course-progress-card .p-4 {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .course-progress-card .btn {
+            margin-top: auto;
         }
         
         .course-progress-card:hover {
@@ -350,7 +363,7 @@
                 </div>
                 <div class="row g-4">
                     <div class="col-md-6 col-lg-4">
-                        <div class="bg-white rounded-3 shadow-sm overflow-hidden course-progress-card">
+                        <div class="bg-white rounded-3 shadow-sm overflow-hidden course-progress-card h-100">
                             <img src="image/course-1.jpg" class="w-100" style="height: 160px; object-fit: cover;" alt="">
                             <div class="p-4">
                                 <span class="badge bg-primary-light text-primary mb-2">Web Design</span>
@@ -362,7 +375,7 @@
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4">
-                        <div class="bg-white rounded-3 shadow-sm overflow-hidden course-progress-card">
+                        <div class="bg-white rounded-3 shadow-sm overflow-hidden course-progress-card h-100">
                             <img src="image/course-2.jpg" class="w-100" style="height: 160px; object-fit: cover;" alt="">
                             <div class="p-4">
                                 <span class="badge bg-success-light text-success mb-2">Python</span>
@@ -374,7 +387,7 @@
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4">
-                        <div class="bg-white rounded-3 shadow-sm overflow-hidden course-progress-card">
+                        <div class="bg-white rounded-3 shadow-sm overflow-hidden course-progress-card h-100">
                             <img src="image/course-3.jpg" class="w-100" style="height: 160px; object-fit: cover;" alt="">
                             <div class="p-4">
                                 <span class="badge bg-info-light text-info mb-2">Marketing</span>
