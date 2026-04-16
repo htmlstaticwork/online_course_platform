@@ -46,21 +46,21 @@
         }
     </style>
 </head>
-<body class="bg-gray-50 min-h-screen font-['Outfit']">
+<body class="bg-gray-50 dark:bg-[#0a110d] min-h-screen font-['Outfit'] transition-colors duration-300">
 
     <!-- Sidebar -->
-    <aside class="sidebar fixed top-0 left-0 h-full bg-white border-r border-gray-100 z-50 flex flex-col">
+    <aside class="sidebar fixed top-0 left-0 h-full bg-white dark:bg-[#0a110d] border-r border-gray-100 dark:border-white/5 z-50 flex flex-col transition-colors duration-300">
         <div class="p-6 flex items-center gap-3">
-            <img src="image/favicon.png" alt="Logo" class="w-8 h-8">
-            <span class="text-xl font-bold text-primary">Gaia Academy</span>
+            <img src="image/favicon.png" alt="Logo" class="logo-brand-img">
+            <span class="logo-brand-text text-primary">Gaia Academy</span>
         </div>
 
         <nav class="flex-1 px-4 py-4 space-y-1">
-            <a href="#" data-section="home" class="sidebar-link active flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-100 transition-all">
+            <a href="#" data-section="home" class="sidebar-link active flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-white/5 transition-all">
                 <i class="fas fa-chart-line w-5"></i>
                 <span class="font-medium text-sm">Dashboard Home</span>
             </a>
-            <a href="#" data-section="create" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-100 transition-all">
+            <a href="#" data-section="create" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-white/5 transition-all">
                 <i class="fas fa-plus-circle w-5"></i>
                 <span class="font-medium text-sm">Create New Course</span>
             </a>
@@ -102,22 +102,24 @@
     </aside>
 
     <!-- Main Content Area -->
-    <main class="lg:ml-[280px] min-h-screen relative">
+    <main class="lg:ml-[280px] min-h-screen relative transition-colors duration-300">
+        <!-- Dashboard Top Navigation Overlay -->
+        <div class="absolute top-6 right-8 z-[60] flex items-center gap-3">
+            <button class="theme-toggle p-2.5 rounded-2xl bg-white dark:bg-white/5 shadow-sm border border-gray-100 dark:border-white/10 hover:bg-gray-50 dark:hover:bg-white/10 transition-all">
+                <i class="fas fa-moon theme-toggle-icon text-primary dark:text-white text-lg"></i>
+            </button>
+            <div class="rtl-switcher btn-toggle-wrapper bg-white dark:bg-white/5 shadow-sm border border-gray-100 dark:border-white/10 p-1 rounded-2xl flex">
+                <button class="btn-toggle-item active px-4 py-1.5 text-[10px] font-black uppercase tracking-widest rounded-xl transition-all" data-dir="ltr">LTR</button>
+                <button class="btn-toggle-item px-4 py-1.5 text-[10px] font-black uppercase tracking-widest rounded-xl transition-all" data-dir="rtl">RTL</button>
+            </div>
+        </div>
         <!-- Dashboard Home Section -->
         <div id="section-home" class="content-section p-8 pt-24 lg:pt-8 space-y-8 animate-fade-in">
             <div class="flex items-center justify-between">
                 <div class="flex items-center gap-6">
                     <div>
-                        <h2 class="text-3xl font-black text-gray-900 leading-none mb-2">Welcome Back, Oliver</h2>
+                        <h2 class="text-3xl font-black text-gray-900 dark:text-white leading-none mb-2">Welcome Back, Oliver</h2>
                         <p class="text-sm text-gray-400 font-bold uppercase tracking-widest">Instructor Overview</p>
-                    </div>
-                    <div class="hidden md:flex items-center gap-2">
-                        <button class="theme-toggle p-2 rounded-xl bg-white shadow-sm border border-gray-100 hover:bg-gray-50 transition-all">
-                            <i class="fas fa-moon theme-toggle-icon text-primary"></i>
-                        </button>
-                        <button class="rtl-toggle p-2 rounded-xl bg-white shadow-sm border border-gray-100 hover:bg-gray-50 transition-all">
-                            <i class="fas fa-language rtl-toggle-icon text-primary"></i>
-                        </button>
                     </div>
                 </div>
                 <button class="lg:hidden p-2 text-primary" onclick="toggleSidebar()">
@@ -127,34 +129,34 @@
 
             <!-- Stats -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm transition-all hover:shadow-xl">
+                <div class="bg-white dark:bg-black/40 p-6 rounded-3xl border border-gray-100 dark:border-white/5 shadow-sm transition-all hover:shadow-xl">
                     <p class="text-gray-500 text-[10px] font-black uppercase tracking-widest">Total Revenue</p>
-                    <h3 class="text-3xl font-black text-gray-900 mt-2">$4,850.00</h3>
+                    <h3 class="text-3xl font-black text-gray-900 dark:text-white mt-2">$4,850.00</h3>
                     <p class="text-green-500 text-[10px] mt-2 font-black uppercase">+20.5% M-O-M</p>
                 </div>
-                <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm transition-all hover:shadow-xl">
+                <div class="bg-white dark:bg-black/40 p-6 rounded-3xl border border-gray-100 dark:border-white/5 shadow-sm transition-all hover:shadow-xl">
                     <p class="text-gray-500 text-[10px] font-black uppercase tracking-widest">Active Students</p>
-                    <h3 class="text-3xl font-black text-gray-900 mt-2">1,248</h3>
+                    <h3 class="text-3xl font-black text-gray-900 dark:text-white mt-2">1,248</h3>
                     <p class="text-primary text-[10px] mt-2 font-black uppercase">+15 Today</p>
                 </div>
-                <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm">
+                <div class="bg-white dark:bg-black/40 p-6 rounded-3xl border border-gray-100 dark:border-white/5 shadow-sm">
                     <p class="text-gray-500 text-[10px] font-black uppercase tracking-widest">Avg. Rating</p>
-                    <h3 class="text-3xl font-black text-gray-900 mt-2">4.9/5.0</h3>
+                    <h3 class="text-3xl font-black text-gray-900 dark:text-white mt-2">4.9/5.0</h3>
                     <div class="flex text-yellow-500 text-xs mt-2">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
                 </div>
-                <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm">
+                <div class="bg-white dark:bg-black/40 p-6 rounded-3xl border border-gray-100 dark:border-white/5 shadow-sm">
                     <p class="text-gray-500 text-[10px] font-black uppercase tracking-widest">Course Sales</p>
-                    <h3 class="text-3xl font-black text-gray-900 mt-2">86</h3>
+                    <h3 class="text-3xl font-black text-gray-900 dark:text-white mt-2">86</h3>
                     <p class="text-secondary text-[10px] mt-2 font-black uppercase">Goal Reached</p>
                 </div>
             </div>
 
             <!-- Quick Chart & Reviews -->
             <div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
-                <div class="xl:col-span-2 bg-white p-10 rounded-[3rem] border border-gray-100 shadow-sm">
-                    <h4 class="text-xl font-black text-gray-900 mb-8">Earnings Momentum</h4>
+                <div class="xl:col-span-2 bg-white dark:bg-black/40 p-10 rounded-[3rem] border border-gray-100 dark:border-white/5 shadow-sm">
+                    <h4 class="text-xl font-black text-gray-900 dark:text-white mb-8">Earnings Momentum</h4>
                     <canvas id="earningsChartHome" height="200"></canvas>
                 </div>
                 <div class="bg-primary p-10 rounded-[3rem] text-white relative overflow-hidden">
@@ -174,26 +176,31 @@
                     <div class="grid lg:grid-cols-2 gap-8">
                         <div>
                             <label class="block text-[10px] font-black text-gray-400 uppercase tracking-widest mb-3 px-2">Course Title</label>
-                            <input type="text" placeholder="e.g. Sustainable Hydrology Mastery" class="w-full px-6 py-4 rounded-2xl bg-gray-50 border-none outline-none focus:ring-2 focus:ring-primary h-14 font-medium">
+                            <input type="text" placeholder="e.g. Sustainable Hydrology Mastery" class="w-full px-6 py-4 rounded-2xl bg-gray-50 dark:bg-white/5 border-none outline-none focus:ring-2 focus:ring-primary h-14 font-medium dark:text-white transition-all">
                         </div>
                         <div>
-                            <label class="block text-[10px] font-black text-gray-400 uppercase tracking-widest mb-3 px-2">Category</label>
-                            <select class="w-full px-6 py-4 rounded-2xl bg-gray-50 border-none outline-none focus:ring-2 focus:ring-primary h-14 font-medium appearance-none">
-                                <option>Agriculture</option>
-                                <option>Design</option>
-                                <option>Water Management</option>
-                                <option>Soil Health</option>
-                            </select>
+                            <label class="block text-[10px] font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-3 px-2">Category</label>
+                            <div class="relative group">
+                                <select class="w-full px-6 py-4 rounded-2xl bg-gray-50 dark:bg-white/10 border-none outline-none focus:ring-2 focus:ring-primary font-bold dark:text-white transition-all cursor-pointer appearance-none">
+                                    <option class="dark:bg-[#0a110d] dark:text-white">Agriculture</option>
+                                    <option class="dark:bg-[#0a110d] dark:text-white">Design</option>
+                                    <option class="dark:bg-[#0a110d] dark:text-white">Water Management</option>
+                                    <option class="dark:bg-[#0a110d] dark:text-white">Soil Health</option>
+                                </select>
+                                <div class="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400 group-hover:text-primary transition-colors">
+                                    <i class="fas fa-chevron-down text-xs"></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div>
                         <label class="block text-[10px] font-black text-gray-400 uppercase tracking-widest mb-3 px-2">Description</label>
-                        <textarea rows="4" placeholder="Describe the course transformation..." class="w-full px-8 py-6 rounded-3xl bg-gray-50 border-none outline-none focus:ring-2 focus:ring-primary font-medium leading-relaxed"></textarea>
+                        <textarea rows="4" placeholder="Describe the course transformation..." class="w-full px-8 py-6 rounded-3xl bg-gray-50 dark:bg-white/5 border-none outline-none focus:ring-2 focus:ring-primary font-medium leading-relaxed dark:text-white transition-all"></textarea>
                     </div>
                     <div class="grid lg:grid-cols-3 gap-8">
                         <div>
                             <label class="block text-[10px] font-black text-gray-400 uppercase tracking-widest mb-3 px-2">Price ($)</label>
-                            <input type="number" placeholder="199" class="w-full px-6 py-4 rounded-2xl bg-gray-50 border-none outline-none focus:ring-2 focus:ring-primary h-14 font-medium">
+                            <input type="number" placeholder="199" class="w-full px-6 py-4 rounded-2xl bg-gray-50 dark:bg-white/5 border-none outline-none focus:ring-2 focus:ring-primary h-14 font-medium dark:text-white transition-all">
                         </div>
                         <div class="lg:col-span-2">
                             <label class="block text-[10px] font-black text-gray-400 uppercase tracking-widest mb-3 px-2">Cover Image URL</label>
@@ -210,9 +217,9 @@
         <!-- Manage Courses Section -->
         <div id="section-manage" class="content-section hidden p-8 space-y-8 animate-fade-in">
             <h2 class="text-4xl font-black text-gray-900 tracking-tighter transition-all">Manage <span class="italic font-light font-serif text-primary">Courses</span></h2>
-            <div class="bg-white rounded-[3rem] border border-gray-100 shadow-xl overflow-hidden">
+            <div class="bg-white dark:bg-black/40 rounded-[3rem] border border-gray-100 dark:border-white/5 shadow-xl overflow-hidden">
                 <table class="w-full text-left">
-                    <thead class="bg-gray-50">
+                    <thead class="bg-gray-50 dark:bg-white/5">
                         <tr>
                             <th class="px-8 py-6 text-[10px] font-black text-gray-400 uppercase tracking-widest">Course Title</th>
                             <th class="px-8 py-6 text-[10px] font-black text-gray-400 uppercase tracking-widest">Sales</th>
@@ -221,16 +228,16 @@
                             <th class="px-8 py-6 text-[10px] font-black text-gray-400 uppercase tracking-widest text-right">Actions</th>
                         </tr>
                     </thead>
-                    <tbody class="divide-y divide-gray-50">
+                    <tbody class="divide-y divide-gray-50 dark:divide-white/5">
                         <tr>
                             <td class="px-8 py-6">
-                                <p class="font-bold text-gray-900">Food Forest Design Mastery</p>
+                                <p class="font-bold text-gray-900 dark:text-white">Food Forest Design Mastery</p>
                                 <p class="text-xs text-secondary uppercase font-bold tracking-widest mt-1">Expert Level</p>
                             </td>
-                            <td class="px-8 py-6 font-medium text-gray-500">45</td>
-                            <td class="px-8 py-6 font-medium text-gray-900">$8,955.00</td>
+                            <td class="px-8 py-6 font-medium text-gray-500 dark:text-gray-400">45</td>
+                            <td class="px-8 py-6 font-medium text-gray-900 dark:text-white">$8,955.00</td>
                             <td class="px-8 py-6">
-                                <span class="px-3 py-1 bg-green-100 text-green-700 text-[9px] font-black uppercase tracking-widest rounded-full">Published</span>
+                                <span class="px-3 py-1 bg-green-50 dark:bg-emerald-500/20 text-green-700 dark:text-emerald-400 text-[9px] font-black uppercase tracking-widest rounded-full border border-green-100 dark:border-emerald-500/30 transition-all">Published</span>
                             </td>
                             <td class="px-8 py-6 text-right">
                                 <button class="p-2 text-primary hover:bg-gray-50 rounded-lg"><i class="fas fa-edit"></i></button>
@@ -252,7 +259,7 @@
                             <div class="grid md:grid-cols-2 gap-8">
                                 <div>
                                     <label class="block text-[10px] font-black text-gray-400 uppercase tracking-widest mb-3 px-2">Expert Name</label>
-                                    <input type="text" value="Oliver Green" class="w-full px-6 py-4 rounded-2xl bg-gray-50 border-none outline-none focus:ring-2 focus:ring-primary h-14 font-medium">
+                            <input type="text" value="Oliver Green" class="w-full px-6 py-4 rounded-2xl bg-gray-50 dark:bg-white/5 border-none outline-none focus:ring-2 focus:ring-primary h-14 font-medium dark:text-white transition-all">
                                 </div>
                                 <div>
                                     <label class="block text-[10px] font-black text-gray-400 uppercase tracking-widest mb-3 px-2">Professional Title</label>
@@ -261,7 +268,7 @@
                             </div>
                             <div>
                                 <label class="block text-[10px] font-black text-gray-400 uppercase tracking-widest mb-3 px-2">Mini Bio</label>
-                                <textarea rows="4" class="w-full px-8 py-6 rounded-3xl bg-gray-50 border-none outline-none focus:ring-2 focus:ring-primary font-medium leading-relaxed">Dedicated to landscape regeneration for over 15 years through clinical design and holistic observation.</textarea>
+                                <textarea rows="4" class="w-full px-8 py-6 rounded-3xl bg-gray-50 dark:bg-white/5 border-none outline-none focus:ring-2 focus:ring-primary font-medium leading-relaxed dark:text-white transition-all">Dedicated to landscape regeneration for over 15 years through clinical design and holistic observation.</textarea>
                             </div>
                             <div class="pt-8 flex justify-end">
                                 <button type="submit" class="btn-primary-gaia !px-12 !py-4 shadow-xl">Update Identity</button>
@@ -319,7 +326,7 @@
                     <span class="text-[10px] font-black text-primary uppercase tracking-widest cursor-pointer">Export CSV <i class="fas fa-download ml-1"></i></span>
                 </div>
                 <table class="w-full text-left">
-                    <thead class="bg-gray-50/50">
+                    <thead class="bg-gray-50/50 dark:bg-white/5">
                         <tr>
                             <th class="px-8 py-4 text-[10px] font-black text-gray-400 uppercase tracking-widest">Date</th>
                             <th class="px-8 py-4 text-[10px] font-black text-gray-400 uppercase tracking-widest">Method</th>
@@ -329,16 +336,16 @@
                     </thead>
                     <tbody class="divide-y divide-gray-50">
                         <tr>
-                            <td class="px-8 py-6 font-medium text-gray-500">Oct 12, 2024</td>
-                            <td class="px-8 py-6 font-medium text-gray-900">Direct Deposit (****42)</td>
-                            <td class="px-8 py-6 font-black text-gray-900">$850.00</td>
-                            <td class="px-8 py-6"><span class="px-3 py-1 bg-green-100 text-green-700 text-[9px] font-black uppercase rounded-full">Paid</span></td>
+                            <td class="px-8 py-6 font-medium text-gray-500 dark:text-gray-400">Oct 12, 2024</td>
+                            <td class="px-8 py-6 font-medium text-gray-900 dark:text-white">Direct Deposit (****42)</td>
+                            <td class="px-8 py-6 font-black text-gray-900 dark:text-white">$850.00</td>
+                            <td class="px-8 py-6"><span class="px-3 py-1 bg-green-50 dark:bg-emerald-500/20 text-green-700 dark:text-emerald-400 text-[9px] font-black uppercase rounded-full border border-green-100 dark:border-emerald-500/30 transition-all">Paid</span></td>
                         </tr>
                          <tr>
-                            <td class="px-8 py-6 font-medium text-gray-500">Sep 28, 2024</td>
-                            <td class="px-8 py-6 font-medium text-gray-900">PayPal (oliver@...)</td>
-                            <td class="px-8 py-6 font-black text-gray-900">$1,200.00</td>
-                            <td class="px-8 py-6"><span class="px-3 py-1 bg-green-100 text-green-700 text-[9px] font-black uppercase rounded-full">Paid</span></td>
+                            <td class="px-8 py-6 font-medium text-gray-500 dark:text-gray-400">Sep 28, 2024</td>
+                            <td class="px-8 py-6 font-medium text-gray-900 dark:text-white">PayPal (oliver@...)</td>
+                            <td class="px-8 py-6 font-black text-gray-900 dark:text-white">$1,200.00</td>
+                            <td class="px-8 py-6"><span class="px-3 py-1 bg-green-50 dark:bg-emerald-500/20 text-green-700 dark:text-emerald-400 text-[9px] font-black uppercase rounded-full border border-green-100 dark:border-emerald-500/30 transition-all">Paid</span></td>
                         </tr>
                     </tbody>
                 </table>
@@ -394,12 +401,12 @@
             <h2 class="text-4xl font-black text-gray-900 tracking-tighter">Voice of the <span class="italic font-light font-serif text-primary">Students</span></h2>
             <div class="grid md:grid-cols-2 gap-8">
                 <!-- Review 1 -->
-                <div class="bg-white p-10 rounded-[3rem] border border-gray-100 shadow-sm reveal-on-scroll">
+                <div class="bg-white dark:bg-black/40 p-10 rounded-[3rem] border border-gray-100 dark:border-white/5 shadow-sm reveal-on-scroll">
                     <div class="flex items-center justify-between mb-6">
                         <div class="flex items-center gap-4">
                             <img src="https://ui-avatars.com/api/?name=Anita+Kumar" class="w-12 h-12 rounded-2xl object-cover">
                             <div>
-                                <h5 class="font-black text-gray-900">Anita Kumar</h5>
+                                <h5 class="font-black text-gray-900 dark:text-white">Anita Kumar</h5>
                                 <p class="text-[9px] font-black text-gray-400 uppercase tracking-widest">Hydrology Mastery</p>
                             </div>
                         </div>
@@ -407,19 +414,19 @@
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
                     </div>
-                    <p class="text-sm text-gray-500 leading-relaxed italic mb-8">"This course single-handedly changed my approach to water harvesting on my farm in India. Highly recommended!"</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed italic mb-8">"This course single-handedly changed my approach to water harvesting on my farm in India. Highly recommended!"</p>
                     <div class="flex gap-4">
-                        <button class="flex-1 py-3 bg-gray-50 text-[10px] font-black text-gray-600 uppercase tracking-widest rounded-xl hover:bg-primary hover:text-white transition-all">Reply</button>
-                        <button class="px-4 py-3 bg-gray-50 text-gray-400 rounded-xl hover:text-red-500 transition-all"><i class="fas fa-flag"></i></button>
+                        <button class="flex-1 py-3 bg-gray-50 dark:bg-white/5 text-[10px] font-black text-gray-600 dark:text-gray-400 uppercase tracking-widest rounded-xl hover:bg-primary hover:text-white transition-all">Reply</button>
+                        <button class="px-4 py-3 bg-gray-50 dark:bg-white/5 text-gray-400 rounded-xl hover:text-red-500 transition-all"><i class="fas fa-flag"></i></button>
                     </div>
                 </div>
                 <!-- Review 2 -->
-                <div class="bg-white p-10 rounded-[3rem] border border-gray-100 shadow-sm reveal-on-scroll" style="animation-delay: 0.1s">
+                <div class="bg-white dark:bg-black/40 p-10 rounded-[3rem] border border-gray-100 dark:border-white/5 shadow-sm reveal-on-scroll" style="animation-delay: 0.1s">
                     <div class="flex items-center justify-between mb-6">
                         <div class="flex items-center gap-4">
                             <img src="https://ui-avatars.com/api/?name=Sam+Lawrence" class="w-12 h-12 rounded-2xl object-cover">
                             <div>
-                                <h5 class="font-black text-gray-900">Sam Lawrence</h5>
+                                <h5 class="font-black text-gray-900 dark:text-white">Sam Lawrence</h5>
                                 <p class="text-[9px] font-black text-gray-400 uppercase tracking-widest">Soil Regeneration</p>
                             </div>
                         </div>
@@ -427,15 +434,20 @@
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
                         </div>
                     </div>
-                    <p class="text-sm text-gray-500 leading-relaxed italic mb-8">"Great content, though I'd love more 3D models of the swale layouts. The instructors are very responsive!"</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed italic mb-8">"Great content, though I'd love more 3D models of the swale layouts. The instructors are very responsive!"</p>
                     <div class="flex gap-4">
-                        <button class="flex-1 py-3 bg-gray-50 text-[10px] font-black text-gray-600 uppercase tracking-widest rounded-xl hover:bg-primary hover:text-white transition-all">Reply</button>
-                        <button class="px-4 py-3 bg-gray-50 text-gray-400 rounded-xl hover:text-red-500 transition-all"><i class="fas fa-flag"></i></button>
+                        <button class="flex-1 py-3 bg-gray-50 dark:bg-white/5 text-[10px] font-black text-gray-600 dark:text-gray-400 uppercase tracking-widest rounded-xl hover:bg-primary hover:text-white transition-all">Reply</button>
+                        <button class="px-4 py-3 bg-gray-50 dark:bg-white/5 text-gray-400 rounded-xl hover:text-red-500 transition-all"><i class="fas fa-flag"></i></button>
                     </div>
                 </div>
             </div>
         </div>
     </main>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

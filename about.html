@@ -36,8 +36,8 @@
         <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
             <!-- Logo -->
             <a href="index.html" class="flex items-center gap-2 group">
-                <img src="image/favicon.png" alt="Logo" class="w-10 h-10 group-hover:rotate-12 transition-all">
-                <span class="text-2xl font-bold text-primary">Gaia Academy</span>
+                <img src="image/favicon.png" alt="Logo" class="logo-brand-img group-hover:rotate-12 transition-all">
+                <span class="logo-brand-text text-primary">Gaia Academy</span>
             </a>
 
             <ul class="hidden xl:flex items-center gap-8 text-gray-700 font-medium">
@@ -63,9 +63,10 @@
                     <button class="theme-toggle p-2 rounded-full hover:bg-gray-100 transition-all">
                         <i class="fas fa-moon theme-toggle-icon text-primary"></i>
                     </button>
-                    <button class="rtl-toggle p-2 rounded-full hover:bg-gray-100 transition-all">
-                        <i class="fas fa-language rtl-toggle-icon text-primary"></i>
-                    </button>
+                    <div class="rtl-switcher btn-toggle-wrapper">
+                        <button class="btn-toggle-item active" data-dir="ltr">LTR</button>
+                        <button class="btn-toggle-item" data-dir="rtl">RTL</button>
+                    </div>
                 </div>
 
                 <!-- Mobile Hamburger -->
@@ -212,13 +213,13 @@
     </section>
 
     <!-- Story Timeline -->
-    <section class="py-24">
+    <section class="py-24 bg-gray-50 dark:bg-[#0a110d] transition-colors duration-300">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl font-extrabold text-center mb-16">Our Journey</h2>
             <div class="max-w-4xl mx-auto space-y-12">
                 <div class="flex flex-col md:flex-row gap-8 reveal-on-scroll">
                     <div class="md:w-1/4">
-                        <span class="text-4xl font-black text-primary opacity-20">2010</span>
+                        <span class="text-5xl font-black text-primary dark:text-primary drop-shadow-sm">2010</span>
                     </div>
                     <div class="md:w-3/4 border-l-4 border-primary pl-8 py-2">
                         <h4 class="text-xl font-bold mb-2">The Seed is Planted</h4>
@@ -227,7 +228,7 @@
                 </div>
                 <div class="flex flex-col md:flex-row gap-8 reveal-on-scroll">
                     <div class="md:w-1/4">
-                        <span class="text-4xl font-black text-primary opacity-20">2015</span>
+                        <span class="text-5xl font-black text-secondary dark:text-secondary drop-shadow-sm">2015</span>
                     </div>
                     <div class="md:w-3/4 border-l-4 border-primary pl-8 py-2">
                         <h4 class="text-xl font-bold mb-2">Global PDC Certification</h4>
@@ -236,11 +237,11 @@
                 </div>
                  <div class="flex flex-col md:flex-row gap-8 reveal-on-scroll">
                     <div class="md:w-1/4">
-                        <span class="text-4xl font-black text-primary opacity-20">2023</span>
+                        <span class="text-5xl font-black text-primary dark:text-primary drop-shadow-sm">2023</span>
                     </div>
                     <div class="md:w-3/4 border-l-4 border-primary pl-8 py-2">
-                        <h4 class="text-xl font-bold mb-2">50,000+ Alumni</h4>
-                        <p class="text-gray-500">Reaching a massive milestone of regenerative designers across 120 countries.</p>
+                        <h4 class="text-2xl font-black text-gray-900 dark:text-white mb-2">50,000+ Alumni</h4>
+                        <p class="text-gray-600 dark:text-gray-400">Reaching a massive milestone of regenerative designers across 120 countries.</p>
                     </div>
                 </div>
             </div>
@@ -318,21 +319,16 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
                 <div class="mobile-center">
                     <a href="index.html" class="flex items-center gap-2 mb-6">
-                        <img src="image/favicon.png" alt="Logo" class="w-8 h-8">
-                        <span class="text-xl font-bold text-primary">Gaia Academy</span>
+                        <img src="image/favicon.png" alt="Logo" class="logo-brand-img">
+                        <span class="logo-brand-text text-primary">Gaia Academy</span>
                     </a>
-                    <p class="text-gray-500 text-sm mb-6 max-w-xs">Global educational platform for permaculture design
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">Global educational platform for permaculture design
                         and sustainable living principles.</p>
                     <div class="flex gap-4">
-                        <a href="#"
-                            class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"><i
-                                class="fab fa-facebook-f"></i></a>
-                        <a href="#"
-                            class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"><i
-                                class="fab fa-instagram"></i></a>
-                        <a href="#"
-                            class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"><i
-                                class="fab fa-youtube"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="mobile-center">
@@ -370,6 +366,11 @@
             </div>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

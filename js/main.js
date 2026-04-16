@@ -12,15 +12,31 @@ $(document).ready(function() {
         if (savedRTL === 'true') {
             $('html').attr('dir', 'rtl');
             $('.rtl-toggle-icon').addClass('fa-rotate-180');
+            $('[data-dir="rtl"]').addClass('active');
+            $('[data-dir="ltr"]').removeClass('active');
+        } else {
+            $('html').attr('dir', 'ltr');
+            $('[data-dir="ltr"]').addClass('active');
+            $('[data-dir="rtl"]').removeClass('active');
         }
     };
 
-    $('.rtl-toggle').on('click', function() {
-        const currentDir = $('html').attr('dir');
-        const isRTL = currentDir === 'rtl';
-        $('html').attr('dir', isRTL ? 'ltr' : 'rtl');
-        localStorage.setItem('rtl', !isRTL);
-        $('.rtl-toggle-icon').toggleClass('fa-rotate-180');
+    const toggleDirection = (dir) => {
+        $('html').attr('dir', dir);
+        localStorage.setItem('rtl', dir === 'rtl');
+        $('.rtl-toggle-icon').toggleClass('fa-rotate-180', dir === 'rtl');
+        $(`[data-dir]`).removeClass('active');
+        $(`[data-dir="${dir}"]`).addClass('active');
+    };
+
+    $('.rtl-toggle, [data-dir]').on('click', function() {
+        const targetDir = $(this).data('dir');
+        if (targetDir) {
+            toggleDirection(targetDir);
+        } else {
+            const currentDir = $('html').attr('dir');
+            toggleDirection(currentDir === 'rtl' ? 'ltr' : 'rtl');
+        }
     });
 
     // 3. Theme Toggle Logic (Dark/Light)
@@ -86,14 +102,33 @@ $(document).ready(function() {
         });
     };
 
-    $(window).on('scroll', revealElements);
+    // 4. Back to Top Logic
+    const handleBackToTop = () => {
+        if ($(window).scrollTop() > 300) {
+            $('#back-to-top').addClass('show');
+        } else {
+            $('#back-to-top').removeClass('show');
+        }
+    };
+
+    $('#back-to-top').on('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    $(window).on('scroll', function() {
+        revealElements();
+        handleBackToTop();
+    });
     
     // 5. Active Link Highlighting
     const highlightActiveLink = () => {
         const currentPath = window.location.pathname.split('/').pop() || 'index.html';
         
-        // Desktop Menu
-        $('.xl\\:flex a').each(function() {
+        // Desktop Menu - use the correct selector for the navigation
+        $('header nav ul').not('#mobile-menu ul').find('a').each(function() {
             const href = $(this).attr('href');
             if (href === currentPath) {
                 $(this).addClass('text-primary font-bold');
@@ -118,5 +153,6 @@ $(document).ready(function() {
     initRTL();
     initTheme();
     revealElements();
+    handleBackToTop();
     highlightActiveLink();
 });

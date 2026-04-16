@@ -36,8 +36,8 @@
         <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
             <!-- Logo -->
             <a href="index.html" class="flex items-center gap-2 group">
-                <img src="image/favicon.png" alt="Logo" class="w-10 h-10 group-hover:rotate-12 transition-all">
-                <span class="text-2xl font-bold text-primary">Gaia Academy</span>
+                <img src="image/favicon.png" alt="Logo" class="logo-brand-img group-hover:rotate-12 transition-all">
+                <span class="logo-brand-text text-primary">Gaia Academy</span>
             </a>
 
             <ul class="hidden xl:flex items-center gap-8 text-gray-700 font-medium">
@@ -63,9 +63,10 @@
                     <button class="theme-toggle p-2 rounded-full hover:bg-gray-100 transition-all">
                         <i class="fas fa-moon theme-toggle-icon text-primary"></i>
                     </button>
-                    <button class="rtl-toggle p-2 rounded-full hover:bg-gray-100 transition-all">
-                        <i class="fas fa-language rtl-toggle-icon text-primary"></i>
-                    </button>
+                    <div class="rtl-switcher btn-toggle-wrapper">
+                        <button class="btn-toggle-item active" data-dir="ltr">LTR</button>
+                        <button class="btn-toggle-item" data-dir="rtl">RTL</button>
+                    </div>
                 </div>
 
                 <!-- Mobile Hamburger -->
@@ -125,7 +126,7 @@
                 </div>
                 <div class="reveal-on-scroll" style="animation-delay: 0.2s">
                     <div class="relative rounded-3xl overflow-hidden shadow-2xl aspect-video group cursor-pointer">
-                        <img src="image/course_food_forest_hd.png" class="w-full h-full object-cover">
+                        <img src="image/food_forest_aerial_mastery.png" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
                             <div class="w-20 h-20 rounded-full bg-white text-primary flex items-center justify-center text-2xl animate-pulse">
                                 <i class="fas fa-play"></i>
@@ -307,21 +308,16 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
                 <div class="mobile-center">
                     <a href="index.html" class="flex items-center gap-2 mb-6">
-                        <img src="image/favicon.png" alt="Logo" class="w-8 h-8">
-                        <span class="text-xl font-bold text-primary">Gaia Academy</span>
+                        <img src="image/favicon.png" alt="Logo" class="logo-brand-img">
+                        <span class="logo-brand-text text-primary">Gaia Academy</span>
                     </a>
-                    <p class="text-gray-500 text-sm mb-6 max-w-xs">Global educational platform for permaculture design
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">Global educational platform for permaculture design
                         and sustainable living principles.</p>
                     <div class="flex gap-4">
-                        <a href="#"
-                            class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"><i
-                                class="fab fa-facebook-f"></i></a>
-                        <a href="#"
-                            class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"><i
-                                class="fab fa-instagram"></i></a>
-                        <a href="#"
-                            class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"><i
-                                class="fab fa-youtube"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="mobile-center">
@@ -359,6 +355,11 @@
             </div>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
