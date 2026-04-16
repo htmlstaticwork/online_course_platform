@@ -85,6 +85,14 @@
                     <i class="fas fa-user-circle w-5"></i>
                     <span class="font-medium text-sm">Profile & Settings</span>
                 </a>
+                <a href="index.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-100 transition-all mt-2">
+                    <i class="fas fa-home w-5"></i>
+                    <span class="font-medium text-sm">Main Site</span>
+                </a>
+                <a href="home2.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-100 transition-all mt-2">
+                    <i class="fas fa-home w-5"></i>
+                    <span class="font-medium text-sm">Main Site 2</span>
+                </a>
                 <a href="index.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-red-500 hover:bg-red-50 transition-all mt-2">
                     <i class="fas fa-sign-out-alt w-5"></i>
                     <span class="font-medium text-sm">Logout</span>
@@ -96,11 +104,21 @@
     <!-- Main Content Area -->
     <main class="lg:ml-[280px] min-h-screen relative">
         <!-- Dashboard Home Section -->
-        <div id="section-home" class="content-section p-8 space-y-8 animate-fade-in">
+        <div id="section-home" class="content-section p-8 pt-24 lg:pt-8 space-y-8 animate-fade-in">
             <div class="flex items-center justify-between">
-                <div>
-                    <h2 class="text-3xl font-black text-gray-900 leading-none mb-2">Welcome Back, Oliver</h2>
-                    <p class="text-sm text-gray-400 font-bold uppercase tracking-widest">Instructor Overview</p>
+                <div class="flex items-center gap-6">
+                    <div>
+                        <h2 class="text-3xl font-black text-gray-900 leading-none mb-2">Welcome Back, Oliver</h2>
+                        <p class="text-sm text-gray-400 font-bold uppercase tracking-widest">Instructor Overview</p>
+                    </div>
+                    <div class="hidden md:flex items-center gap-2">
+                        <button class="theme-toggle p-2 rounded-xl bg-white shadow-sm border border-gray-100 hover:bg-gray-50 transition-all">
+                            <i class="fas fa-moon theme-toggle-icon text-primary"></i>
+                        </button>
+                        <button class="rtl-toggle p-2 rounded-xl bg-white shadow-sm border border-gray-100 hover:bg-gray-50 transition-all">
+                            <i class="fas fa-language rtl-toggle-icon text-primary"></i>
+                        </button>
+                    </div>
                 </div>
                 <button class="lg:hidden p-2 text-primary" onclick="toggleSidebar()">
                     <i class="fas fa-bars text-xl"></i>

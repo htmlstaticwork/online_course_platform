@@ -6,15 +6,29 @@
     --primary-green: #14532D;
     --secondary-brown: #A16207;
     --bg-light: #ffffff;
-    --text-dark: #1f2937;
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --text-dark: #111827;
+    --text-muted: #4b5563;
+    --border-color: #f1f5f9;
+    --card-bg: rgba(255, 255, 255, 0.95);
+    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --header-bg: rgba(255, 255, 255, 0.95);
+}
+
+.dark {
+    --bg-light: #050a08;
+    --text-dark: #f9fafb;
+    --text-muted: #94a3b8;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --card-bg: rgba(11, 20, 16, 0.6);
+    --primary-green: #10b981;
+    --header-bg: rgba(5, 10, 8, 0.95);
 }
 
 body {
     font-family: 'Outfit', sans-serif;
     color: var(--text-dark);
     background-color: var(--bg-light);
-    transition: var(--transition);
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 /* Custom Utilities */
@@ -73,10 +87,10 @@ body {
 
 /* Glassmorphism */
 .glass {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: var(--card-bg);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--border-color);
 }
 
 /* Animations */
@@ -106,6 +120,58 @@ body {
     }
 }
 
+/* Global Navbar Clearance */
+.hero-safe-top {
+    padding-top: 7.5rem !important; /* 120px */
+}
+
+@media (min-width: 1024px) {
+    .hero-safe-top {
+        padding-top: 11.25rem !important; /* 180px */
+    }
+}
+
+/* Mobile Menu Overlay Styles */
+#mobile-menu {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 60 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: var(--header-bg) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+#mobile-menu.hidden {
+    display: none !important;
+    opacity: 0 !important;
+    transform: scale(0.95) !important;
+}
+
+#mobile-menu ul {
+    width: 100% !important;
+    max-width: 400px !important;
+    padding: 2rem !important;
+}
+
+#mobile-menu a {
+    font-size: 1.5rem !important;
+    font-weight: 800 !important;
+    color: #000000 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+}
+
+#mobile-menu a:hover {
+    color: var(--primary-green) !important;
+}
+
 /* Tablet Grid Rules */
 @media (min-width: 768px) and (max-width: 1024px) {
     .tablet-grid-3 {
@@ -113,4 +179,86 @@ body {
         grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
         gap: 1.5rem !important;
     }
+}
+/* --- Theme Compatibility Overrides (Total Inversion) --- */
+.dark .bg-white, 
+.dark .bg-gray-50, 
+.dark .bg-gray-100, 
+.dark .bg-gray-50\/50,
+.dark section.bg-white,
+.dark section.bg-gray-50,
+.dark div.bg-white,
+.dark .bg-green-50,
+.dark .bg-gray-200 { 
+    background-color: var(--bg-light) !important; 
+}
+
+.dark .text-gray-900, 
+.dark .text-gray-800, 
+.dark .text-gray-700, 
+.dark .text-gray-600, 
+.dark .text-gray-500,
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6,
+.dark p, .dark label, .dark span:not(.text-primary):not(.text-secondary):not(.text-white),
+.dark a:not(.btn-primary-gaia):not(.btn-secondary-gaia):not(.text-primary):not(.text-secondary):not(.text-white) { 
+    color: var(--text-dark) !important; 
+}
+
+.dark .text-gray-400 { color: var(--text-muted) !important; }
+
+.dark .border-gray-100, 
+.dark .border-gray-200, 
+.dark .border-gray-300,
+.dark .border-white { 
+    border-color: var(--border-color) !important; 
+}
+
+/* Dashboard & UI Specifics */
+.dark .sidebar { background-color: var(--header-bg) !important; border-color: var(--border-color) !important; }
+.dark .content-section { background-color: var(--bg-light) !important; }
+.dark .sidebar-link:hover:not(.active) { background-color: rgba(255,255,255,0.05) !important; color: var(--primary-green) !important; }
+.dark .hover\:bg-gray-50:hover, .dark .hover\:bg-gray-100:hover { background-color: rgba(255,255,255,0.05) !important; }
+
+/* Abstract Shape Overrides */
+.dark div[class*="bg-green-50"], .dark div[class*="bg-gray-50"] {
+    background-color: rgba(16, 185, 129, 0.05) !important;
+}
+
+/* Navigation Visibility (Themed) */
+header nav ul a, 
+#mobile-menu a {
+    color: #000000 !important;
+    transition: var(--transition);
+}
+
+.dark header nav ul a,
+.dark #mobile-menu a {
+    color: var(--primary-green) !important;
+}
+
+header nav ul a:hover, 
+.dark header nav ul a:hover {
+    color: var(--primary-green) !important;
+}
+
+header nav ul a.text-primary, 
+.dark header nav ul a.text-primary {
+    color: var(--primary-green) !important;
+    font-weight: 800 !important;
+}
+
+/* Header Background - Adapts to Theme */
+header.bg-white\/95 {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.dark header.bg-white\/95 {
+    background-color: rgba(5, 10, 8, 0.95) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Auth Provider Fixes */
+.dark .fa-apple.text-black {
+    color: #ffffff !important;
 }

@@ -73,39 +73,53 @@
 
             <!-- CTAs & Toggles -->
             <div class="flex items-center gap-4">
-                <div class="hidden sm:flex items-center gap-3">
-                    <a href="login.html" class="btn-secondary-gaia">Login</a>
-
+                <div class="hidden xl:flex items-center gap-3">
+                    <a href="login.html" class="btn-primary-gaia">Login</a>
                 </div>
 
+                <div class="hidden xl:block">
+                <div class="hidden xl:flex items-center gap-2">
+                    <button class="theme-toggle p-2 rounded-full hover:bg-gray-100 transition-all">
+                        <i class="fas fa-moon theme-toggle-icon text-primary"></i>
+                    </button>
                     <button class="rtl-toggle p-2 rounded-full hover:bg-gray-100 transition-all">
                         <i class="fas fa-language rtl-toggle-icon text-primary"></i>
                     </button>
-                    <!-- Mobile Hamburger -->
-                    <button class="xl:hidden hamburger-btn p-2 text-primary">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
                 </div>
+                </div>
+
+                <!-- Mobile Hamburger -->
+                <button class="xl:hidden hamburger-btn p-2 text-primary z-[70] relative">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
             </div>
         </nav>
 
-        <!-- Mobile Menu -->
-        <div id="mobile-menu"
-            class="hidden xl:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 p-6 origin-top transition-all duration-300">
-            <ul class="flex flex-col gap-4 text-center">
+        <!-- Premium Full-Screen Mobile Menu -->
+        <div id="mobile-menu" class="hidden xl:hidden">
+            <ul class="flex flex-col gap-8 text-center items-center">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="home2.html">Home2</a></li>
+                <li><a href="home2.html">Home 2</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="courses.html">Courses</a></li>
-                <li><a href="testimonial.html">Testimonial</a></li>
+                <li><a href="testimonial.html">Testimonials</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="instructor.html">Dashboard</a></li>
-                <li class="pt-4 border-t border-gray-100 flex flex-col gap-3">
-                    <a href="login.html" class="btn-secondary-gaia">Login</a>
-                    <a href="signup.html" class="btn-primary-gaia">Get Started</a>
+                
+                <li class="pt-8 border-t border-gray-100 w-full flex flex-col gap-4">
+                    <button class="theme-toggle flex items-center justify-center gap-3 w-full p-4 rounded-2xl bg-gray-50 text-gray-900 font-black uppercase tracking-widest text-xs translate-y-0">
+                        <i class="fas fa-moon theme-toggle-icon text-primary text-lg"></i> Appearance
+                    </button>
+                    <button class="rtl-toggle flex items-center justify-center gap-3 w-full p-4 rounded-2xl bg-gray-50 text-gray-900 font-black uppercase tracking-widest text-xs translate-y-0">
+                        <i class="fas fa-language text-primary text-lg"></i> Switch Language
+                    </button>
+                </li>
+
+                <li class="flex flex-col gap-4 w-full">
+                    <a href="login.html" class="btn-primary-gaia w-full !py-4">Login</a>
                 </li>
             </ul>
         </div>
+    </header>
     </header>
 
     <!-- Premium Hero -->
@@ -282,7 +296,7 @@
 
                 <!-- Premium Card 2: Water Nexus Design -->
                  <div class="card-premium group reveal-on-scroll relative" style="animation-delay: 0.1s">
-                    <div class="relative rounded-[3rem] overflow-hidden shadow-[0_40px_80px_-20px_rgba(0,0,0,0.2)] h-[650px] border border-gray-100 lg:mt-16">
+                    <div class="relative rounded-[3rem] overflow-hidden shadow-[0_40px_80px_-20px_rgba(0,0,0,0.2)] h-[650px] border border-gray-100">
                         <img src="image/course_water_nexus_hd.png" class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110" alt="Water Nexus Design">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent p-12 flex flex-col justify-end">
                             <div class="mb-4 flex gap-2">
@@ -377,7 +391,7 @@
                 </div>
 
                 <!-- Project Card 2 -->
-                <div class="group relative aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl transition-all duration-700 hover:-translate-y-4 lg:mt-12">
+                <div class="group relative aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl transition-all duration-700 hover:-translate-y-4">
                     <img src="image/project_arid_greening_hd.png" class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110" alt="Arid Greening">
                     <div class="absolute inset-x-6 bottom-6 glass p-6 rounded-2xl border border-white/20 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                         <p class="text-[10px] font-black text-primary uppercase tracking-widest mb-1">Arid Recovery</p>
@@ -403,7 +417,7 @@
                 </div>
 
                 <!-- Project Card 4 -->
-                <div class="group relative aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl transition-all duration-700 hover:-translate-y-4 lg:mt-12">
+                <div class="group relative aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl transition-all duration-700 hover:-translate-y-4">
                     <img src="image/course_water_harvesting_hd.png" class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110" alt="Water Shed">
                     <div class="absolute inset-x-6 bottom-6 glass p-6 rounded-2xl border border-white/20 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                         <p class="text-[10px] font-black text-primary uppercase tracking-widest mb-1">Water Sovereignty</p>
@@ -429,7 +443,7 @@
                 </div>
 
                 <!-- Project Card 6 -->
-                <div class="group relative aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl transition-all duration-700 hover:-translate-y-4 lg:mt-12">
+                <div class="group relative aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl transition-all duration-700 hover:-translate-y-4">
                     <img src="image/project_temperate_oregon_hd.png" class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110" alt="Temperate Forest">
                     <div class="absolute inset-x-6 bottom-6 glass p-6 rounded-2xl border border-white/20 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                         <p class="text-[10px] font-black text-primary uppercase tracking-widest mb-1">Temperate Systems</p>
@@ -455,7 +469,7 @@
                 </div>
 
                 <!-- Project Card 8 -->
-                <div class="group relative aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl transition-all duration-700 hover:-translate-y-4 lg:mt-12">
+                <div class="group relative aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl transition-all duration-700 hover:-translate-y-4">
                     <img src="image/student_success_gallery_hd.png" class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110" alt="Community Project">
                     <div class="absolute inset-x-6 bottom-6 glass p-6 rounded-2xl border border-white/20 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                         <p class="text-[10px] font-black text-primary uppercase tracking-widest mb-1">Social Permaculture</p>

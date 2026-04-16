@@ -33,8 +33,7 @@
 <body class="bg-white transition-colors duration-300">
 
     <!-- Navbar -->
-    <header
-        class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
+    <header class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
         <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
             <!-- Logo -->
             <a href="index.html" class="flex items-center gap-2 group">
@@ -57,72 +56,125 @@
 
             <!-- CTAs & Toggles -->
             <div class="flex items-center gap-4">
-                <div class="hidden sm:flex items-center gap-3">
-                    <a href="login.html" class="btn-secondary-gaia">Login</a>
-
+                <div class="hidden xl:flex items-center gap-3">
+                    <a href="login.html" class="btn-primary-gaia">Login</a>
                 </div>
 
+                <div class="hidden xl:flex items-center gap-2">
+                    <button class="theme-toggle p-2 rounded-full hover:bg-gray-100 transition-all">
+                        <i class="fas fa-moon theme-toggle-icon text-primary"></i>
+                    </button>
                     <button class="rtl-toggle p-2 rounded-full hover:bg-gray-100 transition-all">
                         <i class="fas fa-language rtl-toggle-icon text-primary"></i>
                     </button>
-                    <!-- Mobile Hamburger -->
-                    <button class="xl:hidden hamburger-btn p-2 text-primary">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
                 </div>
+
+                <!-- Mobile Hamburger -->
+                <button class="xl:hidden hamburger-btn p-2 text-primary z-[70] relative">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
             </div>
         </nav>
 
-        <!-- Mobile Menu -->
-        <div id="mobile-menu"
-            class="hidden xl:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 p-6 origin-top transition-all duration-300">
-            <ul class="flex flex-col gap-4 text-center">
+        <!-- Premium Full-Screen Mobile Menu -->
+        <div id="mobile-menu" class="hidden xl:hidden">
+            <ul class="flex flex-col gap-8 text-center items-center">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="home2.html">Home2</a></li>
+                <li><a href="home2.html">Home 2</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="courses.html">Courses</a></li>
-                <li><a href="testimonial.html">Testimonial</a></li>
+                <li><a href="testimonial.html">Testimonials</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="instructor.html">Dashboard</a></li>
-                <li class="pt-4 border-t border-gray-100 flex flex-col gap-3">
-                    <a href="login.html" class="btn-secondary-gaia">Login</a>
-                    <a href="signup.html" class="btn-primary-gaia">Get Started</a>
+                
+                <li class="pt-8 border-t border-gray-100 w-full flex flex-col gap-4">
+                    <button class="theme-toggle flex items-center justify-center gap-3 w-full p-4 rounded-2xl bg-gray-50 text-gray-900 font-black uppercase tracking-widest text-xs translate-y-0">
+                        <i class="fas fa-moon theme-toggle-icon text-primary text-lg"></i> Appearance
+                    </button>
+                    <button class="rtl-toggle flex items-center justify-center gap-3 w-full p-4 rounded-2xl bg-gray-50 text-gray-900 font-black uppercase tracking-widest text-xs translate-y-0">
+                        <i class="fas fa-language text-primary text-lg"></i> Switch Language
+                    </button>
+                </li>
+
+                <li class="flex flex-col gap-4 w-full">
+                    <a href="login.html" class="btn-primary-gaia w-full !py-4">Login</a>
                 </li>
             </ul>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="pt-20 pb-16 lg:pt-32 lg:pb-24 relative overflow-hidden">
+    <section class="hero-safe-top pb-16 lg:pb-32 relative overflow-hidden bg-white">
         <div class="container mx-auto px-4">
             <div class="text-center max-w-4xl mx-auto flex flex-col items-center">
                 <div class="reveal-on-scroll flex flex-col items-center">
                     <span
-                        class="inline-flex items-center gap-2 px-4 py-2 bg-green-50 text-primary rounded-full text-xs font-black uppercase tracking-widest mb-6 border border-green-100 shadow-sm">
+                        class="inline-flex items-center gap-2 px-4 py-2 bg-green-50 text-primary rounded-full text-[10px] font-black uppercase tracking-[0.3em] mb-8 border border-green-100 shadow-sm">
                         <span class="w-2 h-2 bg-primary rounded-full animate-ping"></span>
                         Regenerate Your World 🌿</span>
-                    <h1 class="text-5xl lg:text-7xl font-extrabold text-gray-900 leading-tight mb-6">
-                        Master the Art of <span class="text-primary">Permaculture</span> Design</h1>
-                    <p class="text-xl text-gray-600 mb-10 max-w-2xl">Learn sustainable living through
-                        in-depth courses led by world-class instructors. From food forests to soil regeneration.</p>
-                    <div class="flex flex-col sm:flex-row gap-4 items-center justify-center">
+                    <h1 class="text-6xl lg:text-8xl font-black text-gray-900 leading-[1.1] mb-8 tracking-tighter">
+                        Master the Art of <span class="text-primary italic font-light font-serif">Permaculture</span>
+                        Design</h1>
+                    <p class="text-lg lg:text-xl text-gray-600 mb-12 max-w-2xl leading-relaxed">Learn sustainable living
+                        through in-depth courses led by world-class instructors. From food forests to soil regeneration.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-6 items-center justify-center">
                         <a href="courses.html"
-                            class="btn-primary-gaia">Explore Courses</a>
-                        <a href="about.html"
-                            class="btn-secondary-gaia">Our Mission</a>
+                            class="btn-primary-gaia !px-10 !py-4 shadow-xl hover:shadow-primary/20 transition-all">Explore
+                            Courses</a>
+                        <a href="about.html" class="btn-secondary-gaia !px-10 !py-4">Our Mission</a>
                     </div>
                 </div>
             </div>
-            <div class="mt-20 relative reveal-on-scroll" style="animation-delay: 0.2s">
-                <div class="rounded-3xl overflow-hidden shadow-2xl relative z-10 transition-transform hover:scale-[1.01] duration-500 max-w-5xl mx-auto">
-                    <img src="image/permaculture_hero_premium.png" alt="Permaculture Hero"
-                        class="w-full h-full object-cover">
+
+            <!-- Hero Image Container with Floating Elements -->
+            <div class="mt-24 relative reveal-on-scroll" style="animation-delay: 0.2s">
+                <div class="relative max-w-4xl mx-auto">
+                    <!-- Floating Badge 1 (Inside Top Left) -->
+                    <div class="absolute left-10 top-10 z-20 hidden lg:block animate-pulse">
+                        <div
+                            class="glass p-5 rounded-3xl shadow-2xl border border-white/20 flex items-center gap-4 bg-black/20 backdrop-blur-xl">
+                            <div
+                                class="w-12 h-12 bg-primary rounded-2xl flex items-center justify-center text-white text-xl shadow-lg">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-black text-white text-sm">PDC Certified</h5>
+                                <p class="text-[10px] text-white/70 font-bold uppercase tracking-widest">Global Standard
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Badge 2 (Inside Bottom Right) -->
+                    <div class="absolute right-10 bottom-10 z-20 hidden lg:block animate-pulse"
+                        style="animation-delay: 1s">
+                        <div
+                            class="glass p-5 rounded-3xl shadow-2xl border border-white/20 flex items-center gap-4 bg-black/20 backdrop-blur-xl">
+                            <div
+                                class="w-12 h-12 bg-secondary rounded-2xl flex items-center justify-center text-white text-xl shadow-lg">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-black text-white text-sm">50,000+ Alumni</h5>
+                                <p class="text-[10px] text-white/70 font-bold uppercase tracking-widest">Global
+                                    Community</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main Hero Image -->
+                    <div
+                        class="rounded-[3rem] overflow-hidden shadow-2xl relative z-10 transition-all hover:scale-[1.02] duration-700 border-8 border-white">
+                        <img src="image/permaculture_hero_premium.png" alt="Permaculture Hero"
+                            class="w-full h-[600px] object-cover">
+                        <!-- Image Overlay Gradient -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                    </div>
                 </div>
-            </div>
             </div>
         </div>
         <!-- Abstract Shapes -->
-        <div class="absolute top-0 right-0 -z-10 bg-green-50 w-1/2 h-full rounded-l-[200px]"></div>
+        <div class="absolute top-0 right-0 -z-10 bg-green-50 w-1/2 h-full rounded-l-[200px] opacity-60"></div>
     </section>
 
     <!-- Featured Courses -->
@@ -149,8 +201,7 @@
                         </h3>
                         <p class="text-gray-600 mb-6 text-sm">Learn to design multi-layered edible
                             ecosystems that thrive for decades.</p>
-                        <div
-                            class="flex items-center justify-between pt-6 border-t border-gray-100">
+                        <div class="flex items-center justify-between pt-6 border-t border-gray-100">
                             <span class="text-2xl font-black text-primary">$199</span>
                             <a href="single.html" class="text-secondary font-bold hover:underline">View Details <i
                                     class="fas fa-arrow-right ml-1"></i></a>
@@ -171,8 +222,7 @@
                         <h3 class="text-2xl font-bold text-gray-900 mb-3">Soil Regeneration 101</h3>
                         <p class="text-gray-600 mb-6 text-sm">Discover the magic of soil health,
                             composting, and vermiculture.</p>
-                        <div
-                            class="flex items-center justify-between pt-6 border-t border-gray-100">
+                        <div class="flex items-center justify-between pt-6 border-t border-gray-100">
                             <span class="text-2xl font-black text-primary">$99</span>
                             <a href="single.html" class="text-secondary font-bold hover:underline">View Details <i
                                     class="fas fa-arrow-right ml-1"></i></a>
@@ -193,8 +243,7 @@
                         <h3 class="text-2xl font-bold text-gray-900 mb-3">Water Management Systems</h3>
                         <p class="text-gray-600 mb-6 text-sm">Design swales, ponds, and rainwater
                             harvesting for landscape resilience.</p>
-                        <div
-                            class="flex items-center justify-between pt-6 border-t border-gray-100">
+                        <div class="flex items-center justify-between pt-6 border-t border-gray-100">
                             <span class="text-2xl font-black text-primary">$149</span>
                             <a href="single.html" class="text-secondary font-bold hover:underline">View Details <i
                                     class="fas fa-arrow-right ml-1"></i></a>
@@ -350,7 +399,8 @@
                         class="w-32 h-32 rounded-full mx-auto object-cover border-4 border-primary mb-6">
                     <h4 class="text-xl font-bold">Marcus Thorne</h4>
                     <p class="text-primary font-bold text-sm mb-4">Soil Biologist</p>
-                    <p class="text-gray-500 text-sm mb-6">Expert in bio-intensive composting, biochar, and fungal-dominant soil systems.</p>
+                    <p class="text-gray-500 text-sm mb-6">Expert in bio-intensive composting, biochar, and
+                        fungal-dominant soil systems.</p>
                     <div class="flex justify-center gap-4 text-gray-400">
                         <i class="fab fa-linkedin hover:text-primary cursor-pointer"></i>
                         <i class="fab fa-twitter hover:text-primary cursor-pointer"></i>
@@ -394,8 +444,7 @@
     <!-- Testimonials Preview -->
     <section class="py-20">
         <div class="container mx-auto px-4">
-            <div
-                class="max-w-4xl mx-auto bg-gray-50 rounded-[3rem] p-12 text-center reveal-on-scroll relative">
+            <div class="max-w-4xl mx-auto bg-gray-50 rounded-[3rem] p-12 text-center reveal-on-scroll relative">
                 <i class="fas fa-quote-left text-5xl text-primary/20 absolute top-8 left-8"></i>
                 <img src="https://ui-avatars.com/api/?name=David+R&background=14532D&color=fff"
                     class="w-20 h-20 rounded-full mx-auto mb-6 border-4 border-white">
@@ -412,21 +461,64 @@
         </div>
     </section>
 
-    <!-- CTA Banner -->
-    <section class="py-20">
+    <!-- Premium CTA Section -->
+    <section class="py-32 relative overflow-hidden bg-white">
         <div class="container mx-auto px-4">
-            <div class="bg-primary rounded-[3rem] p-12 lg:p-20 text-center relative overflow-hidden reveal-on-scroll">
-                <div class="relative z-10 text-white max-w-2xl mx-auto">
-                    <h2 class="text-4xl lg:text-6xl font-black mb-6">Ready to Start Your Sustainability Journey?</h2>
-                    <p class="text-lg opacity-80 mb-10">Join 50,000+ students worldwide learning to regenerate the
-                        earth.</p>
-                    <a href="signup.html"
-                        class="bg-white text-primary px-12 py-5 rounded-full font-bold text-xl shadow-2xl hover:scale-105 transition-all inline-block">Join
-                        Now for Free</a>
+            <div class="relative rounded-[4rem] overflow-hidden shadow-2xl group">
+                <!-- Background Image & Overlay -->
+                <div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105"
+                    style="background-image: url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=2013');">
                 </div>
-                <!-- Background Decorations -->
-                <div class="absolute -top-20 -left-20 w-64 h-64 bg-green-900 rounded-full opacity-50"></div>
-                <div class="absolute -bottom-20 -right-20 w-64 h-64 bg-green-900 rounded-full opacity-50"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
+
+                <div class="relative z-10 p-12 lg:p-24 grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="reveal-on-scroll">
+                        <div
+                            class="inline-flex items-center gap-3 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 text-white text-[10px] font-black uppercase tracking-[0.3em] mb-8">
+                            <i class="fas fa-globe-americas"></i> Join the Global Movement
+                        </div>
+                        <h2 class="text-5xl lg:text-7xl font-black text-white mb-8 tracking-tighter leading-none">
+                            Ready to Start Your <span
+                                class="italic font-light font-serif text-primary">Sustainability</span> Journey?
+                        </h2>
+
+                        <!-- Social Proof -->
+                        <div class="flex items-center gap-6 mb-10">
+                            <div class="flex -space-x-4">
+                                <img src="https://ui-avatars.com/api/?name=A&background=random"
+                                    class="w-12 h-12 rounded-full border-4 border-white shadow-lg">
+                                <img src="https://ui-avatars.com/api/?name=B&background=random"
+                                    class="w-12 h-12 rounded-full border-4 border-white shadow-lg">
+                                <img src="https://ui-avatars.com/api/?name=C&background=random"
+                                    class="w-12 h-12 rounded-full border-4 border-white shadow-lg">
+                            </div>
+                            <div>
+                                <h4 class="text-white font-black text-xl leading-none">50,000+</h4>
+                                <p class="text-white/60 text-[10px] font-bold uppercase tracking-widest mt-1">Students
+                                    Learning Globally</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-6">
+                            <a href="login.html"
+                                class="btn-primary-gaia !px-12 !py-5 !text-lg !rounded-2xl shadow-[0_0_30px_rgba(20,83,45,0.4)] hover:shadow-primary/60 transition-all text-center">Login to Access</a>
+                        </div>
+                    </div>
+
+                    <!-- Side Stats/Glass Card -->
+                    <div class="hidden lg:flex justify-center reveal-on-scroll" style="animation-delay: 0.2s">
+                        <div class="glass p-10 rounded-[3rem] border border-white/20 max-w-sm">
+                            <div class="text-primary text-4xl mb-6"><i class="fas fa-award"></i></div>
+                            <h3 class="text-white text-2xl font-black mb-4">Elite Education</h3>
+                            <p class="text-white/60 leading-relaxed mb-6">Our Permaculture Design Certificate follows
+                                the international standards established by Bill Mollison.</p>
+                            <div
+                                class="flex items-center gap-2 text-primary font-black text-xs uppercase tracking-widest">
+                                <span class="w-2 h-2 bg-primary rounded-full"></span> Globally Recognized
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

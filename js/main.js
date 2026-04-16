@@ -23,10 +23,55 @@ $(document).ready(function() {
         $('.rtl-toggle-icon').toggleClass('fa-rotate-180');
     });
 
-    // 3. Mobile Menu Toggle
+    // 3. Theme Toggle Logic (Dark/Light)
+    const initTheme = () => {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            $('html').addClass('dark');
+            $('.theme-toggle-icon').removeClass('fa-moon').addClass('fa-sun');
+        } else {
+            $('html').removeClass('dark');
+            $('.theme-toggle-icon').removeClass('fa-sun').addClass('fa-moon');
+        }
+    };
+
+    $('.theme-toggle').on('click', function() {
+        const isDark = $('html').hasClass('dark');
+        if (isDark) {
+            $('html').removeClass('dark');
+            localStorage.setItem('theme', 'light');
+            $('.theme-toggle-icon').removeClass('fa-sun').addClass('fa-moon');
+        } else {
+            $('html').addClass('dark');
+            localStorage.setItem('theme', 'dark');
+            $('.theme-toggle-icon').removeClass('fa-moon').addClass('fa-sun');
+        }
+    });
+
+    // 4. Mobile Menu Toggle - Enhanced Version
     $('.hamburger-btn').on('click', function() {
-        $('#mobile-menu').toggleClass('hidden scale-y-0 opacity-0');
+        const menu = $('#mobile-menu');
+        const isOpen = !menu.hasClass('hidden');
+        
+        if (isOpen) {
+            menu.addClass('opacity-0 scale-95').delay(300).queue(function(next) {
+                $(this).addClass('hidden');
+                $('body').removeClass('overflow-hidden');
+                next();
+            });
+        } else {
+            menu.removeClass('hidden').removeClass('opacity-0 scale-95');
+            $('body').addClass('overflow-hidden');
+        }
+        
         $(this).find('i').toggleClass('fa-bars fa-times');
+    });
+
+    // Close menu when clicking links
+    $('#mobile-menu a').on('click', function() {
+        $('#mobile-menu').addClass('hidden opacity-0 scale-95');
+        $('body').removeClass('overflow-hidden');
+        $('.hamburger-btn i').addClass('fa-bars').removeClass('fa-times');
     });
 
     // 4. Scroll Reveal Logic
@@ -71,6 +116,7 @@ $(document).ready(function() {
     // Initialize
 
     initRTL();
+    initTheme();
     revealElements();
     highlightActiveLink();
 });
