@@ -2,891 +2,497 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="google-translate-customization" content="9f841e7780177523-3214ceb76f765f38-gc38c6fe6f9d06436-c">
-    </meta>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaia Academy - Permaculture Education</title>
+    <link rel="icon" type="image/png" href="image/favicon.png">
 
-    <title>Global Academy : Online Courses</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
 
-    <!-- Favicon -->
-    <link href="image/logo.png" rel="icon">
-
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
-        rel="stylesheet">
-
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
-
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#14532D',
+                        secondary: '#A16207',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/index.css">
 </head>
 
-<body>
-    <!-- Spinner Start -->
-    <div id="spinner"
-        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
+<body class="bg-white transition-colors duration-300">
+
+    <!-- Navbar -->
+    <header
+        class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
+        <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-2 group">
+                <img src="image/favicon.png" alt="Logo" class="w-10 h-10 group-hover:rotate-12 transition-all">
+                <span class="text-2xl font-bold text-primary">Gaia Academy</span>
+            </a>
+
+            <ul class="hidden xl:flex items-center gap-8 text-gray-700 font-medium">
+                <li><a href="index.html" class="hover:text-primary transition-colors">Home</a>
+                </li>
+                <li><a href="home2.html" class="hover:text-primary transition-colors">Home2</a>
+                </li>
+                <li><a href="about.html" class="hover:text-primary transition-colors">About</a></li>
+                <li><a href="courses.html" class="hover:text-primary transition-colors">Courses</a></li>
+                <li><a href="testimonial.html" class="hover:text-primary transition-colors">Testimonial</a></li>
+                <li><a href="contact.html" class="hover:text-primary transition-colors">Contact</a></li>
+                <li><a href="instructor.html" class="hover:text-primary transition-colors">Dashboard</a></li>
+
+            </ul>
+
+            <!-- CTAs & Toggles -->
+            <div class="flex items-center gap-4">
+                <div class="hidden sm:flex items-center gap-3">
+                    <a href="login.html" class="btn-secondary-gaia">Login</a>
+
+                </div>
+
+                    <button class="rtl-toggle p-2 rounded-full hover:bg-gray-100 transition-all">
+                        <i class="fas fa-language rtl-toggle-icon text-primary"></i>
+                    </button>
+                    <!-- Mobile Hamburger -->
+                    <button class="xl:hidden hamburger-btn p-2 text-primary">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden xl:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 p-6 origin-top transition-all duration-300">
+            <ul class="flex flex-col gap-4 text-center">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="home2.html">Home2</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="testimonial.html">Testimonial</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="instructor.html">Dashboard</a></li>
+                <li class="pt-4 border-t border-gray-100 flex flex-col gap-3">
+                    <a href="login.html" class="btn-secondary-gaia">Login</a>
+                    <a href="signup.html" class="btn-primary-gaia">Get Started</a>
+                </li>
+            </ul>
         </div>
-    </div>
-    <!-- Spinner End -->
+    </header>
 
-
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <img src="image/logo.png" alt="Logo" style="height: 75px;">
-        </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-            title="Toggle Navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link active">Classic</a>
-                <a href="home2.html" class="nav-item nav-link">Premium</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="courses.html" class="nav-item nav-link">Courses</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu fade-down m-0">
-
-                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                        <a href="instructor.html" class="dropdown-item">Become Instructor</a>
+    <!-- Hero Section -->
+    <section class="pt-20 pb-16 lg:pt-32 lg:pb-24 relative overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-4xl mx-auto flex flex-col items-center">
+                <div class="reveal-on-scroll flex flex-col items-center">
+                    <span
+                        class="inline-flex items-center gap-2 px-4 py-2 bg-green-50 text-primary rounded-full text-xs font-black uppercase tracking-widest mb-6 border border-green-100 shadow-sm">
+                        <span class="w-2 h-2 bg-primary rounded-full animate-ping"></span>
+                        Regenerate Your World 🌿</span>
+                    <h1 class="text-5xl lg:text-7xl font-extrabold text-gray-900 leading-tight mb-6">
+                        Master the Art of <span class="text-primary">Permaculture</span> Design</h1>
+                    <p class="text-xl text-gray-600 mb-10 max-w-2xl">Learn sustainable living through
+                        in-depth courses led by world-class instructors. From food forests to soil regeneration.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 items-center justify-center">
+                        <a href="courses.html"
+                            class="btn-primary-gaia">Explore Courses</a>
+                        <a href="about.html"
+                            class="btn-secondary-gaia">Our Mission</a>
                     </div>
                 </div>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
-                <a href="dashboard.html" class="nav-item nav-link" title="Dashboard"><i
-                        class="fa fa-tachometer-alt"></i></a>
-                <button onclick="toggleDarkMode()"
-                    class="nav-item nav-link btn btn-sm btn-outline-dark border-0 bg-transparent p-0"
-                    title="Toggle Dark Mode">
-                    <i data-lucide="moon" size="20"></i>
-                </button>
-                <button onclick="toggleRTL()"
-                    class="nav-item nav-link btn btn-sm btn-outline-dark border-0 bg-transparent p-0"
-                    title="Toggle RTL">
-                    <i data-lucide="languages" size="20"></i>
-                </button>
-
-                <a href="login.html" class="nav-item nav-link btn btn-sm btn-outline-dark border-0 bg-transparent p-0"
-                    title="Login"><i data-lucide="user" size="20"></i></a>
-                <div class="nav-item nav-link" id="google_translate_element"></div>
+            </div>
+            <div class="mt-20 relative reveal-on-scroll" style="animation-delay: 0.2s">
+                <div class="rounded-3xl overflow-hidden shadow-2xl relative z-10 transition-transform hover:scale-[1.01] duration-500 max-w-5xl mx-auto">
+                    <img src="image/permaculture_hero_premium.png" alt="Permaculture Hero"
+                        class="w-full h-full object-cover">
+                </div>
+            </div>
             </div>
         </div>
-    </nav>
-    <!-- Navbar End -->
+        <!-- Abstract Shapes -->
+        <div class="absolute top-0 right-0 -z-10 bg-green-50 w-1/2 h-full rounded-l-[200px]"></div>
+    </section>
 
+    <!-- Featured Courses -->
+    <section class="py-20 bg-gray-50/50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 reveal-on-scroll">
+                <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Featured Courses</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Start your journey with our most popular
+                    and impactful learning paths.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 tablet-grid-3 gap-8 reveal-on-scroll">
+                <!-- Course Card 1 -->
+                <div
+                    class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-gray-100 group mobile-center">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="image/course_food_forest_hd.png" alt="Course"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+                        <div
+                            class="absolute top-4 left-4 bg-primary text-white px-4 py-1 rounded-full text-sm font-bold">
+                            Expert</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Food Forest Design Mastery
+                        </h3>
+                        <p class="text-gray-600 mb-6 text-sm">Learn to design multi-layered edible
+                            ecosystems that thrive for decades.</p>
+                        <div
+                            class="flex items-center justify-between pt-6 border-t border-gray-100">
+                            <span class="text-2xl font-black text-primary">$199</span>
+                            <a href="single.html" class="text-secondary font-bold hover:underline">View Details <i
+                                    class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Course Card 2 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-gray-100 group mobile-center"
+                    style="animation-delay: 0.1s">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="image/course_soil_regeneration_hd.png" alt="Course"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+                        <div
+                            class="absolute top-4 left-4 bg-primary text-white px-4 py-1 rounded-full text-sm font-bold">
+                            Beginner</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Soil Regeneration 101</h3>
+                        <p class="text-gray-600 mb-6 text-sm">Discover the magic of soil health,
+                            composting, and vermiculture.</p>
+                        <div
+                            class="flex items-center justify-between pt-6 border-t border-gray-100">
+                            <span class="text-2xl font-black text-primary">$99</span>
+                            <a href="single.html" class="text-secondary font-bold hover:underline">View Details <i
+                                    class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Course Card 3 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-gray-100 group mobile-center"
+                    style="animation-delay: 0.2s">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="image/course_water_harvesting_hd.png" alt="Course"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+                        <div
+                            class="absolute top-4 left-4 bg-primary text-white px-4 py-1 rounded-full text-sm font-bold">
+                            Intermediate</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Water Management Systems</h3>
+                        <p class="text-gray-600 mb-6 text-sm">Design swales, ponds, and rainwater
+                            harvesting for landscape resilience.</p>
+                        <div
+                            class="flex items-center justify-between pt-6 border-t border-gray-100">
+                            <span class="text-2xl font-black text-primary">$149</span>
+                            <a href="single.html" class="text-secondary font-bold hover:underline">View Details <i
+                                    class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-16 reveal-on-scroll">
+                <a href="courses.html" class="btn-secondary-gaia">Browse All Courses</a>
+            </div>
+        </div>
+    </section>
 
-    <!-- Carousel Start -->
-    <div class="container-fluid p-0 mb-4">
-        <div class="owl-carousel header-carousel position-relative">
-            <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="img/carousel-1.jpg" alt="">
-                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
-                    style="background: rgba(24, 29, 56, .7);">
-                    <div class="container">
-                        <div class="row justify-content-center text-center">
-                            <div class="col-sm-10 col-lg-8">
-                                <h5 class=" text-uppercase mb-3 animated slideInDown" style="color: #fb873f;">Best
-                                    E-learning platform</h5>
-                                <h1 class="display-3 text-white animated slideInDown">Learn Job ready skills from free
-                                    online courses with certificates</h1>
-                                <p class=" text-white mb-4 pb-2">Explore a wide range of courses designed to enhance
-                                    your expertise in technology, business, arts, and more!</p>
-                                <div class="d-flex justify-content-center gap-2">
-                                    <a href="about.html"
-                                        class="btn btn-primary py-md-3 px-md-5 animated slideInLeft">Read More</a>
-                                    <a href="signup.html"
-                                        class="btn btn-light btn-join py-md-3 px-md-5 animated slideInRight">Join
-                                        Now</a>
-                                </div>
+    <!-- Why Permaculture -->
+    <section class="py-20 bg-white overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal-on-scroll order-2 lg:order-1">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="space-y-6">
+                            <div class="bg-green-50 p-8 rounded-3xl">
+                                <i class="fas fa-seedling text-3xl text-primary mb-4"></i>
+                                <h4 class="font-bold text-lg">Earth Care</h4>
+                                <p class="text-sm text-gray-500 mt-2">Rebuilding biosystems and soil health.</p>
+                            </div>
+                            <div class="bg-amber-50 p-8 rounded-3xl">
+                                <i class="fas fa-users text-3xl text-secondary mb-4"></i>
+                                <h4 class="font-bold text-lg">People Care</h4>
+                                <p class="text-sm text-gray-500 mt-2">Building resilient and healthy communities.</p>
+                            </div>
+                        </div>
+                        <div class="space-y-6 mt-12">
+                            <div class="bg-blue-50 p-8 rounded-3xl">
+                                <i class="fas fa-balance-scale text-3xl text-blue-600 mb-4"></i>
+                                <h4 class="font-bold text-lg">Fair Share</h4>
+                                <p class="text-sm text-gray-500 mt-2">Redistributing surplus to benefit all.</p>
+                            </div>
+                            <div class="bg-primary p-8 rounded-3xl text-white">
+                                <h4 class="text-4xl font-black mb-2">12</h4>
+                                <p class="text-sm font-bold opacity-80 uppercase tracking-widest">Core Principles</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="img/carousel-2.jpg" alt="">
-                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
-                    style="background: rgba(24, 29, 56, .7);">
-                    <div class="container">
-                        <div class="row justify-content-center text-center">
-                            <div class="col-sm-10 col-lg-8">
-                                <h5 class=" text-uppercase mb-3 animated slideInDown" style="color: #fb873f;">Welcome to
-                                    E-Learning Academy</h5>
-                                <h1 class="display-3 text-white animated slideInDown">Interactive Learning Experience
-                                </h1>
-                                <p class=" text-white mb-4 pb-2">Engage with interactive lessons, quizzes, and
-                                    projects. Experience hands-on learning that keeps you motivated and inspired.</p>
-                                <div class="d-flex justify-content-center gap-2">
-                                    <a href="about.html"
-                                        class="btn btn-primary py-md-3 px-md-5 animated slideInLeft">Read More</a>
-                                    <a href="signup.html"
-                                        class="btn btn-light btn-join py-md-3 px-md-5 animated slideInRight">Join
-                                        Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Carousel End -->
-
-
-    <!-- Service Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="row g-2 text-center">
-                <div class="col-12 wow fadeInUp" data-wow-delay="0.3s">
-                    <h1 style="color: #fb873f;">Invest in your professional goals with e-learning</h1>
-                    <p class="mb-5">Get unlimited access to over 90% of courses, Projects, Specializations, and
-                        Professional Certificates on Coursera, taught by top instructors.</p>
-                </div>
-            </div>
-            <div class="row g-4 justify-content-center">
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item text-center pt-3 shadow h-100">
-                        <div class="p-4">
-                            <h5 class="mb-3">Learn anything</h5>
-                            <p>Explore any interest or trending topic, take prerequisites, and advance your skills</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item text-center pt-3 shadow h-100">
-                        <div class="p-4">
-                            <h5 class="mb-3">Save money</h5>
-                            <p>Spend less money on your learning if you plan to take multiple courses this year</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item text-center pt-3 shadow h-100">
-                        <div class="p-4">
-                            <h5 class="mb-3">Flexible learning</h5>
-                            <p>Learn at your own pace, move between multiple courses, or switch to a different course
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="service-item text-center pt-3 shadow h-100">
-                        <div class="p-4">
-                            <h5 class="mb-3">Unlimited certificates</h5>
-                            <p>Earn a certificate for every learning program that you complete at no additional cost</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Service End -->
-
-
-    <!-- About Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
-                    <div class="position-relative h-100">
-                        <img class="img-fluid position-absolute w-100 h-100" src="img/about.jpg" alt=""
-                            style="object-fit: cover;">
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInUp text-center" data-wow-delay="0.3s">
-                    <h6 class="section-title bg-white text-center px-3">About Us</h6>
-                    <h1 class="mb-4" style="color: #fb873f;">Welcome to e-learning</h1>
-                    <p class="mb-4">At e-learning, we believe in accessible, innovative learning experiences that
-                        adapt to your schedule and learning style. Join us in embracing the future of education and
-                        unlock your potential with our immersive online courses.</p>
-                    <p class="mb-4"> Welcom to e-learning, your gateway to boundless learning opportunities. We're
-                        dedicated to democratizing education, offering a diverse range of courses taught by industry
-                        experts. Our mission is to empower learners worldwide, fostering a community-driven platform
-                        where knowledge knows no limits.</p>
-                    <div class="row gy-2 gx-4 mb-4">
-                        <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right  me-2"></i>Expert Instructors</p>
-                        </div>
-                        <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right me-2"></i>Live Interactive Sessions</p>
-                        </div>
-                        <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right me-2"></i>Comprehensive Course Catalog</p>
-                        </div>
-                        <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right me-2"></i>Community Engagement</p>
-                        </div>
-                        <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right me-2"></i>Personalized Learning Paths</p>
-                        </div>
-                        <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right me-2"></i>Certification and Recognition</p>
-                        </div>
-                    </div>
-                    <a class="btn btn-primary text-light py-3 px-5 mt-2" href="about.html">Read More</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- About End -->
-
-
-
-
-    <!-- Banner-1 Start -->
-    <div class="container-xxl py-5 bg-light">
-        <div class="container">
-            <div class="row g-5 ">
-                <div class="col-lg-6 p-5 wow fadeInUp text-center" data-wow-delay="0.3s">
-
-                    <h1 class="mb-4" style="color: #fb873f;">Explore Free Courses</h1>
-                    <p class="mb-4">Start your online learning journey at Great Learning Academy for free with our
-                        short-term basic courses across various in-demand domains.</p>
-
-                    <a class="btn btn-primary text-light py-3 px-5 mt-2" href="signup.html">Start For Free</a>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
-                    <div class="position-relative h-100">
-                        <img class="img-fluid position-absolute w-100 h-100" src="img/banner-1.jpg" alt=""
-                            style="object-fit: cover;">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Banner-1 End -->
-
-
-
-    <!-- Categories Start -->
-    <div class="container-xxl py-5 category">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center px-3">Categories</h6>
-                <h1 class="mb-5" style="color: #fb873f;">Popular Topics to Explore</h1>
-            </div>
-            <div class="row g-2 m-2">
-                <div class="col-lg-3 col-md-6 col-sm-12  text-center">
-                    <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
-
-                        <img src="img/cat1.png" class="img-fluid" alt="categories"></i>
-
-                        <h5 class="my-2">
-                            <a href="#" class="text-center">Microsoft Excel</a>
-                        </h5>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12  text-center">
-                    <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
-
-                        <img src="img/cat2.png" class="img-fluid" alt="categories"></i>
-
-                        <h5 class="my-2">
-                            <a href="#" class="text-center"> AWS</a>
-                        </h5>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12  text-center">
-                    <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
-
-                        <img src="img/cat3.png" class="img-fluid" alt="categories"></i>
-
-                        <h5 class="my-2">
-                            <a href="#" class="text-center">Python</a>
-                        </h5>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12  text-center">
-                    <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
-
-                        <img src="img/cat4.png" class="img-fluid" alt="categories"></i>
-
-                        <h5 class="my-2">
-                            <a href="#" class="text-center">Java</a>
-                        </h5>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12  text-center">
-                    <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
-
-                        <img src="img/cat5.png" class="img-fluid" alt="categories"></i>
-
-                        <h5 class="my-2">
-                            <a href="#" class="text-center">Web Design</a>
-                        </h5>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12  text-center">
-                    <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
-
-                        <img src="img/cat6.png" class="img-fluid" alt="categories"></i>
-
-                        <h5 class="my-2">
-                            <a href="#" class="text-center">Web Development</a>
-                        </h5>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12  text-center">
-                    <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
-
-                        <img src="img/cat7.png" class="img-fluid" alt="categories"></i>
-
-                        <h5 class="my-2">
-                            <a href="#" class="text-center">MySQL</a>
-                        </h5>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12  text-center">
-                    <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
-
-                        <img src="img/cat8.png" class="img-fluid" alt="categories"></i>
-
-                        <h5 class="my-2">
-                            <a href="#" class="text-center">UI/UX Design</a>
-                        </h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Categories End -->
-
-
-    <!-- Courses Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center px-3">Popular Courses</h6>
-                <h1 class="mb-5" style="color: #fb873f;">Explore new and trending free online courses</h1>
-            </div>
-            <div class="row g-4 py-2 justify-content-center">
-                <!-- Row 1 -->
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="course-item shadow h-100">
-                        <div class="position-relative overflow-hidden text-light image">
-                            <img class="img-fluid w-100" src="img/course-1.jpg" alt="">
-                            <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
-                                class="px-2 py-1 fw-bold text-uppercase">FREE</div>
-                        </div>
-                        <div class="p-4 pb-0">
-                            <h5 class="mb-1"><a href="single.html" class="text-dark">HTML Course for Beginners</a></h5>
-                        </div>
-                        <div class="d-flex border-top border-bottom mt-3">
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-star text-warning me-2"></i>4.55</small>
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-user-graduate me-2"></i>5.8L+ Learners</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>Beginner</small>
-                        </div>
-                        <div class="d-flex p-4">
-                            <small class="flex-fill text-left"><i class="fa fa-clock me-2"></i>2.0 Hrs</small>
-                            <small class="flex-fill text-center fw-bold fs-6">₹ 0</small>
-                            <small class="flex-fill text-right text-primary fw-bold fs-6"><a href="single.html">Enroll
-                                    Now <i class="fa fa-chevron-right ms-1 fs-10"></i></a></small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="course-item shadow h-100">
-                        <div class="position-relative overflow-hidden text-light image">
-                            <img class="img-fluid w-100" src="img/course-2.jpg" alt="">
-                            <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#0ed44c;"
-                                class="px-2 py-1 fw-bold text-uppercase">PAID</div>
-                        </div>
-                        <div class="p-4 pb-0">
-                            <h5 class="mb-1"><a href="single.html" class="text-dark">Front End Development-CSS</a></h5>
-                        </div>
-                        <div class="d-flex border-top border-bottom mt-3">
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-star text-warning me-2"></i>4.55</small>
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-user-graduate me-2"></i>5.2L+ Learners</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>Beginner</small>
-                        </div>
-                        <div class="d-flex p-4">
-                            <small class="flex-fill text-left"><i class="fa fa-clock me-2"></i>4.0 Hrs</small>
-                            <small class="flex-fill text-center fw-bold fs-6">₹ 199</small>
-                            <small class="flex-fill text-right text-primary fw-bold fs-6"><a href="single.html">Enroll
-                                    Now <i class="fa fa-chevron-right ms-1 fs-10"></i></a></small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="course-item shadow h-100">
-                        <div class="position-relative overflow-hidden text-light image">
-                            <img class="img-fluid w-100" src="img/course-3.jpg" alt="">
-                            <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
-                                class="px-2 py-1 fw-bold text-uppercase">FREE</div>
-                        </div>
-                        <div class="p-4 pb-0">
-                            <h5 class="mb-1"><a href="single.html" class="text-dark">Introduction to JavaScript</a></h5>
-                        </div>
-                        <div class="d-flex border-top border-bottom mt-3">
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-star text-warning me-2"></i>4.46</small>
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-user-graduate me-2"></i>76L+ Learners</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>Beginner</small>
-                        </div>
-                        <div class="d-flex p-4">
-                            <small class="flex-fill text-left"><i class="fa fa-clock me-2"></i>2.5 Hrs</small>
-                            <small class="flex-fill text-center fw-bold fs-6">₹ 0</small>
-                            <small class="flex-fill text-right text-primary fw-bold fs-6"><a href="single.html">Enroll
-                                    Now <i class="fa fa-chevron-right ms-1 fs-10"></i></a></small>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Row 2 -->
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="course-item shadow h-100">
-                        <div class="position-relative overflow-hidden text-light image">
-                            <img class="img-fluid w-100" src="img/course-4.jpg" alt="">
-                            <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#0ed44c;"
-                                class="px-2 py-1 fw-bold text-uppercase">PAID</div>
-                        </div>
-                        <div class="p-4 pb-0">
-                            <h5 class="mb-1"><a href="single.html" class="text-dark">Python Programming</a></h5>
-                        </div>
-                        <div class="d-flex border-top border-bottom mt-3">
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-star text-warning me-2"></i>3.54</small>
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-user-graduate me-2"></i>3.3L+ Learners</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>Beginner</small>
-                        </div>
-                        <div class="d-flex p-4">
-                            <small class="flex-fill text-left"><i class="fa fa-clock me-2"></i>3.0 Hrs</small>
-                            <small class="flex-fill text-center fw-bold fs-6">₹ 299</small>
-                            <small class="flex-fill text-right text-primary fw-bold fs-6"><a href="single.html">Enroll
-                                    Now <i class="fa fa-chevron-right ms-1 fs-10"></i></a></small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="course-item shadow h-100">
-                        <div class="position-relative overflow-hidden text-light image">
-                            <img class="img-fluid w-100" src="img/course-5.jpg" alt="">
-                            <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
-                                class="px-2 py-1 fw-bold text-uppercase">FREE</div>
-                        </div>
-                        <div class="p-4 pb-0">
-                            <h5 class="mb-1"><a href="single.html" class="text-dark">SQL for Data Science</a></h5>
-                        </div>
-                        <div class="d-flex border-top border-bottom mt-3">
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-star text-warning me-2"></i>4.54</small>
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-user-graduate me-2"></i>1.3L+ Learners</small>
-                            <small class="flex-fill text-center py-2"><i
-                                    class="fa fa-user me-2"></i>Intermediate</small>
-                        </div>
-                        <div class="d-flex p-4">
-                            <small class="flex-fill text-left"><i class="fa fa-clock me-2"></i>5.0 Hrs</small>
-                            <small class="flex-fill text-center fw-bold fs-6">₹ 0</small>
-                            <small class="flex-fill text-right text-primary fw-bold fs-6"><a href="single.html">Enroll
-                                    Now <i class="fa fa-chevron-right ms-1 fs-10"></i></a></small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="course-item shadow h-100">
-                        <div class="position-relative overflow-hidden text-light image">
-                            <img class="img-fluid w-100" src="img/course-6.jpg" alt="">
-                            <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
-                                class="px-2 py-1 fw-bold text-uppercase">FREE</div>
-                        </div>
-                        <div class="p-4 pb-0">
-                            <h5 class="mb-1"><a href="single.html" class="text-dark">ChatGPT for Beginners</a></h5>
-                        </div>
-                        <div class="d-flex border-top border-bottom mt-3">
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-star text-warning me-2"></i>3.55</small>
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-user-graduate me-2"></i>3.5L+ Learners</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>Beginner</small>
-                        </div>
-                        <div class="d-flex p-4">
-                            <small class="flex-fill text-left"><i class="fa fa-clock me-2"></i>4.5 Hrs</small>
-                            <small class="flex-fill text-center fw-bold fs-6">₹ 0</small>
-                            <small class="flex-fill text-right text-primary fw-bold fs-6"><a href="single.html">Enroll
-                                    Now <i class="fa fa-chevron-right ms-1 fs-10"></i></a></small>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Row 3 -->
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="course-item shadow h-100">
-                        <div class="position-relative overflow-hidden text-light image">
-                            <img class="img-fluid w-100" src="img/course-7.jpg" alt="">
-                            <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
-                                class="px-2 py-1 fw-bold text-uppercase">FREE</div>
-                        </div>
-                        <div class="p-4 pb-0">
-                            <h5 class="mb-1"><a href="single.html" class="text-dark">AWS for Beginners</a></h5>
-                        </div>
-                        <div class="d-flex border-top border-bottom mt-3">
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-star text-warning me-2"></i>4.53</small>
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-user-graduate me-2"></i>1L+ Learners</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>Beginner</small>
-                        </div>
-                        <div class="d-flex p-4">
-                            <small class="flex-fill text-left"><i class="fa fa-clock me-2"></i>3.0 Hrs</small>
-                            <small class="flex-fill text-center fw-bold fs-6">₹ 0</small>
-                            <small class="flex-fill text-right text-primary fw-bold fs-6"><a href="single.html">Enroll
-                                    Now <i class="fa fa-chevron-right ms-1 fs-10"></i></a></small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="course-item shadow h-100">
-                        <div class="position-relative overflow-hidden text-light image">
-                            <img class="img-fluid w-100" src="img/course-8.jpg" alt="">
-                            <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#0ed44c;"
-                                class="px-2 py-1 fw-bold text-uppercase">PAID</div>
-                        </div>
-                        <div class="p-4 pb-0">
-                            <h5 class="mb-1"><a href="single.html" class="text-dark">Microsoft Azure Essentials</a></h5>
-                        </div>
-                        <div class="d-flex border-top border-bottom mt-3">
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-star text-warning me-2"></i>4.64</small>
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-user-graduate me-2"></i>4.4L+ Learners</small>
-                            <small class="flex-fill text-center py-2"><i
-                                    class="fa fa-user me-2"></i>Intermediate</small>
-                        </div>
-                        <div class="d-flex p-4">
-                            <small class="flex-fill text-left"><i class="fa fa-clock me-2"></i>3.5 Hrs</small>
-                            <small class="flex-fill text-center fw-bold fs-6">₹ 149</small>
-                            <small class="flex-fill text-right text-primary fw-bold fs-6"><a href="single.html">Enroll
-                                    Now <i class="fa fa-chevron-right ms-1 fs-10"></i></a></small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="course-item shadow h-100">
-                        <div class="position-relative overflow-hidden text-light image">
-                            <img class="img-fluid w-100" src="img/course-9.jpg" alt="">
-                            <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
-                                class="px-2 py-1 fw-bold text-uppercase">FREE</div>
-                        </div>
-                        <div class="p-4 pb-0">
-                            <h5 class="mb-1"><a href="single.html" class="text-dark">Introduction to MS Excel</a></h5>
-                        </div>
-                        <div class="d-flex border-top border-bottom mt-3">
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-star text-warning me-2"></i>4.6</small>
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-user-graduate me-2"></i>4.2L+ Learners</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>Beginner</small>
-                        </div>
-                        <div class="d-flex p-4">
-                            <small class="flex-fill text-left"><i class="fa fa-clock me-2"></i>3.5 Hrs</small>
-                            <small class="flex-fill text-center fw-bold fs-6">₹ 0</small>
-                            <small class="flex-fill text-right text-primary fw-bold fs-6"><a href="single.html">Enroll
-                                    Now <i class="fa fa-chevron-right ms-1 fs-10"></i></a></small>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Row 4 -->
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="course-item shadow h-100">
-                        <div class="position-relative overflow-hidden text-light image">
-                            <img class="img-fluid w-100" src="img/course-10.jpg" alt="">
-                            <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#0ed44c;"
-                                class="px-2 py-1 fw-bold text-uppercase">PAID</div>
-                        </div>
-                        <div class="p-4 pb-0">
-                            <h5 class="mb-1"><a href="single.html" class="text-dark">Statistics For Data Science</a>
-                            </h5>
-                        </div>
-                        <div class="d-flex border-top border-bottom mt-3">
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-star text-warning me-2"></i>4.55</small>
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-user-graduate me-2"></i>5.3L+ Learners</small>
-                            <small class="flex-fill text-center py-2"><i
-                                    class="fa fa-user me-2"></i>Intermediate</small>
-                        </div>
-                        <div class="d-flex p-4">
-                            <small class="flex-fill text-left"><i class="fa fa-clock me-2"></i>2.5 Hrs</small>
-                            <small class="flex-fill text-center fw-bold fs-6">₹ 299</small>
-                            <small class="flex-fill text-right text-primary fw-bold fs-6"><a href="single.html">Enroll
-                                    Now <i class="fa fa-chevron-right ms-1 fs-10"></i></a></small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="course-item shadow h-100">
-                        <div class="position-relative overflow-hidden text-light image">
-                            <img class="img-fluid w-100" src="img/course-11.jpg" alt="">
-                            <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
-                                class="px-2 py-1 fw-bold text-uppercase">FREE</div>
-                        </div>
-                        <div class="p-4 pb-0">
-                            <h5 class="mb-1"><a href="single.html" class="text-dark">Java Programming</a></h5>
-                        </div>
-                        <div class="d-flex border-top border-bottom mt-3">
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-star text-warning me-2"></i>4.45</small>
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-user-graduate me-2"></i>5L+ Learners</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>Beginner</small>
-                        </div>
-                        <div class="d-flex p-4">
-                            <small class="flex-fill text-left"><i class="fa fa-clock me-2"></i>2.0 Hrs</small>
-                            <small class="flex-fill text-center fw-bold fs-6">₹ 0</small>
-                            <small class="flex-fill text-right text-primary fw-bold fs-6"><a href="single.html">Enroll
-                                    Now <i class="fa fa-chevron-right ms-1 fs-10"></i></a></small>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
-    </div>
-
-    </div>
-    </div>
-    <div class="container text-center">
-        <a class="btn text-light py-3 px-5 mt-2 mb-5" href="courses.html">All Courses</a>
-    </div>
-    <!-- Courses End -->
-
-
-    <!-- Banner-2 Start -->
-    <section class="pb-5" style="background: url('img/banner-3.jpg');">
-        <div class="container-xxl mt-5">
-            <div class="container">
-                <div class="row g-5 ">
-
-                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
-                        <div class="position-relative h-100">
-                            <img class="img-fluid position-absolute w-100 h-100 bg-light" src="img/banner-2.png" alt=""
-                                style="object-fit: cover;">
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 p-5 wow fadeInUp text-center" data-wow-delay="0.3s">
-
-                        <h1 class="mb-4" style="color: #fb873f;">Become an Instructor</h1>
-                        <p class="mb-4 text-white">Instructors from around the world teach millions of learners on
-                            Udemy. We provide
-                            the tools and skills to teach what you love.</p>
-
-                        <a class="btn btn-primary text-light py-3 px-5 mt-2" href="instructor.html">Start Teaching
-                            Today</a>
-                    </div>
-
+                <div class="reveal-on-scroll order-1 lg:order-2 mobile-center">
+                    <h2 class="text-4xl lg:text-5xl font-extrabold text-gray-900 mb-6">Why Learn <span
+                            class="text-primary">Permaculture</span>?</h2>
+                    <p class="text-lg text-gray-600 mb-8">Permaculture isn't just gardening—it's a
+                        design system for a revolutionary way of living. It's about working with nature, not against it.
+                    </p>
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-center gap-3 font-medium text-gray-700">
+                            <span
+                                class="w-6 h-6 bg-green-100 text-primary rounded-full flex items-center justify-center text-xs"><i
+                                    class="fas fa-check"></i></span>
+                            Food Security & Resilience
+                        </li>
+                        <li class="flex items-center gap-3 font-medium text-gray-700">
+                            <span
+                                class="w-6 h-6 bg-green-100 text-primary rounded-full flex items-center justify-center text-xs"><i
+                                    class="fas fa-check"></i></span>
+                            Waste Reduction & Resource Efficiency
+                        </li>
+                        <li class="flex items-center gap-3 font-medium text-gray-700">
+                            <span
+                                class="w-6 h-6 bg-green-100 text-primary rounded-full flex items-center justify-center text-xs"><i
+                                    class="fas fa-check"></i></span>
+                            Holistic Landscape Design
+                        </li>
+                    </ul>
+                    <a href="about.html" class="btn-primary-gaia">Discover More</a>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Banner-2 End -->
 
-    <!-- FAQ Start  -->
-    <div class="container-xxl py-5 category">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-
-                <h1 class="mb-5">Frequently Asked Questions</h1>
+    <!-- How It Works -->
+    <section class="py-20 bg-gray-50/50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 reveal-on-scroll">
+                <h2 class="text-4xl font-extrabold text-gray-900 mb-4">How It Works</h2>
             </div>
-            <div class="row g-2">
-                <div class="col-12">
-                    <div class="accordion" id="accordionExample">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    What is the e-learning ?
-                                </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show"
-                                data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    The e-learning is an initiative taken by e-learning, where we offer 1000+ free
-                                    online courses in cutting-edge technologies and have successfully enrolled a
-                                    whopping 5 Million+ learners across all domains. e-learning covers courses on Data
-                                    Science, Machine Learning, Artificial Intelligence, Cloud Computing, Software
-                                    Development, Sales and Business Development, Digital Marketing, Big Data, and many
-                                    more.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    Why should I choose Great Learning Academy for free courses with certificates ?
-                                </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    Great Learning Academy is an excellent choice for free courses with certificates
-                                    because of the high quality of the learning content. The courses are well-crafted,
-                                    offer a great learning experience, and are interactive and engaging, making them
-                                    ideal for learners in identifying what works best for their career goals.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    How many free courses can I enroll in at the same time?
-                                </button>
-                            </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    You can simultaneously enroll in multiple courses at e-learning.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                    How can I enroll in these free online courses?
-                                </button>
-                            </h2>
-                            <div id="collapseFour" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    You can click on the “Sign Up” button at the top-right of the page and register with
-                                    your email address, or you can sign up using your Google Account.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                    What are the most popular free courses offered by e-learning ?
-                                </button>
-                            </h2>
-                            <div id="collapseFive" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    e-learning focuses on in-demand concepts and skills, where learners can develop
-                                    industry-relevant knowledge in their chosen sector. It provides a wide range of
-                                    courses in prestigious fields, assisting learners across the globe in achieving
-                                    their professional goals.
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 text-center reveal-on-scroll">
+                <div class="mobile-center">
+                    <div
+                        class="w-20 h-20 bg-white rounded-2xl shadow-lg border border-gray-100 flex items-center justify-center mx-auto mb-6 text-3xl text-primary font-black">
+                        1</div>
+                    <h4 class="font-bold text-xl mb-3">Join Club</h4>
+                    <p class="text-gray-500 text-sm">Create your free account to access basic resources.</p>
+                </div>
+                <div class="mobile-center">
+                    <div
+                        class="w-20 h-20 bg-white rounded-2xl shadow-lg border border-gray-100 flex items-center justify-center mx-auto mb-6 text-3xl text-primary font-black">
+                        2</div>
+                    <h4 class="font-bold text-xl mb-3">Choose Path</h4>
+                    <p class="text-gray-500 text-sm">Select courses based on your climate and goals.</p>
+                </div>
+                <div class="mobile-center">
+                    <div
+                        class="w-20 h-20 bg-white rounded-2xl shadow-lg border border-gray-100 flex items-center justify-center mx-auto mb-6 text-3xl text-primary font-black">
+                        3</div>
+                    <h4 class="font-bold text-xl mb-3">Learn & Do</h4>
+                    <p class="text-gray-500 text-sm">Apply principles directly to your own landscape.</p>
+                </div>
+                <div class="mobile-center">
+                    <div
+                        class="w-20 h-20 bg-white rounded-2xl shadow-lg border border-gray-100 flex items-center justify-center mx-auto mb-6 text-3xl text-primary font-black">
+                        4</div>
+                    <h4 class="font-bold text-xl mb-3">Get Certified</h4>
+                    <p class="text-gray-500 text-sm">Earn your Permaculture Design Certificate (PDC).</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                                    <p>Some of the most popular free courses offered by e-learning that are in high
-                                        demand today include:</p>
-                                    <ul>
-                                        <li>Free Data Science Courses</li>
-                                        <li>Free Artificial Intelligence Courses</li>
-                                        <li>Free Software Courses</li>
-                                        <li>Free Cloud Computing Courses</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+    <!-- Instructor Highlights -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 reveal-on-scroll">
+                <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Learn From Experts</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 tablet-grid-3 gap-8">
+                <div
+                    class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-gray-100 p-8 text-center reveal-on-scroll">
+                    <img src="image/instructor_oliver_hd.png" alt="Oliver Green"
+                        class="w-32 h-32 rounded-full mx-auto object-cover border-4 border-primary mb-6">
+                    <h4 class="text-xl font-bold">Oliver Green</h4>
+                    <p class="text-primary font-bold text-sm mb-4">Master Designer</p>
+                    <p class="text-gray-500 text-sm mb-6">Over 20 years of experience in tropical food forest
+                        implementation.</p>
+                    <div class="flex justify-center gap-4 text-gray-400">
+                        <i class="fab fa-linkedin hover:text-primary cursor-pointer"></i>
+                        <i class="fab fa-twitter hover:text-primary cursor-pointer"></i>
+                        <i class="fab fa-youtube hover:text-primary cursor-pointer"></i>
+                    </div>
+                </div>
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-gray-100 p-8 text-center reveal-on-scroll"
+                    style="animation-delay: 0.1s">
+                    <img src="image/instructor_elena_hd.png" alt="Elena Rivers"
+                        class="w-32 h-32 rounded-full mx-auto object-cover border-4 border-secondary mb-6">
+                    <h4 class="text-xl font-bold">Elena Rivers</h4>
+                    <p class="text-secondary font-bold text-sm mb-4">Hydrologist</p>
+                    <p class="text-gray-500 text-sm mb-6">Specializing in dry-land water management and swale systems.
+                    </p>
+                    <div class="flex justify-center gap-4 text-gray-400">
+                        <i class="fab fa-linkedin hover:text-primary cursor-pointer"></i>
+                        <i class="fab fa-instagram hover:text-primary cursor-pointer"></i>
+                    </div>
+                </div>
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-gray-100 p-8 text-center reveal-on-scroll"
+                    style="animation-delay: 0.2s">
+                    <img src="image/instructor_marcus_thorne.png"
+                        class="w-32 h-32 rounded-full mx-auto object-cover border-4 border-primary mb-6">
+                    <h4 class="text-xl font-bold">Marcus Thorne</h4>
+                    <p class="text-primary font-bold text-sm mb-4">Soil Biologist</p>
+                    <p class="text-gray-500 text-sm mb-6">Expert in bio-intensive composting, biochar, and fungal-dominant soil systems.</p>
+                    <div class="flex justify-center gap-4 text-gray-400">
+                        <i class="fab fa-linkedin hover:text-primary cursor-pointer"></i>
+                        <i class="fab fa-twitter hover:text-primary cursor-pointer"></i>
+                        <i class="fab fa-github hover:text-primary cursor-pointer"></i>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container-fluid py-5 px-5">
-            <div class="row g-5">
-                <div class="col-lg-3 col-md-6">
-                    <img src="image/logo.png" alt="Logo" class="footer-logo mb-4">
-                    <h4 class="text-white mb-3">Quick Link</h4>
-                    <p><a class="text-light" href="about.html">About Us</a></p>
-                    <p><a class="text-light" href="contact.html">Contact Us</a></p>
-                    <p><a class="text-light" href="">Privacy Policy</a></p>
-                    <p><a class="text-light" href="">Terms & Condition</a></p>
-                    <p><a class="text-light" href="">FAQs & Help</a></p>
+    </section>
+
+    <!-- Student Projects Showcase -->
+    <section class="py-20 bg-gray-900 text-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between mb-16 reveal-on-scroll">
+                <h2 class="text-4xl font-extrabold mb-4 md:mb-0">Student Success Stories</h2>
+                <a href="#" class="text-primary font-bold hover:underline">View Project Gallery →</a>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 tablet-grid-3 gap-8">
+                <div class="reveal-on-scroll hover:-translate-y-2 transition-all">
+                    <img src="image/Beautiful raised garden beds with abundant vegetables.png"
+                        class="rounded-3xl h-64 w-full object-cover mb-6">
+                    <h4 class="font-bold text-xl mb-2">Backyard Permaculture</h4>
+                    <p class="text-gray-400 text-sm">By Marcus T. - 1/4 Acre transformation in just 2 years.</p>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <h4 class="text-white mb-3">Contact</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, Chennai, Tamil Nadu</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 8683045908</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@elearning.com</p>
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href="" title="Twitter"><i
-                                class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social" href="" title="Facebook"><i
+                <div class="reveal-on-scroll hover:-translate-y-2 transition-all" style="animation-delay: 0.1s">
+                    <img src="image/Rainwater collection system and swales after rainfall.png"
+                        class="rounded-3xl h-64 w-full object-cover mb-6">
+                    <h4 class="font-bold text-xl mb-2">Swale System Install</h4>
+                    <p class="text-gray-400 text-sm">By Julia K. - Managing runoff in high-altitude environments.</p>
+                </div>
+                <div class="reveal-on-scroll hover:-translate-y-2 transition-all" style="animation-delay: 0.2s">
+                    <img src="image/Close-up spiral herb garden with colorful flowers.png"
+                        class="rounded-3xl h-64 w-full object-cover mb-6">
+                    <h4 class="font-bold text-xl mb-2">The Herb Spiral</h4>
+                    <p class="text-gray-400 text-sm">By Team Gaia - A community center showpiece project.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Preview -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div
+                class="max-w-4xl mx-auto bg-gray-50 rounded-[3rem] p-12 text-center reveal-on-scroll relative">
+                <i class="fas fa-quote-left text-5xl text-primary/20 absolute top-8 left-8"></i>
+                <img src="https://ui-avatars.com/api/?name=David+R&background=14532D&color=fff"
+                    class="w-20 h-20 rounded-full mx-auto mb-6 border-4 border-white">
+                <p class="text-2xl font-medium italic text-gray-700 mb-8 leading-relaxed">"Gaia
+                    academy didn't just teach me how to grow vegetables—it changed how I see the entire world. The PDC
+                    course is a life-changing investment."</p>
+                <h4 class="font-bold text-xl">David Robison</h4>
+                <p class="text-gray-500 font-bold uppercase tracking-widest text-xs mt-1">Certified Designer</p>
+            </div>
+            <div class="text-center mt-12 reveal-on-scroll">
+                <a href="testimonial.html" class="text-primary font-bold hover:underline">Read All 500+ Student
+                    Reviews</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="bg-primary rounded-[3rem] p-12 lg:p-20 text-center relative overflow-hidden reveal-on-scroll">
+                <div class="relative z-10 text-white max-w-2xl mx-auto">
+                    <h2 class="text-4xl lg:text-6xl font-black mb-6">Ready to Start Your Sustainability Journey?</h2>
+                    <p class="text-lg opacity-80 mb-10">Join 50,000+ students worldwide learning to regenerate the
+                        earth.</p>
+                    <a href="signup.html"
+                        class="bg-white text-primary px-12 py-5 rounded-full font-bold text-xl shadow-2xl hover:scale-105 transition-all inline-block">Join
+                        Now for Free</a>
+                </div>
+                <!-- Background Decorations -->
+                <div class="absolute -top-20 -left-20 w-64 h-64 bg-green-900 rounded-full opacity-50"></div>
+                <div class="absolute -bottom-20 -right-20 w-64 h-64 bg-green-900 rounded-full opacity-50"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 border-t border-gray-100 pt-20 pb-10">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="mobile-center">
+                    <a href="index.html" class="flex items-center gap-2 mb-6">
+                        <img src="image/favicon.png" alt="Logo" class="w-8 h-8">
+                        <span class="text-xl font-bold text-primary">Gaia Academy</span>
+                    </a>
+                    <p class="text-gray-500 text-sm mb-6 max-w-xs">Global educational platform for permaculture design
+                        and sustainable living principles.</p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"><i
                                 class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href="" title="YouTube"><i
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"><i
                                 class="fab fa-youtube"></i></a>
-                        <a class="btn btn-outline-light btn-social" href="" title="LinkedIn"><i
-                                class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <h4 class="text-white mb-3">Subscribe to our Newsletter</h4>
-                    <p>Subscribe now and join our growing community of learners committed to lifelong education! </p>
-                    <div class="position-relative mx-auto" style="max-width: 400px;">
-                        <form action="#">
-                            <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="email"
-                                placeholder="Your email" required>
-                            <button type="submit" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">
-                                <a href="mailto:info@elearning.com"
-                                    style="color: inherit; text-decoration: none;">Subscribe</a>
-                            </button>
-                        </form>
-                    </div>
+                <div class="mobile-center">
+                    <h5 class="font-bold text-lg mb-6">Quick Links</h5>
+                    <ul class="space-y-4 text-gray-500 text-sm">
+                        <li><a href="courses.html" class="hover:text-primary transition-colors">Course Catalog</a></li>
+                        <li><a href="about.html" class="hover:text-primary transition-colors">Our History</a></li>
+                        <li><a href="testimonial.html" class="hover:text-primary transition-colors">Success Stories</a>
+                        </li>
+                        <li><a href="contact.html" class="hover:text-primary transition-colors">Help Center</a></li>
+                    </ul>
+                </div>
+                <div class="mobile-center">
+                    <h5 class="font-bold text-lg mb-6">Popular Topics</h5>
+                    <ul class="space-y-4 text-gray-500 text-sm">
+                        <li><a href="#" class="hover:text-primary transition-colors">Urban Gardening</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Water Harvesting</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Animal Integration</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Composting Pro</a></li>
+                    </ul>
+                </div>
+                <div class="mobile-center">
+                    <h5 class="font-bold text-lg mb-6">Newsletter</h5>
+                    <p class="text-gray-500 text-sm mb-6">Get tips and insights delivered to your inbox.</p>
+                    <form class="flex gap-2">
+                        <input type="email" placeholder="Email"
+                            class="bg-white border border-gray-100 rounded-xl px-4 py-2 text-sm focus:ring-primary outline-none w-full">
+                        <button type="submit" class="bg-primary text-white p-2 rounded-xl"><i
+                                class="fas fa-paper-plane"></i></button>
+                    </form>
                 </div>
             </div>
-        </div>
-        <div class="container">
-            <div class="copyright">
-                <div class="row">
-                    <div class="col-md-12 text-center mb-3 mb-md-0">
-                        &copy; 2026 <a class="border-bottom" href="index.html">Global Academy</a>, All Right Reserved.
-                    </div>
-                </div>
+            <div class="pt-8 border-t border-gray-100 text-center text-gray-400 text-xs">
+                © 2026 Gaia Academy. All rights reserved. Designed with ❤️ for the Earth.
             </div>
         </div>
-    </div>
-    <!-- Footer End -->
+    </footer>
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <!-- Template Javascript -->
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/theme-control.js"></script>
 </body>
 
 </html>

@@ -1,442 +1,357 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="google-translate-customization" content="9f841e7780177523-3214ceb76f765f38-gc38c6fe6f9d06436-c">
-    </meta>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Forest Design Mastery - Gaia Academy</title>
+    <link rel="icon" type="image/png" href="image/favicon.png">
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
 
-    <title>Global Academy : Single</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
-
-    <!-- Favicon -->
-    <link href="image/logo.png" rel="icon">
-
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
-        rel="stylesheet">
-
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
-   
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#14532D',
+                        secondary: '#A16207',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/index.css">
 </head>
-<style>
-    .tabs ul li {
-        list-style-type: none;
-    }
+<body class="bg-white transition-colors duration-300">
 
-    .tabs ul li a {
-        font-size: 25px;
-        color: #4e4e4e !important;
-        font-weight: 500;
-    }
+    <!-- Navbar -->
+    <header
+        class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
+        <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-2 group">
+                <img src="image/favicon.png" alt="Logo" class="w-10 h-10 group-hover:rotate-12 transition-all">
+                <span class="text-2xl font-bold text-primary">Gaia Academy</span>
+            </a>
 
-    .tabs ul li a.active {
-        color: #f69050 !important;
-    }
+            <ul class="hidden xl:flex items-center gap-8 text-gray-700 font-medium">
+                <li><a href="index.html" class="hover:text-primary transition-colors">Home</a>
+                </li>
+                <li><a href="home2.html" class="hover:text-primary transition-colors">Home2</a>
+                </li>
+                <li><a href="about.html" class="hover:text-primary transition-colors">About</a></li>
+                <li><a href="courses.html" class="hover:text-primary transition-colors">Courses</a></li>
+                <li><a href="testimonial.html" class="hover:text-primary transition-colors">Testimonial</a></li>
+                <li><a href="contact.html" class="hover:text-primary transition-colors">Contact</a></li>
+                <li><a href="instructor.html" class="hover:text-primary transition-colors">Dashboard</a></li>
 
-    .tabs ul li a:hover {
-        color: #f69050 !important;
-    }
+            </ul>
 
-    #more {
-        display: none;
-    }
+            <!-- CTAs & Toggles -->
+            <div class="flex items-center gap-4">
+                <div class="hidden sm:flex items-center gap-3">
+                    <a href="login.html" class="btn-secondary-gaia">Login</a>
 
-    button {
-        border: none;
-        color: #f69050;
-    }
-</style>
-
-<body>
-    <!-- Spinner Start -->
-    <div id="spinner"
-        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-    </div>
-    <!-- Spinner End -->
-
-
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <img src="image/logo.png" alt="Logo" style="height: 60px;">
-        </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link">Classic</a>
-                <a href="home2.html" class="nav-item nav-link">Premium</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="courses.html" class="nav-item nav-link">Courses</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu fade-down m-0">
-
-                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                        <a href="instructor.html" class="dropdown-item">Become Instructor</a>
-                    </div>
                 </div>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
-                <a href="dashboard.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt"></i></a>
-                <button onclick="toggleDarkMode()" class="nav-item nav-link btn btn-sm btn-outline-dark border-0 bg-transparent p-0" title="Toggle Dark Mode">
-                    <i data-lucide="moon" size="20"></i>
-                </button>
-                <button onclick="toggleRTL()" class="nav-item nav-link btn btn-sm btn-outline-dark border-0 bg-transparent p-0" title="Toggle RTL">
-                    <i data-lucide="languages" size="20"></i>
-                </button>
-                <a href="login.html" class="nav-item nav-link btn btn-sm btn-outline-dark border-0 bg-transparent p-0" title="Login"><i data-lucide="user" size="20"></i></a>
-                <div class="nav-item nav-link" id="google_translate_element"></div>
-            </div>
-        </div>
-    </nav>
-    <!-- Navbar End -->
 
-    <!-- Header Start -->
-    <div class="container-fluid bg-primary py-5 mb-5 page-header courses-header">
-            <div class="container py-5">
-                <div class="row justify-content-center">
-                    <div class="col-lg-10 text-center">
-                        <h1 class="display-3 text-white animated slideInDown">Course</h1>
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb justify-content-center">
-                                <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
-                                <li class="breadcrumb-item"><a class="text-white" href="courses.html">Course</a></li>
-                                <li class="breadcrumb-item text-white active" aria-current="page">HTML Course for Beginners</li>
-                            </ol>
-                        </nav>
-                    </div>
+                    <button class="rtl-toggle p-2 rounded-full hover:bg-gray-100 transition-all">
+                        <i class="fas fa-language rtl-toggle-icon text-primary"></i>
+                    </button>
+                    <!-- Mobile Hamburger -->
+                    <button class="xl:hidden hamburger-btn p-2 text-primary">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
                 </div>
             </div>
-    </div>
-    <!-- Header End -->
+        </nav>
 
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden xl:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 p-6 origin-top transition-all duration-300">
+            <ul class="flex flex-col gap-4 text-center">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="home2.html">Home2</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="testimonial.html">Testimonial</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="instructor.html">Dashboard</a></li>
+                <li class="pt-4 border-t border-gray-100 flex flex-col gap-3">
+                    <a href="login.html" class="btn-secondary-gaia">Login</a>
+                    <a href="signup.html" class="btn-primary-gaia">Get Started</a>
+                </li>
+            </ul>
+        </div>
+    </header>
 
-<!-- Course Detail Start -->
-<div class="container-xxl py-2">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-9 wow fadeInUp">
-
-                <div class="container">
-                    <div class="row g-5 justify-content-center">
-
-                        <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.3s">
-                            <h2>HTML Course for Beginners</h2>
-                            <p>Start at the beginning by learning HTML basics — an important foundation for building and editing web pages.
-
-                            </p>
-                            <div class="d-flex">
-                                <small><i class="fa fa-star text-warning"></i>
-                                    4.6</small>
-                                <small style="margin-left: 15px;"><i class="fa fa-user-graduate"></i> 5.8L+
-                                    Learners
-                                </small>
-                                <small style="margin-left: 15px;"><i class="fa fa-user"></i>Beginner</small>
-                                <small style="margin-left: 15px;"><i class="fa fa-clock me-2"></i> 2.0 Hrs</small>
-
-                            </div>
-                            <div class="image-div text-left mt-3">
-                                <img src="img/testimonial-2.jpg" alt=""
-                                    style="height: 40px; width: 40px; border-radius: 50%;">
-                                <span style="margin-left: 10px;"><b>Instructor Name</b> - Zoe Bachman</span>
+    <!-- Course Hero -->
+    <section class="pt-32 pb-20 bg-gray-900 text-white relative overflow-hidden">
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal-on-scroll">
+                    <div class="flex items-center gap-4 mb-6">
+                        <span class="bg-primary px-4 py-1 rounded-full text-xs font-bold uppercase">Expert Level</span>
+                    <div class="flex flex-col items-center text-center">
+                    <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-xs font-black uppercase tracking-widest mb-6 inline-block">Best Seller</span>
+                    <h1 class="text-4xl lg:text-6xl font-black mb-8 leading-tight">Food Forest <span class="text-primary">Design Mastery</span> 4K</h1>
+                    <div class="flex flex-wrap items-center justify-center gap-6 text-gray-400 text-sm mb-12">
+                        <span class="flex items-center gap-2"><i class="fas fa-signal"></i> Advanced Level</span>
+                        <span class="flex items-center gap-2"><i class="fas fa-clock"></i> 45 Hours</span>
+                        <span class="flex items-center gap-2"><i class="fas fa-closed-captioning"></i> English</span>
+                        <span class="flex items-center gap-2 text-yellow-500 font-bold"><i class="fas fa-star"></i> 4.9 (2,450 Reviews)</span>
+                    </div>
+                    <div class="flex items-center justify-center gap-6">
+                        <span class="text-3xl font-black text-primary">$199.99</span>
+                        <a href="signup.html" class="btn-primary-gaia">Enroll for Lifetime</a>
+                    </div>
+                </div>
+                </div>
+                <div class="reveal-on-scroll" style="animation-delay: 0.2s">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl aspect-video group cursor-pointer">
+                        <img src="image/course_food_forest_hd.png" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                            <div class="w-20 h-20 rounded-full bg-white text-primary flex items-center justify-center text-2xl animate-pulse">
+                                <i class="fas fa-play"></i>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <!-- Background Overlay -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-primary/20 -skew-x-12 translate-x-1/2"></div>
+    </section>
 
+    <!-- Sticky Enroll Bar (Desktop) -->
+    <div class="hidden lg:block sticky top-20 z-40 bg-white border-b border-gray-100 py-4 shadow-sm">
+        <div class="container mx-auto px-4 flex items-center justify-between">
+            <div class="flex items-center gap-6">
+                 <h2 class="font-bold">Food Forest Design Mastery</h2>
+                 <div class="h-6 w-px bg-gray-200"></div>
+                 <div class="flex gap-4 text-sm font-medium text-gray-500">
+                    <a href="#about" class="hover:text-primary">About</a>
+                    <a href="#curriculum" class="hover:text-primary">Curriculum</a>
+                    <a href="#instructor" class="hover:text-primary">Instructor</a>
+                    <a href="#reviews" class="hover:text-primary">Reviews</a>
+                 </div>
+            </div>
+            <div class="flex items-center gap-6">
+                <span class="text-3xl font-black text-primary">$199.99</span>
+                <a href="signup.html" class="btn-primary-gaia">Enroll for Lifetime</a>
+            </div>
+        </div>
+    </div>
 
-
-                <div class="container-fluid wow fadeInUp mt-5 tabs">
-
-
-                    <!-- Tab panes -->
-                    <div class="tab-content mt-4">
-
-                        <div class="tab-pane container active" id="Overview">
-                            <h2>About this Course</h2>
-                            <p>Fun fact: all websites use HTML — even this one. It's a fundamental part of every web developer's toolkit. HTML provides the content that gives web pages structure, by using elements and tags, you can add text, images, videos, forms, and more. Learning HTML basics is an important first step in your web development journey and an essential skill for front- and back-end developers.</p>
-
-
-                           
-                            <h2 class="mt-4">
-                                Skills you'll gain
-                            </h2>
-                            
-                            <span class="badge rounded-pill text-white bg-primary px-4 py-2 m-2"
-                                style="font-size: 15px; font-weight: normal;">Structure pages with HTML</span>
-
-                                <span class="badge rounded-pill text-white bg-primary px-4 py-2 m-2"
-                                style="font-size: 15px; font-weight: normal;">Present data with tables</span>
-
-                                <span class="badge rounded-pill text-white bg-primary px-4 py-2 m-2"
-                                style="font-size: 15px; font-weight: normal;">Write cleaner HTML</span>
-                           
-
-                        </div>
-
-                        <div class="container" id="Curriculum">
-
-                            <h2 class="mt-4">
-                                Syllabus
-                            </h2>
-                            <div class="accordion accordion-flush" id="accordionFlushExample">
-                                <div class="accordion-item">
-                                  <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                        Elements and Structure
-                                    
-                                    </button>
-                                  </h2>
-                                  <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body"><ul>
-                                        <li><i class="fa fa-video text-danger"></i> Introduction to HTML</li>
-                                        <li><i class="fa fa-video text-danger"></i> HTMl Document Standards</li>
-                                    </ul></div>
-                                  </div>
+    <!-- Main Content -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-3 gap-16">
+                <!-- Left Content -->
+                <div class="lg:col-span-2 space-y-16">
+                    <!-- About -->
+                    <div id="about" class="reveal-on-scroll">
+                        <h3 class="text-3xl font-bold mb-6">Course Description</h3>
+                        <div class="prose max-w-none text-gray-600 leading-relaxed">
+                            <p class="mb-4">Permaculture Food Forest Design is more than just organic gardening. It is a systematic design approach that creates high-yield, low-maintenance landscapes by mimicking the structural layers and ecological relationships of a natural forest.</p>
+                            <p class="mb-4">In this comprehensive masterclass, Oliver Green takes you through the step-by-step process of transitioning any landscape—from a small backyard to a large farm—into a thriving, self-fertilizing food forest.</p>
+                            <div class="grid md:grid-cols-2 gap-8 mt-10">
+                                <div class="bg-gray-50 p-8 rounded-3xl border border-gray-100">
+                                    <h4 class="font-bold mb-4">What you'll learn:</h4>
+                                    <ul class="space-y-3 text-sm">
+                                        <li class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> 7 Layers of a Food Forest</li>
+                                        <li class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> Guild Design & Companion Planting</li>
+                                        <li class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> Soil Building & Fungal Networks</li>
+                                        <li class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> Nutrient Cycling & Mulching</li>
+                                    </ul>
                                 </div>
-                                <div class="accordion-item">
-                                  <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                                       Tables
-                                    </button>
-                                  </h2>
-                                  <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body"><ul>
-                                        <li><i class="fa fa-video text-danger"></i> HTML Tables</li>
-                                    </ul></div>
-                                  </div>
-                                </div>
-                                <div class="accordion-item">
-                                  <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                                       Forms
-                                    </button>
-                                  </h2>
-                                  <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body"><ul>
-                                        <li><i class="fa fa-video text-danger"></i> HTML Forms</li>
-                                        <li><i class="fa fa-video text-danger"></i> Form Validation</li>
-                                    </ul></div>
-                                  </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header">
-                                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                                         Semantic HTML
-                                      </button>
-                                    </h2>
-                                    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                                      <div class="accordion-body"><ul>
-                                          <li><i class="fa fa-video text-danger"></i> Semantic HTML</li>
-                                      </ul></div>
-                                    </div>
-                                  </div>
-                              </div>
-
-
-
-                        </div>
-
-                        <div class="container" id="Instructor">
-                            <h2 class="mt-4">About the Instructor</h2>
-                            <div class="image-div text-left mt-4">
-                                <div class="row">
-                                    <div class="col-lg-3 col-md-6">
-                                        <img src="img/testimonial-2.jpg" alt=""
-                                            style="height: 150px; width: 150px; border-radius: 50%;">
-                                    </div>
-                                    <div class="col-lg-9 col-md-6 mt-2">
-                                        <h5>Zoe Bachman</h5>
-                                        <p>Developer</p>
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <p><i class="fa fa-star"></i>
-                                                    4.87 Instructor rating</p>
-                                            </div>
-                                            <div class="col-6">
-                                                <p> <i class="fa fa-check
-                                                    
-                                                    
-                                                     "></i>
-                                                    1,533 reviews</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <p><i class="fa fa-user"></i>
-                                                    20 Students</p>
-                                            </div>
-                                            <div class="col-6">
-                                                <p><i class="fa fa-video"></i>
-                                                    29 courses</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="des mt-4 mb-5">
-                                    Curriculum Director at Codecademy and creative technologist. She has designed a range of Codecademy courses, including Learn HTML, Learn C#, Learn Alexa, and the beginner-friendly Learn How to Code.
+                                <div class="bg-gray-50 p-8 rounded-3xl border border-gray-100">
+                                    <h4 class="font-bold mb-4">Requirements:</h4>
+                                    <ul class="space-y-3 text-sm">
+                                        <li class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> Basic interest in sustainable living</li>
+                                        <li class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> A small patch of earth (optional)</li>
+                                        <li class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> Beginner design mindset</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
-                        
                     </div>
 
+                    <!-- Curriculum (Accordion) -->
+                    <div id="curriculum" class="reveal-on-scroll">
+                        <h3 class="text-3xl font-bold mb-8">Course Curriculum</h3>
+                        <div class="accordion border border-gray-100 rounded-3xl overflow-hidden" id="curriculumAccordion">
+                            <div class="accordion-item border-b border-gray-100 bg-transparent">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button bg-gray-50 text-gray-900 font-bold p-6 w-full text-left flex items-center justify-between" type="button" data-bs-toggle="collapse" data-bs-target="#chapter1">
+                                        Chapter 01: Foundations & Evolution
+                                        <span class="text-xs font-normal opacity-60">4 Lessons • 1h 20m</span>
+                                    </button>
+                                </h2>
+                                <div id="chapter1" class="accordion-collapse collapse show" data-bs-parent="#curriculumAccordion">
+                                    <div class="accordion-body bg-white p-0">
+                                        <ul class="divide-y divide-gray-50">
+                                            <li class="p-6 flex items-center justify-between group cursor-pointer hover:bg-gray-50">
+                                                <div class="flex items-center gap-4">
+                                                    <i class="fas fa-play-circle text-primary"></i>
+                                                    <span class="text-sm">Introduction to Forest Mimicry</span>
+                                                </div>
+                                                <span class="text-xs text-secondary font-bold">Preview</span>
+                                            </li>
+                                            <li class="p-6 flex items-center justify-between group cursor-pointer hover:bg-gray-50">
+                                                <div class="flex items-center gap-4">
+                                                    <i class="fas fa-lock text-gray-400"></i>
+                                                    <span class="text-sm">History of Permaculture Design</span>
+                                                </div>
+                                                <span class="text-xs text-gray-400">15:00</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item bg-transparent">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed bg-gray-50 text-gray-900 font-bold p-6 w-full text-left flex items-center justify-between" type="button" data-bs-toggle="collapse" data-bs-target="#chapter2">
+                                        Chapter 02: The Underground Network
+                                        <span class="text-xs font-normal opacity-60">5 Lessons • 3h 10m</span>
+                                    </button>
+                                </h2>
+                                <div id="chapter2" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
+                                    <div class="accordion-body bg-white p-0 text-center py-10 text-gray-400 text-sm">
+                                        Enroll now to unlock the full curriculum.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reviews -->
+                    <div id="reviews" class="reveal-on-scroll">
+                        <div class="flex items-center justify-between mb-8">
+                             <h3 class="text-3xl font-bold">Student Reviews</h3>
+                             <button class="btn-secondary-gaia">Write a Review</button>
+                        </div>
+                        <div class="space-y-8">
+                             <div class="flex flex-col md:flex-row gap-6 p-8 bg-gray-50 rounded-3xl border border-gray-100">
+                                <img src="https://ui-avatars.com/api/?name=James+M" class="w-16 h-16 rounded-full border-4 border-white shadow-xl flex-shrink-0">
+                                <div>
+                                    <div class="flex items-center gap-3 mb-2">
+                                        <h5 class="font-bold">James Middleton</h5>
+                                        <div class="flex text-yellow-500 text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                    </div>
+                                    <p class="text-sm text-gray-500 mb-4">"The video quality is breathtaking. You can actually see the soil microbes under the macro lens! High performance education."</p>
+                                    <div class="flex gap-4 text-xs text-gray-400">
+                                        <span>Helpful? <i class="far fa-thumbs-up cursor-pointer hover:text-primary"></i> 45</span>
+                                        <span>3 weeks ago</span>
+                                    </div>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
                 </div>
 
+                <!-- Right Sidebar (Desktop Fix) -->
+                <div class="hidden lg:block space-y-8">
+                    <div class="bg-white p-8 rounded-[2.5rem] border border-gray-100 shadow-xl sticky top-48">
+                        <div id="instructor" class="text-center mb-8">
+                            <h4 class="text-xs font-black uppercase tracking-[0.2em] text-gray-500 mb-6">Master Instructor</h4>
+                            <img src="image/instructor_oliver_hd.png" class="w-32 h-32 rounded-full mx-auto border-4 border-primary mb-6 shadow-2xl object-cover">
+                            <h5 class="text-xl font-bold">Oliver Green</h5>
+                            <p class="text-sm text-primary font-bold mb-4">Gaia Academy Founder</p>
+                            <p class="text-xs text-gray-500 leading-relaxed">PDC instructor since 2005. Designed over 1,200 food forests worldwide.</p>
+                        </div>
+                        <div class="space-y-4 pt-8 border-t border-gray-50">
+                            <ul class="space-y-4 text-xs font-bold text-gray-600">
+                                <li class="flex items-center gap-3"><i class="fas fa-certificate text-primary"></i> PDC Certified</li>
+                                <li class="flex items-center gap-3"><i class="fas fa-user-friends text-primary"></i> 50k+ Students Trained</li>
+                                <li class="flex items-center gap-3"><i class="fas fa-star text-primary"></i> 4.9 Avg Rating</li>
+                            </ul>
+                            <a href="about.html" class="block text-center text-xs font-black text-secondary uppercase tracking-widest pt-4 hover:underline">Full Profile</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-3 col-md-6 shadow wow fadeInUp" data-wow-delay="0.3s">
+        </div>
+    </section>
 
-                <div class="image text-center">
-                    <img class="img-fluid mt-2" src="img/course-1.jpg" alt="" height="200px" width="500px">
-                </div>
-                
-                <h4 class="mt-2 p-2">Free <small></small></h4>
-                
-                <h4 class="mt-2 p-2">$
-                    <small><del>20</del></small>
-                </h4>
-                
-
-                <div class="buttons">
-                    
-                    <a href="#"
-                        class="text-decoration-none text-white btn p-3 w-100 mb-2">ENROLL NOW</a>
-                    
-                    
-                   
-                </div>
-                <div class="list mt-2">
-                    <div class="list1 d-flex justify-content-between pt-2 border-bottom">
-                        <p><i class="fa fa-clock"></i> Duration</p>
-                        <p>2.0 Hrs</p>
-                    </div>
-                    <div class="list2 d-flex justify-content-between pt-2 border-bottom">
-                        <p><i class="fa fa-book"></i> Lectures</p>
-                        <p>4</p>
-                    </div>
-                    <div class="list3 d-flex justify-content-between pt-2 border-bottom">
-                        <p><i class="fa fa-bolt"></i> Enrolled</p>
-                        <p>240 students</p>
-                    </div>
-                    <div class="list4 d-flex justify-content-between pt-2 border-bottom">
-                        <p><i class="fa fa-google-translate"></i> Language</p>
-                        <p>English</p>
-                    </div>
-                    <div class="list5 d-flex justify-content-between pt-2 border-bottom">
-                        <p><i class="fa fa-list"></i> Skill Level</p>
-                        <p>Beginner</p>
-                    </div>
-                    <div class="list6 d-flex justify-content-between pt-2 border-bottom">
-                        <p><i class="fa fa-list"></i> Deadline</p>
-                        <p>Life Time</p>
-                    </div>
-                    <div class="list7 d-flex justify-content-between pt-2 border-bottom">
-                        <p><i class="fa fa-certificate"></i> Certificate</p>
-                        <p>Yes</p>
-                    </div>
-                    <div class="button pt-4 text-center mb-4">
-                        <i class="fa fa-share"></i><a href=""> Share this Course</a>
-                    </div>
-                </div>
-
-
+    <!-- Mobile Enroll CTA (Fixed) -->
+    <div class="lg:hidden fixed bottom-6 left-6 right-6 z-50">
+        <div class="bg-gray-900 border border-white/10 p-4 rounded-3xl shadow-2xl flex items-center justify-between">
+            <div>
+                <span class="text-white font-black text-xl">$199.99</span>
+                <p class="text-[10px] text-gray-400 font-bold uppercase">Lifetime Access</p>
             </div>
+            <a href="signup.html" class="btn-primary-gaia">Enroll</a>
         </div>
     </div>
 
-</div>
-<!-- Course Detail End -->
-
-
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container-fluid py-5 px-5">
-            <div class="row g-5">
-                <div class="col-lg-3 col-md-6">
-                    <img src="image/logo.png" alt="Logo" style="height: 60px;" class="mb-4">
-                    <h4 class="text-white mb-3">Quick Link</h4>
-                    <p><a class="text-light" href="about.html">About Us</a></p>
-                    <p><a class="text-light" href="contact.html">Contact Us</a></p>
-                    <p><a class="text-light" href="">Privacy Policy</a></p>
-                    <p><a class="text-light" href="">Terms & Condition</a></p>
-                    <p><a class="text-light" href="">FAQs & Help</a></p>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <h4 class="text-white mb-3">Contact</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, Chennai, Tamil Nadu</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 8683045908</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@elearning.com</p>
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+    <!-- Footer -->
+    <footer class="bg-gray-50 border-t border-gray-100 pt-20 pb-10">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="mobile-center">
+                    <a href="index.html" class="flex items-center gap-2 mb-6">
+                        <img src="image/favicon.png" alt="Logo" class="w-8 h-8">
+                        <span class="text-xl font-bold text-primary">Gaia Academy</span>
+                    </a>
+                    <p class="text-gray-500 text-sm mb-6 max-w-xs">Global educational platform for permaculture design
+                        and sustainable living principles.</p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"><i
+                                class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <h4 class="text-white mb-3">Subscribe to our Newsletter</h4>
-                    <p>Subscribe now and join our growing community of learners committed to lifelong education! </p>
-                    <div class="position-relative mx-auto" style="max-width: 400px;">
-                        <form action="#">
-                            <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="email" placeholder="Your email" required>
-                            <button type="submit" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">
-                                <a href="mailto:info@elearning.com" style="color: inherit; text-decoration: none;">Subscribe</a>
-                            </button>
-                        </form>
-                    </div>
+                <div class="mobile-center">
+                    <h5 class="font-bold text-lg mb-6">Quick Links</h5>
+                    <ul class="space-y-4 text-gray-500 text-sm">
+                        <li><a href="courses.html" class="hover:text-primary transition-colors">Course Catalog</a></li>
+                        <li><a href="about.html" class="hover:text-primary transition-colors">Our History</a></li>
+                        <li><a href="testimonial.html" class="hover:text-primary transition-colors">Success Stories</a>
+                        </li>
+                        <li><a href="contact.html" class="hover:text-primary transition-colors">Help Center</a></li>
+                    </ul>
+                </div>
+                <div class="mobile-center">
+                    <h5 class="font-bold text-lg mb-6">Popular Topics</h5>
+                    <ul class="space-y-4 text-gray-500 text-sm">
+                        <li><a href="#" class="hover:text-primary transition-colors">Urban Gardening</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Water Harvesting</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Animal Integration</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Composting Pro</a></li>
+                    </ul>
+                </div>
+                <div class="mobile-center">
+                    <h5 class="font-bold text-lg mb-6">Newsletter</h5>
+                    <p class="text-gray-500 text-sm mb-6">Get tips and insights delivered to your inbox.</p>
+                    <form class="flex gap-2">
+                        <input type="email" placeholder="Email"
+                            class="bg-white border border-gray-100 rounded-xl px-4 py-2 text-sm focus:ring-primary outline-none w-full">
+                        <button type="submit" class="bg-primary text-white p-2 rounded-xl"><i
+                                class="fas fa-paper-plane"></i></button>
+                    </form>
                 </div>
             </div>
-        </div>
-        <div class="container">
-            <div class="copyright">
-                <div class="row">
-                    <div class="col-md-12 text-center mb-3 mb-md-0">
-                        &copy; 2026 <a class="border-bottom" href="index.html">Global Academy</a>, All Right Reserved.
-                    </div>
-                </div>
+            <div class="pt-8 border-t border-gray-100 text-center text-gray-400 text-xs">
+                © 2026 Gaia Academy. All rights reserved. Designed with ❤️ for the Earth.
             </div>
         </div>
-    </div>
-    <!-- Footer End -->
+    </footer>
 
-<!-- Back to Top -->
-<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-
-<!-- JavaScript Libraries -->
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="lib/wow/wow.min.js"></script>
-<script src="lib/easing/easing.min.js"></script>
-<script src="lib/waypoints/waypoints.min.js"></script>
-<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-<!-- Template Javascript -->
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/theme-control.js"></script>
 </body>
-
 </html>

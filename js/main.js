@@ -1,109 +1,76 @@
-(function ($) {
-    "use strict";
+/**
+ * Gaia Academy - Main JavaScript Logic
+ * Handles RTL, Mobile Menu, and Scroll Animations
+ */
 
-    // Spinner
-    var spinner = function () {
-        setTimeout(function () {
-            if ($('#spinner').length > 0) {
-                $('#spinner').removeClass('show');
-            }
-        }, 1);
+$(document).ready(function() {
+
+
+    // 2. RTL Logic
+    const initRTL = () => {
+        const savedRTL = localStorage.getItem('rtl');
+        if (savedRTL === 'true') {
+            $('html').attr('dir', 'rtl');
+            $('.rtl-toggle-icon').addClass('fa-rotate-180');
+        }
     };
-    spinner();
 
-
-    // Initiate the wowjs
-    new WOW().init();
-
-
-    // Sticky Navbar
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 300) {
-            $('.sticky-top').css('top', '0px');
-        } else {
-            $('.sticky-top').css('top', '-100px');
-        }
+    $('.rtl-toggle').on('click', function() {
+        const currentDir = $('html').attr('dir');
+        const isRTL = currentDir === 'rtl';
+        $('html').attr('dir', isRTL ? 'ltr' : 'rtl');
+        localStorage.setItem('rtl', !isRTL);
+        $('.rtl-toggle-icon').toggleClass('fa-rotate-180');
     });
 
-
-    // Dropdown on mouse hover
-    const $dropdown = $(".dropdown");
-    const $dropdownToggle = $(".dropdown-toggle");
-    const $dropdownMenu = $(".dropdown-menu");
-    const showClass = "show";
-
-    $(window).on("load resize", function () {
-        if (this.matchMedia("(min-width: 992px)").matches) {
-            $dropdown.hover(
-                function () {
-                    const $this = $(this);
-                    $this.addClass(showClass);
-                    $this.find($dropdownToggle).attr("aria-expanded", "true");
-                    $this.find($dropdownMenu).addClass(showClass);
-                },
-                function () {
-                    const $this = $(this);
-                    $this.removeClass(showClass);
-                    $this.find($dropdownToggle).attr("aria-expanded", "false");
-                    $this.find($dropdownMenu).removeClass(showClass);
-                }
-            );
-        } else {
-            $dropdown.off("mouseenter mouseleave");
-        }
+    // 3. Mobile Menu Toggle
+    $('.hamburger-btn').on('click', function() {
+        $('#mobile-menu').toggleClass('hidden scale-y-0 opacity-0');
+        $(this).find('i').toggleClass('fa-bars fa-times');
     });
 
-
-    // Back to top button
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 300) {
-            $('.back-to-top').fadeIn('slow');
-        } else {
-            $('.back-to-top').fadeOut('slow');
-        }
-    });
-    $('.back-to-top').click(function () {
-        $('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo');
-        return false;
-    });
-
-
-    // Header carousel
-    $(".header-carousel").owlCarousel({
-        autoplay: true,
-        smartSpeed: 1500,
-        items: 1,
-        dots: false,
-        loop: true,
-        nav: false
-    });
-
-
-    // Testimonials carousel
-    $(".testimonial-carousel").owlCarousel({
-        autoplay: true,
-        smartSpeed: 1000,
-        center: true,
-        margin: 24,
-        dots: true,
-        loop: true,
-        nav: false,
-        responsive: {
-            0: {
-                items: 1
-            },
-            768: {
-                items: 2
-            },
-            992: {
-                items: 3
+    // 4. Scroll Reveal Logic
+    const revealElements = () => {
+        $('.reveal-on-scroll').each(function() {
+            const elementTop = $(this).offset().top;
+            const windowHeight = $(window).height();
+            const scrollTop = $(window).scrollTop();
+            if (scrollTop + windowHeight > elementTop + 100) {
+                $(this).addClass('reveal');
             }
-        }
-    });
+        });
+    };
 
-})(jQuery);
+    $(window).on('scroll', revealElements);
+    
+    // 5. Active Link Highlighting
+    const highlightActiveLink = () => {
+        const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+        
+        // Desktop Menu
+        $('.xl\\:flex a').each(function() {
+            const href = $(this).attr('href');
+            if (href === currentPath) {
+                $(this).addClass('text-primary font-bold');
+            } else {
+                $(this).removeClass('text-primary font-bold');
+            }
+        });
 
+        // Mobile Menu
+        $('#mobile-menu a').each(function() {
+            const href = $(this).attr('href');
+            if (href === currentPath) {
+                $(this).addClass('text-primary font-bold');
+            } else {
+                $(this).removeClass('text-primary font-bold');
+            }
+        });
+    };
 
+    // Initialize
 
-
-
+    initRTL();
+    revealElements();
+    highlightActiveLink();
+});

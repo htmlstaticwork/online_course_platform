@@ -1,0 +1,116 @@
+/* Custom Design System for Gaia Academy */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --primary-green: #14532D;
+    --secondary-brown: #A16207;
+    --bg-light: #ffffff;
+    --text-dark: #1f2937;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    transition: var(--transition);
+}
+
+/* Custom Utilities */
+.btn-primary-gaia {
+    background-color: var(--primary-green);
+    color: white;
+    padding: 0.5rem 1.25rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 0.875rem; /* text-sm equivalent */
+    transition: var(--transition);
+    border: 2px solid transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.btn-primary-gaia:hover {
+    background-color: #0d3b20; /* Darker green instead of transparent */
+    color: white;
+    border-color: #0d3b20;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -5px rgba(20, 83, 45, 0.4);
+}
+
+.btn-primary-gaia-outline:hover {
+    background-color: var(--primary-green);
+    color: white;
+}
+
+.btn-secondary-gaia {
+    border: 2px solid var(--secondary-brown);
+    color: var(--secondary-brown);
+    padding: 0.5rem 1.25rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 0.875rem; /* text-sm equivalent */
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.btn-secondary-gaia:hover {
+    background-color: var(--secondary-brown);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* RTL Support */
+[dir="rtl"] {
+    text-align: right;
+}
+
+/* Glassmorphism */
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reveal {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Mobile Alignment Rules */
+@media (max-width: 1023px) {
+    .mobile-center {
+        text-align: center !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+}
+
+/* Tablet Grid Rules */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .tablet-grid-3 {
+        display: grid !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 1.5rem !important;
+    }
+}
