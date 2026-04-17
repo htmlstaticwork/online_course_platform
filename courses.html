@@ -27,6 +27,48 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/index.css">
+    <style>
+        /* Specific 1024px tab view styling */
+        @media (min-width: 1024px) and (max-width: 1024px) {
+            .master-pathways-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+            .master-pathways-grid > :last-child {
+                grid-column: 1 / -1;
+                max-width: 350px;
+                margin: 2rem auto 0;
+            }
+            .master-pathways-grid > :last-child .card-premium {
+                transform: scale(0.95);
+            }
+        }
+
+        /* Center last card in Trusted by Thousands section for tablet and 1024px */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .trusted-reviews-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+            .trusted-reviews-grid > :last-child {
+                grid-column: 1 / -1;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+        }
+        
+        @media (min-width: 1024px) and (max-width: 1024px) {
+            .trusted-reviews-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+            .trusted-reviews-grid > :last-child {
+                grid-column: 1 / -1;
+                max-width: 480px;
+                margin: 0 auto;
+            }
+        }
+    </style>
 </head>
 <body class="bg-gray-50 transition-colors duration-300">
 
@@ -160,7 +202,6 @@
                         <img src="image/food_forest_aerial_mastery.png" class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110" alt="Food Forest">
                         <div class="absolute top-6 left-6 flex gap-2">
                              <span class="bg-primary text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest">Expert</span>
-                             <span class="bg-white/90 dark:bg-black/40 backdrop-blur-md px-4 py-1.5 rounded-full text-[10px] font-black text-gray-900 dark:text-white uppercase tracking-widest border border-gray-100 dark:border-white/20">24 Lessons</span>
                         </div>
                     </div>
                     <div class="p-10 flex-1 flex flex-col">
@@ -191,7 +232,6 @@
                         <img src="image/course_soil_regeneration_hd.png" class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110" alt="Soil">
                         <div class="absolute top-6 left-6 flex gap-2">
                              <span class="bg-secondary text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest">Beginner</span>
-                             <span class="bg-white/90 dark:bg-black/40 backdrop-blur-md px-4 py-1.5 rounded-full text-[10px] font-black text-gray-900 dark:text-white uppercase tracking-widest border border-gray-100 dark:border-white/20">18 Lessons</span>
                         </div>
                     </div>
                     <div class="p-10 flex-1 flex flex-col">
@@ -203,7 +243,7 @@
                         <div class="mt-auto">
                             <div class="flex items-center justify-between pt-8 border-t border-gray-50 mb-8">
                                 <div class="flex items-center gap-3">
-                                    <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center text-secondary font-bold text-[10px]">SB</div>
+                                    <img src="image/about page image4.png" class="w-10 h-10 rounded-full border-2 border-primary/20 p-0.5 object-cover">
                                     <span class="text-[10px] font-black text-gray-400 uppercase tracking-widest">Sarah Bloom</span>
                                 </div>
                                 <div class="text-right">
@@ -222,7 +262,6 @@
                         <img src="image/Water Management and Swales in permaculture landscape.png" class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110" alt="Hydrology">
                         <div class="absolute top-6 left-6 flex gap-2">
                              <span class="bg-primary text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest">Intermediate</span>
-                             <span class="bg-white/90 dark:bg-black/40 backdrop-blur-md px-4 py-1.5 rounded-full text-[10px] font-black text-gray-900 dark:text-white uppercase tracking-widest border border-gray-100 dark:border-white/20">12 Lessons</span>
                         </div>
                     </div>
                     <div class="p-10 flex-1 flex flex-col">
@@ -253,7 +292,6 @@
                         <img src="image/Polyculture and Companion Planting vibrant garden bed.png" class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110" alt="Companion Planting">
                         <div class="absolute top-6 left-6 flex gap-2">
                              <span class="bg-secondary text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest">Beginner</span>
-                             <span class="bg-white/90 dark:bg-black/40 backdrop-blur-md px-4 py-1.5 rounded-full text-[10px] font-black text-gray-900 dark:text-white uppercase tracking-widest border border-gray-100 dark:border-white/20">10 Lessons</span>
                         </div>
                     </div>
                     <div class="p-10 flex-1 flex flex-col">
@@ -265,7 +303,7 @@
                         <div class="mt-auto">
                             <div class="flex items-center justify-between pt-8 border-t border-gray-50 mb-8">
                                 <div class="flex items-center gap-3">
-                                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-[10px]">SB</div>
+                                    <img src="image/about page image4.png" class="w-10 h-10 rounded-full border-2 border-primary/20 p-0.5 object-cover">
                                     <span class="text-[10px] font-black text-gray-400 uppercase tracking-widest">Sarah Bloom</span>
                                 </div>
                                 <div class="text-right">
@@ -284,7 +322,6 @@
                         <img src="image/course_food_forest_architect_hd.png" class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110" alt="Commercial">
                         <div class="absolute top-6 left-6 flex gap-2">
                              <span class="bg-primary text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest">Advanced</span>
-                             <span class="bg-white/90 dark:bg-black/40 backdrop-blur-md px-4 py-1.5 rounded-full text-[10px] font-black text-gray-900 dark:text-white uppercase tracking-widest border border-gray-100 dark:border-white/20">35 Lessons</span>
                         </div>
                     </div>
                     <div class="p-10 flex-1 flex flex-col">
@@ -315,7 +352,6 @@
                         <img src="image/project_arid_greening_hd.png" class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110" alt="Arid Zone">
                         <div class="absolute top-6 left-6 flex gap-2">
                              <span class="bg-primary text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest">Advanced</span>
-                             <span class="bg-white/90 dark:bg-black/40 backdrop-blur-md px-4 py-1.5 rounded-full text-[10px] font-black text-gray-900 dark:text-white uppercase tracking-widest border border-gray-100 dark:border-white/20">30 Lessons</span>
                         </div>
                     </div>
                     <div class="p-10 flex-1 flex flex-col">
@@ -386,7 +422,7 @@
             <div class="text-center mb-16 reveal-on-scroll">
                  <h2 class="text-4xl font-extrabold text-gray-900">Trusted by Thousands</h2>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 trusted-reviews-grid">
                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 reveal-on-scroll">
                     <div class="flex text-yellow-500 mb-4 text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     <p class="text-gray-600 text-sm mb-6 leading-relaxed italic">"The curriculum is incredible. It blends theoretical design with practical hands-on examples that anyone can follow."</p>
@@ -434,7 +470,7 @@
                 <div class="grid lg:grid-cols-2 gap-16 items-center relative z-20">
                     <div class="text-left">
                         <div class="inline-block px-4 py-1.5 bg-white/10 backdrop-blur-md rounded-full text-white text-[10px] font-black uppercase tracking-[0.3em] mb-8">Collaborative Design</div>
-                        <h2 class="text-5xl lg:text-7xl font-black mb-8 tracking-tighter leading-[0.9]">CAN'T FIND <br><span class="text-primary/30">THE PATH?</span></h2>
+                        <h2 class="text-5xl lg:text-7xl font-black mb-8 tracking-tighter leading-[0.9]">CAN'T FIND <br><span class="text-white">THE PATH?</span></h2>
                         <p class="text-lg text-white mb-12 max-w-lg leading-relaxed">Our curriculum is built by the community. Suggest a specific course topic and get an exclusive 50% discount if your vision becomes a reality.</p>
                         <div class="flex flex-col sm:flex-row gap-6">
                             <a href="contact.html" class="btn-primary-gaia !px-12 !py-4 shadow-2xl">Submit Suggestion</a>
@@ -502,8 +538,7 @@
                     <ul class="space-y-4 text-gray-500 text-sm">
                         <li><a href="courses.html" class="hover:text-primary transition-colors">Course Catalog</a></li>
                         <li><a href="about.html" class="hover:text-primary transition-colors">Our History</a></li>
-                        <li><a href="testimonial.html" class="hover:text-primary transition-colors">Success Stories</a>
-                        </li>
+                        <li><a href="testimonial.html" class="hover:text-primary transition-colors">Success Stories</a></li>
                         <li><a href="contact.html" class="hover:text-primary transition-colors">Help Center</a></li>
                     </ul>
                 </div>

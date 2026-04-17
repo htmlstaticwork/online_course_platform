@@ -55,25 +55,28 @@
                 grid-template-columns: 1fr 1fr;
                 gap: 3rem;
             }
-            .master-pathways-grid > :last-child {
+
+            .master-pathways-grid> :last-child {
                 grid-column: 1 / -1;
                 max-width: 400px;
                 margin: 0 auto;
             }
         }
-        
+
         /* Specific 1024px tab view styling */
         @media (min-width: 1024px) and (max-width: 1024px) {
             .master-pathways-grid {
                 grid-template-columns: 1fr 1fr;
                 gap: 2rem;
             }
-            .master-pathways-grid > :last-child {
+
+            .master-pathways-grid> :last-child {
                 grid-column: 1 / -1;
                 max-width: 350px;
                 margin: 2rem auto 0;
             }
-            .master-pathways-grid > :last-child .card-premium {
+
+            .master-pathways-grid> :last-child .card-premium {
                 transform: scale(0.95);
             }
         }
@@ -106,11 +109,11 @@
 
             <!-- CTAs & Toggles -->
             <div class="flex items-center gap-4">
-                <div class="hidden xl:flex items-center gap-3">
+                <div class="hidden md:flex items-center gap-3">
                     <a href="login.html" class="btn-primary-gaia">Login</a>
                 </div>
 
-                <div class="hidden xl:block">
+                <div class="hidden md:flex items-center gap-2">
                     <div class="hidden xl:flex items-center gap-2">
                         <button class="theme-toggle p-2 rounded-full hover:bg-gray-100 transition-all">
                             <i class="fas fa-moon theme-toggle-icon text-primary"></i>
@@ -144,10 +147,10 @@
                         class="theme-toggle flex items-center justify-center gap-3 w-full p-4 rounded-2xl bg-gray-50 text-gray-900 font-black uppercase tracking-widest text-xs translate-y-0">
                         <i class="fas fa-moon theme-toggle-icon text-primary text-lg"></i> Appearance
                     </button>
-                    <button
-                        class="rtl-toggle flex items-center justify-center gap-3 w-full p-4 rounded-2xl bg-gray-50 text-gray-900 font-black uppercase tracking-widest text-xs translate-y-0">
-                        <i class="fas fa-language text-primary text-lg"></i> Switch Language
-                    </button>
+                    <div class="rtl-switcher btn-toggle-wrapper w-full !bg-gray-100 dark:!bg-white/5 !p-1">
+                        <button class="btn-toggle-item active !py-3 w-1/2" data-dir="ltr">LTR</button>
+                        <button class="btn-toggle-item !py-3 w-1/2" data-dir="rtl">RTL</button>
+                    </div>
                 </li>
 
                 <li class="flex flex-col gap-4 w-full">
@@ -215,8 +218,11 @@
                         <p
                             class="text-[8px] sm:text-[10px] font-black text-gray-500 dark:text-white/50 uppercase tracking-widest mb-1">
                             Now Playing</p>
-                        <h4 class="text-gray-900 dark:text-white font-bold text-sm sm:text-base lg:text-lg mb-0 line-clamp-1">Golden Hour Farm</h4>
-                        <p class="text-primary font-black text-[8px] sm:text-[10px] uppercase">Zone 2 Design Practice • 45:12</p>
+                        <h4
+                            class="text-gray-900 dark:text-white font-bold text-sm sm:text-base lg:text-lg mb-0 line-clamp-1">
+                            Golden Hour Farm</h4>
+                        <p class="text-primary font-black text-[8px] sm:text-[10px] uppercase">Zone 2 Design Practice •
+                            45:12</p>
                     </div>
                 </div>
 
@@ -434,6 +440,67 @@
         </div>
     </section>
 
+
+    <!-- Foundation of Stewardship (Ethics & Principles) -->
+    <section class="py-24 bg-white relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16 reveal-on-scroll">
+                <h2 class="text-5xl lg:text-6xl font-black text-gray-900 mb-6 tracking-tighter">Foundation of Stewardship</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto text-lg">Rooted in ethical care for the earth and all its inhabitants, guided by systemic design principles.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Earth Care -->
+                <div class="reveal-on-scroll group">
+                    <div class="h-full bg-green-50 p-8 rounded-[2.5rem] border border-green-100 group-hover:bg-primary group-hover:border-primary transition-all duration-500 shadow-sm hover:shadow-xl flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform">
+                                <i class="fas fa-globe-americas text-primary text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-black text-gray-900 dark:text-gray-900 mb-4 group-hover:text-white transition-colors">Earth Care</h3>
+                            <p class="text-gray-600 dark:text-gray-900 group-hover:text-white/80 transition-colors">Rebuilding biosystems and soil health.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- People Care -->
+                <div class="reveal-on-scroll group" style="animation-delay: 0.1s">
+                    <div class="h-full bg-orange-50 p-8 rounded-[2.5rem] border border-orange-100 group-hover:bg-secondary group-hover:border-secondary transition-all duration-500 shadow-sm hover:shadow-xl flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform">
+                                <i class="fas fa-users text-secondary text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-black text-gray-900 dark:text-gray-900 mb-4 group-hover:text-white transition-colors">People Care</h3>
+                            <p class="text-gray-600 dark:text-gray-900 group-hover:text-white/80 transition-colors">Building resilient and healthy communities.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fair Share -->
+                <div class="reveal-on-scroll group" style="animation-delay: 0.2s">
+                    <div class="h-full bg-green-50 p-8 rounded-[2.5rem] border border-green-100 group-hover:bg-primary group-hover:border-primary transition-all duration-500 shadow-sm hover:shadow-xl flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform">
+                                <i class="fas fa-hand-holding-heart text-primary text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-black text-gray-900 dark:text-gray-900 mb-4 group-hover:text-white transition-colors">Fair Share</h3>
+                            <p class="text-gray-600 dark:text-gray-900 group-hover:text-white/80 transition-colors">Redistributing surplus to benefit all.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 12 Principles -->
+                <div class="reveal-on-scroll group" style="animation-delay: 0.3s">
+                    <div class="h-full bg-orange-50 p-8 rounded-[2.5rem] border border-orange-100 group-hover:bg-secondary group-hover:border-secondary transition-all duration-500 shadow-sm hover:shadow-xl flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform">
+                                <i class="fas fa-dharmachakra text-secondary text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-black text-gray-900 dark:text-gray-900 mb-4 group-hover:text-white transition-colors">12 Core Principles</h3>
+                            <p class="text-gray-600 dark:text-gray-900 group-hover:text-white/80 transition-colors">Systemic tools for designing regenerative human habitats.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Animated Course Cards (THE MASTER PATHWAYS Redesign) -->
     <section class="py-40 bg-white">
         <div class="container mx-auto px-6">
@@ -466,9 +533,7 @@
                         <div
                             class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent p-12 flex flex-col justify-end">
                             <div class="mb-4 flex gap-3">
-                                <span
-                                    class="bg-white/90 dark:bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full text-[9px] font-black text-gray-900 dark:text-white uppercase tracking-widest border border-gray-100 dark:border-white/10">24
-                                    Lessons</span>
+
                                 <span
                                     class="bg-primary text-white px-3 py-1.5 rounded-full text-[9px] font-black uppercase tracking-widest">Advanced</span>
                             </div>
@@ -500,9 +565,6 @@
                             class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent p-12 flex flex-col justify-end">
                             <div class="mb-4 flex gap-3">
                                 <span
-                                    class="bg-white/90 dark:bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full text-[9px] font-black text-gray-900 dark:text-white uppercase tracking-widest border border-gray-100 dark:border-white/10">18
-                                    Lessons</span>
-                                <span
                                     class="bg-secondary text-white px-3 py-1.5 rounded-full text-[9px] font-black uppercase tracking-widest">Practitioner</span>
                             </div>
                             <h4 class="text-4xl lg:text-5xl font-black text-white mb-8 leading-none">Water <br>Nexus
@@ -531,9 +593,6 @@
                         <div
                             class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent p-12 flex flex-col justify-end">
                             <div class="mb-4 flex gap-3">
-                                <span
-                                    class="bg-white/90 dark:bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full text-[10px] font-black text-gray-900 dark:text-white uppercase tracking-widest border border-gray-100 dark:border-white/10">12
-                                    Lessons</span>
                                 <span
                                     class="bg-primary text-white px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest">Scientific</span>
                             </div>
