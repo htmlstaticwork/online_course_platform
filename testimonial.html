@@ -39,6 +39,9 @@
         .hud-line {
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
         }
+        .animation-delay-100ms {
+            animation-delay: 0.1s;
+        }
     </style>
 </head>
 <body class="bg-white transition-colors duration-300">
@@ -78,8 +81,12 @@
                         <i class="fas fa-moon theme-toggle-icon text-primary"></i>
                     </button>
                     <div class="rtl-switcher btn-toggle-wrapper">
-                        <button class="btn-toggle-item active" data-dir="ltr">LTR</button>
-                        <button class="btn-toggle-item" data-dir="rtl">RTL</button>
+                        <button class="btn-toggle-item active" data-dir="ltr">
+                            <i class="fas fa-align-left"></i>
+                        </button>
+                        <button class="btn-toggle-item" data-dir="rtl">
+                            <i class="fas fa-align-right"></i>
+                        </button>
                     </div>
                 </div>
 
@@ -117,28 +124,32 @@
     </header>
 
     <!-- Cinematic Testimonial Hero -->
-    <section class="hero-safe-top pb-32 bg-gray-50 dark:bg-[#0a110d] transition-colors duration-300 relative overflow-hidden">
+    <section class="hero-safe-top pb-32 bg-gradient-to-br from-primary via-green-800 to-green-950 dark:from-green-900 dark:via-green-950 dark:from-black transition-colors duration-300 relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,<svg width=\"100\" height=\"100\" viewBox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M0 50 Q25 25 50 50 T100 50 M0 80 Q25 55 50 80 T100 80 M0 20 Q25 -5 50 20 T100 20\" fill=\"none\" stroke=\"white\" stroke-width=\"0.5\"/></svg>'); background-size: 100px;"></div>
+        
         <div class="container mx-auto px-4 text-center max-w-5xl relative z-10">
             <div class="reveal-on-scroll">
-                <div class="inline-block px-4 py-1.5 border border-primary/20 rounded-full text-primary text-[10px] font-black uppercase tracking-[0.3em] mb-12">Global Success</div>
-                <h1 class="text-6xl lg:text-8xl font-black text-gray-900 dark:text-white mb-16 tracking-tighter leading-[0.9]">VOICES OF <br><span class="text-primary italic font-light font-serif">REGENERATION.</span></h1>
+                <div class="inline-block px-4 py-1.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white text-[10px] font-black uppercase tracking-[0.3em] mb-12">Global Success</div>
+                <h1 class="text-6xl lg:text-8xl font-black text-white mb-16 tracking-tighter leading-[0.9]">VOICES OF <br><span class="text-secondary italic font-light font-serif">REGENERATION.</span></h1>
             </div>
 
             <div class="reveal-on-scroll mb-20">
-                <div class="relative max-w-3xl mx-auto rounded-[3rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)] group">
+                <div class="relative max-w-3xl mx-auto rounded-[3rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] group border border-white/10">
                     <img src="image/Diverse happy learners celebrating in food forest.png" class="w-full h-auto transition-transform duration-[3s] group-hover:scale-105" alt="Community Celebration">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
                 </div>
             </div>
 
-            <p class="text-xl text-gray-500 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed reveal-on-scroll" style="animation-delay: 0.1s">
+            <p class="text-xl text-white/80 max-w-2xl mx-auto leading-relaxed reveal-on-scroll animation-delay-100ms">
                 Hear from our global community of designers, farmers, and urban growers who have transformed their lives and landscapes through the Gaia curriculum.
             </p>
         </div>
         
-        <!-- Decoration -->
-        <div class="absolute -top-40 -left-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
-        <div class="absolute top-1/2 -right-40 w-96 h-96 bg-secondary/5 rounded-full blur-3xl"></div>
+        <!-- Enhanced Decorations -->
+        <div class="absolute -top-40 -left-40 w-80 h-80 bg-secondary/20 rounded-full blur-3xl"></div>
+        <div class="absolute top-1/2 -right-40 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-1/4 w-64 h-64 bg-primary/30 rounded-full blur-2xl"></div>
     </section>
 
     <!-- Ratings Summary -->
@@ -411,6 +422,14 @@
                         <a href="#" class="footer-social-icon"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="footer-social-icon"><i class="fab fa-linkedin-in"></i></a>
                     </div>
+                </div>
+                <div class="mobile-center">
+                    <h5 class="font-bold text-lg mb-6">Account</h5>
+                    <ul class="space-y-4 text-gray-500 text-sm">
+                        <li><a href="login.html" class="hover:text-primary transition-colors">Login</a></li>
+                        <li><a href="signup.html" class="hover:text-primary transition-colors">Register</a></li>
+                        <li><a href="instructor.html" class="hover:text-primary transition-colors">Dashboard</a></li>
+                    </ul>
                 </div>
                 <div class="mobile-center">
                     <h5 class="font-bold text-lg mb-6">Quick Links</h5>

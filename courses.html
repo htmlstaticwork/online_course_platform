@@ -68,6 +68,18 @@
                 margin: 0 auto;
             }
         }
+        .animation-delay-100ms {
+            animation-delay: 0.1s;
+        }
+        .animation-delay-200ms {
+            animation-delay: 0.2s;
+        }
+        .animation-delay-2s {
+            animation-delay: 2s;
+        }
+        .animation-delay-4s {
+            animation-delay: 4s;
+        }
     </style>
 </head>
 <body class="bg-gray-50 transition-colors duration-300">
@@ -106,8 +118,12 @@
                         <i class="fas fa-moon theme-toggle-icon text-primary"></i>
                     </button>
                     <div class="rtl-switcher btn-toggle-wrapper">
-                        <button class="btn-toggle-item active" data-dir="ltr">LTR</button>
-                        <button class="btn-toggle-item" data-dir="rtl">RTL</button>
+                        <button class="btn-toggle-item active" data-dir="ltr">
+                            <i class="fas fa-align-left"></i>
+                        </button>
+                        <button class="btn-toggle-item" data-dir="rtl">
+                            <i class="fas fa-align-right"></i>
+                        </button>
                     </div>
                 </div>
 
@@ -144,38 +160,70 @@
         </div>
     </header>
 
-    <!-- Header Section -->
-    <section class="hero-safe-top pb-12 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="container mx-auto px-4 text-center max-w-4xl">
-            <h1 class="text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4">Course Catalog</h1>
-            <p class="text-gray-600">Discover our full range of masterclasses led by world-class permaculture designers.</p>
-        </div>
-
-            <!-- Search & Filter Bar -->
-            <div class="bg-white p-4 rounded-3xl border border-gray-100 shadow-xl flex flex-col lg:flex-row gap-4 reveal-on-scroll">
-                <div class="flex-1 relative">
-                    <i class="fas fa-search absolute left-5 top-1/2 -translate-y-1/2 text-gray-400"></i>
-                    <input type="text" placeholder="Search courses (e.g. Food Forest, Swales)..." class="w-full pl-14 pr-6 py-4 rounded-2xl bg-gray-50 border-none outline-none focus:ring-2 focus:ring-primary">
+    <!-- Hero Section -->
+    <section class="hero-safe-top pb-32 bg-gradient-to-br from-primary via-green-800 to-green-950 dark:from-black dark:via-green-950 dark:to-black transition-colors duration-300 relative overflow-hidden">
+        <!-- Animated Background Pattern -->
+        <div class="absolute inset-0 opacity-20" style="background-image: url('data:image/svg+xml,<svg width=\"100\" height=\"100\" viewBox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M0 50 Q25 25 50 50 T100 50 M0 80 Q25 55 50 80 T100 80 M0 20 Q25 -5 50 20 T100 20\" fill=\"none\" stroke=\"white\" stroke-width=\"0.5\"/></svg>'); background-size: 100px; animation: float 20s ease-in-out infinite;"></div>
+        
+        <!-- Floating Orbs -->
+        <div class="absolute top-20 left-20 w-64 h-64 bg-secondary/30 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-20 right-20 w-96 h-96 bg-primary/40 rounded-full blur-3xl animate-pulse animation-delay-2s"></div>
+        <div class="absolute top-1/2 left-1/3 w-80 h-80 bg-white/10 rounded-full blur-2xl animate-pulse animation-delay-4s"></div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="container mx-auto px-4 text-center max-w-5xl reveal-on-scroll">
+                <div class="inline-block px-6 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white text-[10px] font-black uppercase tracking-[0.3em] mb-12 animate-pulse">Master Your Skills</div>
+                <h1 class="text-6xl lg:text-8xl font-black text-white mb-8 tracking-tighter leading-[0.9] bg-gradient-to-r from-white via-green-100 to-white bg-clip-text text-transparent">Course <span class="italic font-light font-serif text-secondary">Catalog</span></h1>
+                <p class="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-16">Discover our full range of masterclasses led by world-class permaculture designers and transform your understanding of sustainable living.</p>
+                
+                <!-- Hero Stats -->
+                <div class="grid grid-cols-3 gap-8 max-w-2xl mx-auto mb-16">
+                    <div class="text-center">
+                        <div class="text-3xl font-black text-secondary mb-2">50+</div>
+                        <div class="text-white/60 text-xs font-black uppercase tracking-widest">Expert Courses</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-black text-secondary mb-2">4.9+</div>
+                        <div class="text-white/60 text-xs font-black uppercase tracking-widest">Avg Rating</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-black text-secondary mb-2">12M+</div>
+                        <div class="text-white/60 text-xs font-black uppercase tracking-widest">Students</div>
+                    </div>
                 </div>
-                <div class="flex flex-wrap gap-4">
-                    <select class="px-6 py-4 rounded-2xl bg-gray-50 border-none outline-none focus:ring-2 focus:ring-primary font-medium">
-                        <option>All Categories</option>
-                        <option>Design</option>
-                        <option>Soil</option>
-                        <option>Water</option>
-                        <option>Community</option>
-                    </select>
-                    <select class="px-6 py-4 rounded-2xl bg-gray-50 border-none outline-none focus:ring-2 focus:ring-primary font-medium">
-                        <option>Difficulty</option>
-                        <option>Beginner</option>
-                        <option>Intermediate</option>
-                        <option>Advanced</option>
-                    </select>
-                     <button class="bg-primary text-white px-8 py-4 rounded-2xl font-bold hover:bg-green-800 transition-all">Filter</button>
+            </div>
+
+            <!-- Enhanced Search & Filter Bar -->
+            <div class="max-w-5xl mx-auto reveal-on-scroll animation-delay-100ms">
+                <div class="bg-white/95 dark:bg-gray-800/95 backdrop-blur-2xl p-8 rounded-3xl border border-white/30 shadow-2xl">
+                    <div class="flex flex-col lg:flex-row gap-6">
+                        <div class="flex-1 relative">
+                            <i class="fas fa-search absolute left-6 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-300 text-lg"></i>
+                            <input type="text" placeholder="Search courses (e.g. Food Forest, Swales)..." class="w-full pl-16 pr-6 py-4 rounded-2xl bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 outline-none focus:ring-2 focus:ring-secondary text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 text-lg">
+                        </div>
+                        <div class="flex flex-wrap gap-4">
+                            <select class="px-8 py-4 rounded-2xl bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 outline-none focus:ring-2 focus:ring-secondary font-medium text-gray-900 dark:text-white text-lg min-w-[150px]">
+                                <option>All Categories</option>
+                                <option>Design</option>
+                                <option>Soil</option>
+                                <option>Water</option>
+                                <option>Community</option>
+                            </select>
+                            <select class="px-8 py-4 rounded-2xl bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 outline-none focus:ring-2 focus:ring-secondary font-medium text-gray-900 dark:text-white text-lg min-w-[150px]">
+                                <option>Difficulty</option>
+                                <option>Beginner</option>
+                                <option>Intermediate</option>
+                                <option>Advanced</option>
+                            </select>
+                            <button class="bg-secondary text-primary px-12 py-4 rounded-2xl font-black hover:bg-white hover:text-primary transition-all text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1">Filter Courses</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+        
+        <!-- Bottom Gradient Fade -->
+        <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-green-950 to-transparent"></div>
     </section>
 
     <!-- Course Categories -->
@@ -207,17 +255,17 @@
                     <div class="p-10 flex-1 flex flex-col">
                         <div class="mb-4 flex items-center justify-between">
                             <h3 class="text-2xl font-black text-gray-900 leading-tight">Food Forest Design Mastery</h3>
-                            <div class="text-[10px] font-bold text-gray-900 shadow-sm border border-gray-50 px-2 py-1 rounded-lg shrink-0"><i class="fas fa-star text-yellow-500 mr-1"></i> 4.9 (120)</div>
+                            <div class="text-[10px] font-bold text-gray-900 dark:text-gray-800 shadow-sm border border-gray-50 dark:border-gray-600 px-2 py-1 rounded-lg shrink-0"><i class="fas fa-star text-yellow-500 mr-1"></i> 4.9 (120+)</div>
                         </div>
                         <p class="text-gray-500 text-sm mb-8 leading-relaxed">Learn to design multi-layered edible ecosystems that thrive for decades.</p>
                         <div class="mt-auto">
                             <div class="flex items-center justify-between pt-8 border-t border-gray-50 mb-8">
                                 <div class="flex items-center gap-3">
                                     <img src="image/instructor_oliver_hd.png" class="w-10 h-10 rounded-full border-2 border-primary/20 p-0.5 object-cover">
-                                    <span class="text-[10px] font-black text-gray-400 uppercase tracking-widest">Oliver Green</span>
+                                    <span class="text-[10px] font-black text-gray-400 dark:text-gray-300 uppercase tracking-widest">Oliver Green</span>
                                 </div>
                                 <div class="text-right">
-                                    <p class="text-[9px] font-black text-gray-400 dark:text-white/30 uppercase mb-1">Full Price</p>
+                                    <p class="text-[9px] font-black text-gray-400 dark:text-gray-300 dark:text-white/30 uppercase mb-1">Full Price</p>
                                     <span class="text-2xl font-black text-primary">$199</span>
                                 </div>
                             </div>
@@ -227,7 +275,7 @@
                 </div>
 
                 <!-- Card 2: Soil -->
-                <div class="group flex flex-col bg-white rounded-[3rem] overflow-hidden shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] border border-gray-100 transition-all duration-500 hover:-translate-y-4 reveal-on-scroll" style="animation-delay: 0.1s">
+                <div class="group flex flex-col bg-white rounded-[3rem] overflow-hidden shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] border border-gray-100 transition-all duration-500 hover:-translate-y-4 reveal-on-scroll animation-delay-100ms">
                     <div class="relative h-72 overflow-hidden shrink-0">
                         <img src="image/course_soil_regeneration_hd.png" class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110" alt="Soil">
                         <div class="absolute top-6 left-6 flex gap-2">
@@ -244,10 +292,10 @@
                             <div class="flex items-center justify-between pt-8 border-t border-gray-50 mb-8">
                                 <div class="flex items-center gap-3">
                                     <img src="image/about page image4.png" class="w-10 h-10 rounded-full border-2 border-primary/20 p-0.5 object-cover">
-                                    <span class="text-[10px] font-black text-gray-400 uppercase tracking-widest">Sarah Bloom</span>
+                                    <span class="text-[10px] font-black text-gray-400 dark:text-gray-300 uppercase tracking-widest">Sarah Bloom</span>
                                 </div>
                                 <div class="text-right">
-                                    <p class="text-[9px] font-black text-gray-400 dark:text-white/30 uppercase mb-1">Full Price</p>
+                                    <p class="text-[9px] font-black text-gray-400 dark:text-gray-300 dark:text-white/30 uppercase mb-1">Full Price</p>
                                     <span class="text-2xl font-black text-primary">$99</span>
                                 </div>
                             </div>
@@ -257,7 +305,7 @@
                 </div>
 
                 <!-- Card 3: Hydrology -->
-                <div class="group flex flex-col bg-white rounded-[3rem] overflow-hidden shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] border border-gray-100 transition-all duration-500 hover:-translate-y-4 reveal-on-scroll" style="animation-delay: 0.2s">
+                <div class="group flex flex-col bg-white rounded-[3rem] overflow-hidden shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] border border-gray-100 transition-all duration-500 hover:-translate-y-4 reveal-on-scroll animation-delay-200ms">
                     <div class="relative h-72 overflow-hidden shrink-0">
                         <img src="image/Water Management and Swales in permaculture landscape.png" class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110" alt="Hydrology">
                         <div class="absolute top-6 left-6 flex gap-2">
@@ -274,10 +322,10 @@
                             <div class="flex items-center justify-between pt-8 border-t border-gray-50 mb-8">
                                 <div class="flex items-center gap-3">
                                     <img src="image/instructor_elena_hd.png" class="w-10 h-10 rounded-full border-2 border-primary/20 p-0.5 object-cover">
-                                    <span class="text-[10px] font-black text-gray-400 uppercase tracking-widest">Elena Rivers</span>
+                                    <span class="text-[10px] font-black text-gray-400 dark:text-gray-300 uppercase tracking-widest">Elena Rivers</span>
                                 </div>
                                 <div class="text-right">
-                                    <p class="text-[9px] font-black text-gray-400 dark:text-white/30 uppercase mb-1">Full Price</p>
+                                    <p class="text-[9px] font-black text-gray-400 dark:text-gray-300 dark:text-white/30 uppercase mb-1">Full Price</p>
                                     <span class="text-2xl font-black text-primary">$149</span>
                                 </div>
                             </div>
@@ -304,10 +352,10 @@
                             <div class="flex items-center justify-between pt-8 border-t border-gray-50 mb-8">
                                 <div class="flex items-center gap-3">
                                     <img src="image/about page image4.png" class="w-10 h-10 rounded-full border-2 border-primary/20 p-0.5 object-cover">
-                                    <span class="text-[10px] font-black text-gray-400 uppercase tracking-widest">Sarah Bloom</span>
+                                    <span class="text-[10px] font-black text-gray-400 dark:text-gray-300 uppercase tracking-widest">Sarah Bloom</span>
                                 </div>
                                 <div class="text-right">
-                                    <p class="text-[9px] font-black text-gray-400 dark:text-white/30 uppercase mb-1">Full Price</p>
+                                    <p class="text-[9px] font-black text-gray-400 dark:text-gray-300 dark:text-white/30 uppercase mb-1">Full Price</p>
                                     <span class="text-2xl font-black text-primary">$79</span>
                                 </div>
                             </div>
@@ -317,7 +365,7 @@
                 </div>
 
                 <!-- Card 5: Commercial -->
-                <div class="group flex flex-col bg-white rounded-[3rem] overflow-hidden shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] border border-gray-100 transition-all duration-500 hover:-translate-y-4 reveal-on-scroll" style="animation-delay: 0.1s">
+                <div class="group flex flex-col bg-white rounded-[3rem] overflow-hidden shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] border border-gray-100 transition-all duration-500 hover:-translate-y-4 reveal-on-scroll animation-delay-100ms">
                     <div class="relative h-72 overflow-hidden shrink-0">
                         <img src="image/course_food_forest_architect_hd.png" class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110" alt="Commercial">
                         <div class="absolute top-6 left-6 flex gap-2">
@@ -334,10 +382,10 @@
                             <div class="flex items-center justify-between pt-8 border-t border-gray-50 mb-8">
                                 <div class="flex items-center gap-3">
                                     <img src="image/instructor_oliver_hd.png" class="w-10 h-10 rounded-full border-2 border-primary/20 object-cover p-0.5">
-                                    <span class="text-[10px] font-black text-gray-400 uppercase tracking-widest">Oliver Green</span>
+                                    <span class="text-[10px] font-black text-gray-400 dark:text-gray-300 uppercase tracking-widest">Oliver Green</span>
                                 </div>
                                 <div class="text-right">
-                                    <p class="text-[9px] font-black text-gray-400 dark:text-white/30 uppercase mb-1">Full Price</p>
+                                    <p class="text-[9px] font-black text-gray-400 dark:text-gray-300 dark:text-white/30 uppercase mb-1">Full Price</p>
                                     <span class="text-2xl font-black text-primary">$499</span>
                                 </div>
                             </div>
@@ -357,17 +405,17 @@
                     <div class="p-10 flex-1 flex flex-col">
                         <div class="mb-4 flex items-center justify-between">
                             <h3 class="text-2xl font-black text-gray-900 leading-tight">Arid Zone Restoration</h3>
-                            <div class="text-[10px] font-bold text-gray-900 shadow-sm border border-gray-50 px-2 py-1 rounded-lg shrink-0"><i class="fas fa-star text-yellow-500 mr-1"></i> 4.9 (50)</div>
+                            <div class="text-[10px] font-bold text-gray-900 shadow-sm border border-gray-50 px-2 py-1 rounded-lg shrink-0"><i class="fas fa-star text-yellow-500 mr-1"></i> 4.9 (50+)</div>
                         </div>
                         <p class="text-gray-500 text-sm mb-8 leading-relaxed">Greening deserts and building climate resilience in extreme heat environments.</p>
                         <div class="mt-auto">
                             <div class="flex items-center justify-between pt-8 border-t border-gray-50 mb-8">
                                 <div class="flex items-center gap-3">
                                     <img src="image/instructor_marcus_thorne.png" class="w-10 h-10 rounded-full border-2 border-primary/20 object-cover p-0.5">
-                                    <span class="text-[10px] font-black text-gray-400 uppercase tracking-widest">Marcus Thorne</span>
+                                    <span class="text-[10px] font-black text-gray-400 dark:text-gray-300 uppercase tracking-widest">Marcus Thorne</span>
                                 </div>
                                 <div class="text-right">
-                                    <p class="text-[9px] font-black text-gray-400 dark:text-white/30 uppercase mb-1">Full Price</p>
+                                    <p class="text-[9px] font-black text-gray-400 dark:text-gray-300 dark:text-white/30 uppercase mb-1">Full Price</p>
                                     <span class="text-2xl font-black text-primary">$349</span>
                                 </div>
                             </div>
@@ -534,6 +582,14 @@
                     </div>
                 </div>
                 <div class="mobile-center">
+                    <h5 class="font-bold text-lg mb-6">Account</h5>
+                    <ul class="space-y-4 text-gray-500 text-sm">
+                        <li><a href="login.html" class="hover:text-primary transition-colors">Login</a></li>
+                        <li><a href="signup.html" class="hover:text-primary transition-colors">Register</a></li>
+                        <li><a href="instructor.html" class="hover:text-primary transition-colors">Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="mobile-center">
                     <h5 class="font-bold text-lg mb-6">Quick Links</h5>
                     <ul class="space-y-4 text-gray-500 text-sm">
                         <li><a href="courses.html" class="hover:text-primary transition-colors">Course Catalog</a></li>
@@ -562,7 +618,7 @@
                     </form>
                 </div>
             </div>
-            <div class="pt-8 border-t border-gray-100 text-center text-gray-400 text-xs">
+            <div class="pt-8 border-t border-gray-100 text-center text-gray-400 dark:text-gray-300 text-xs">
                 © 2026 Gaia Academy. All rights reserved. Designed with ❤️ for the Earth.
             </div>
         </div>

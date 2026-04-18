@@ -37,6 +37,7 @@
         .text-gradient {
             background: linear-gradient(to right, #ffffff, #a7f3d0);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
@@ -119,8 +120,12 @@
                             <i class="fas fa-moon theme-toggle-icon text-primary"></i>
                         </button>
                         <div class="rtl-switcher btn-toggle-wrapper">
-                            <button class="btn-toggle-item active" data-dir="ltr">LTR</button>
-                            <button class="btn-toggle-item" data-dir="rtl">RTL</button>
+                            <button class="btn-toggle-item active" data-dir="ltr">
+                                <i class="fas fa-align-left"></i>
+                            </button>
+                            <button class="btn-toggle-item" data-dir="rtl">
+                                <i class="fas fa-align-right"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -202,29 +207,7 @@
                     alt="Cinematic Panorama">
 
                 <!-- Refined Floating Status Card - Mobile Optimized -->
-                <div
-                    class="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 lg:bottom-10 lg:left-10 bg-white/90 dark:bg-black/40 backdrop-blur-3xl p-3 sm:p-4 lg:p-6 rounded-xl sm:rounded-2xl border border-gray-100 dark:border-white/20 shadow-xl lg:shadow-2xl flex items-center gap-3 sm:gap-4 lg:gap-6 min-w-[200px] sm:min-w-[250px] lg:min-w-[300px]">
-                    <div class="relative">
-                        <div
-                            class="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-lg sm:rounded-xl bg-primary/10 dark:bg-black/20 flex items-center justify-center overflow-hidden">
-                            <img src="image/permaculture_hero_wide.png"
-                                class="w-full h-full object-cover opacity-50 blur-sm">
-                            <i class="fas fa-play text-primary dark:text-white absolute text-xs"></i>
-                        </div>
-                        <span
-                            class="absolute -top-1 -right-1 w-2 h-2 sm:w-3 sm:h-3 bg-red-500 rounded-full border border-white sm:border-2 border-white animate-pulse"></span>
-                    </div>
-                    <div class="text-left flex-1">
-                        <p
-                            class="text-[8px] sm:text-[10px] font-black text-gray-500 dark:text-white/50 uppercase tracking-widest mb-1">
-                            Now Playing</p>
-                        <h4
-                            class="text-gray-900 dark:text-white font-bold text-sm sm:text-base lg:text-lg mb-0 line-clamp-1">
-                            Golden Hour Farm</h4>
-                        <p class="text-primary font-black text-[8px] sm:text-[10px] uppercase">Zone 2 Design Practice •
-                            45:12</p>
-                    </div>
-                </div>
+                 
 
                 <!-- Technical Overlay Details - Hidden on small mobile -->
                 <div
@@ -461,18 +444,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- People Care -->
-                <div class="reveal-on-scroll group" style="animation-delay: 0.1s">
-                    <div class="h-full bg-orange-50 p-8 rounded-[2.5rem] border border-orange-100 group-hover:bg-secondary group-hover:border-secondary transition-all duration-500 shadow-sm hover:shadow-xl flex flex-col justify-between">
-                        <div>
-                            <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform">
-                                <i class="fas fa-users text-secondary text-2xl"></i>
-                            </div>
-                            <h3 class="text-2xl font-black text-gray-900 dark:text-gray-900 mb-4 group-hover:text-white transition-colors">People Care</h3>
-                            <p class="text-gray-600 dark:text-gray-900 group-hover:text-white/80 transition-colors">Building resilient and healthy communities.</p>
-                        </div>
-                    </div>
-                </div>
+                
                 <!-- Fair Share -->
                 <div class="reveal-on-scroll group" style="animation-delay: 0.2s">
                     <div class="h-full bg-green-50 p-8 rounded-[2.5rem] border border-green-100 group-hover:bg-primary group-hover:border-primary transition-all duration-500 shadow-sm hover:shadow-xl flex flex-col justify-between">
@@ -486,19 +458,7 @@
                     </div>
                 </div>
                 <!-- 12 Principles -->
-                <div class="reveal-on-scroll group" style="animation-delay: 0.3s">
-                    <div class="h-full bg-orange-50 p-8 rounded-[2.5rem] border border-orange-100 group-hover:bg-secondary group-hover:border-secondary transition-all duration-500 shadow-sm hover:shadow-xl flex flex-col justify-between">
-                        <div>
-                            <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform">
-                                <i class="fas fa-dharmachakra text-secondary text-2xl"></i>
-                            </div>
-                            <h3 class="text-2xl font-black text-gray-900 dark:text-gray-900 mb-4 group-hover:text-white transition-colors">12 Core Principles</h3>
-                            <p class="text-gray-600 dark:text-gray-900 group-hover:text-white/80 transition-colors">Systemic tools for designing regenerative human habitats.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                 
     </section>
 
     <!-- Animated Course Cards (THE MASTER PATHWAYS Redesign) -->
@@ -625,15 +585,15 @@
                     <p class="text-white/60 font-black uppercase text-[10px] tracking-[0.3em]">Designers Trained</p>
                 </div>
                 <div class="mobile-center">
-                    <h3 class="text-7xl font-black mb-2">120</h3>
+                    <h3 class="text-7xl font-black mb-2">120+</h3>
                     <p class="text-white/60 font-black uppercase text-[10px] tracking-[0.3em]">Countries Reached</p>
                 </div>
                 <div class="mobile-center">
-                    <h3 class="text-7xl font-black mb-2">4.9</h3>
+                    <h3 class="text-7xl font-black mb-2">4.9+</h3>
                     <p class="text-white/60 font-black uppercase text-[10px] tracking-[0.3em]">Average Rating</p>
                 </div>
                 <div class="mobile-center">
-                    <h3 class="text-7xl font-black mb-2">12M</h3>
+                    <h3 class="text-7xl font-black mb-2">12M+</h3>
                     <p class="text-white/60 font-black uppercase text-[10px] tracking-[0.3em]">Carbon Sequestered</p>
                 </div>
             </div>
@@ -829,6 +789,14 @@
                         <a href="#" class="footer-social-icon"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="footer-social-icon"><i class="fab fa-linkedin-in"></i></a>
                     </div>
+                </div>
+                <div class="mobile-center">
+                    <h5 class="font-bold text-lg mb-6">Account</h5>
+                    <ul class="space-y-4 text-gray-500 text-sm">
+                        <li><a href="login.html" class="hover:text-primary transition-colors">Login</a></li>
+                        <li><a href="signup.html" class="hover:text-primary transition-colors">Register</a></li>
+                        <li><a href="instructor.html" class="hover:text-primary transition-colors">Dashboard</a></li>
+                    </ul>
                 </div>
                 <div class="mobile-center">
                     <h5 class="font-bold text-lg mb-6">Quick Links</h5>
