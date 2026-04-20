@@ -50,35 +50,33 @@
             box-shadow: 0 25px 50px -12px rgba(20, 83, 45, 0.25);
         }
 
-        /* Center last card in tablet view and tab view at 1024px */
+        /* Center all 3 cards with perfect equality in tablet and 1024px */
         @media (min-width: 768px) and (max-width: 1024px) {
             .master-pathways-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 3rem;
+                display: flex !important;
+                flex-wrap: wrap !important;
+                justify-content: center !important;
+                gap: 2.5rem !important;
             }
 
-            .master-pathways-grid> :last-child {
-                grid-column: 1 / -1;
-                max-width: 400px;
-                margin: 0 auto;
+            .master-pathways-grid > div {
+                flex: 0 0 calc(50% - 1.25rem) !important;
+                max-width: calc(50% - 1.25rem) !important;
+            }
+
+            .master-pathways-grid > :last-child {
+                transform: none !important;
             }
         }
 
-        /* Specific 1024px tab view styling */
+        /* Specific 1024px tab view styling refinement */
         @media (min-width: 1024px) and (max-width: 1024px) {
             .master-pathways-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 2rem;
+                gap: 2rem !important;
             }
-
-            .master-pathways-grid> :last-child {
-                grid-column: 1 / -1;
-                max-width: 350px;
-                margin: 2rem auto 0;
-            }
-
-            .master-pathways-grid> :last-child .card-premium {
-                transform: scale(0.95);
+            .master-pathways-grid > div {
+                flex: 0 0 calc(50% - 1rem) !important;
+                max-width: calc(50% - 1rem) !important;
             }
         }
     </style>
@@ -459,8 +457,8 @@
     <!-- Animated Course Cards (THE MASTER PATHWAYS Redesign) -->
     <section class="py-40 bg-white">
         <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-end justify-between mb-24 reveal-on-scroll">
-                <div class="max-w-xl">
+            <div class="flex flex-col md:flex-row items-center md:items-end justify-between mb-24 reveal-on-scroll text-center md:text-left">
+                <div class="max-w-4xl mx-auto md:mx-0">
                     <span class="text-primary font-black uppercase text-xs tracking-[0.4em] mb-6 block">Our
                         Curriculum</span>
                     <h2 class="text-5xl lg:text-8xl font-black text-gray-900 tracking-tighter leading-[0.9]">THE MASTER
@@ -812,16 +810,7 @@
                         <li><a href="#" class="hover:text-primary transition-colors">Composting Pro</a></li>
                     </ul>
                 </div>
-                <div class="mobile-center">
-                    <h5 class="font-bold text-lg mb-6">Newsletter</h5>
-                    <p class="text-gray-500 text-sm mb-6">Get tips and insights delivered to your inbox.</p>
-                    <form class="flex gap-2">
-                        <input type="email" placeholder="Email"
-                            class="bg-white border border-gray-100 rounded-xl px-4 py-2 text-sm focus:ring-primary outline-none w-full">
-                        <button type="submit" class="bg-primary text-white p-2 rounded-xl"><i
-                                class="fas fa-paper-plane"></i></button>
-                    </form>
-                </div>
+
             </div>
             <div class="pt-8 border-t border-gray-100 text-center text-gray-400 text-xs">
                 © 2026 Gaia Academy. All rights reserved. Designed with ❤️ for the Earth.

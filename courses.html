@@ -44,28 +44,17 @@
             }
         }
 
-        /* Center last card in Trusted by Thousands section for tablet and 1024px */
+        /* Center all testimonial cards with perfect equality in tablet and 1024px */
         @media (min-width: 768px) and (max-width: 1024px) {
             .trusted-reviews-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 2rem;
+                display: flex !important;
+                flex-wrap: wrap !important;
+                justify-content: center !important;
+                gap: 2rem !important;
             }
-            .trusted-reviews-grid > :last-child {
-                grid-column: 1 / -1;
-                max-width: 500px;
-                margin: 0 auto;
-            }
-        }
-        
-        @media (min-width: 1024px) and (max-width: 1024px) {
-            .trusted-reviews-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 2rem;
-            }
-            .trusted-reviews-grid > :last-child {
-                grid-column: 1 / -1;
-                max-width: 480px;
-                margin: 0 auto;
+            .trusted-reviews-grid > div {
+                flex: 0 0 calc(50% - 1rem) !important;
+                max-width: calc(50% - 1rem) !important;
             }
         }
         .animation-delay-100ms {
@@ -604,16 +593,7 @@
                         <li><a href="#" class="hover:text-primary transition-colors">Composting Pro</a></li>
                     </ul>
                 </div>
-                <div class="mobile-center">
-                    <h5 class="font-bold text-lg mb-6">Newsletter</h5>
-                    <p class="text-gray-500 text-sm mb-6">Get tips and insights delivered to your inbox.</p>
-                    <form class="flex gap-2">
-                        <input type="email" placeholder="Email"
-                            class="bg-white border border-gray-100 rounded-xl px-4 py-2 text-sm focus:ring-primary outline-none w-full">
-                        <button type="submit" class="bg-primary text-white p-2 rounded-xl"><i
-                                class="fas fa-paper-plane"></i></button>
-                    </form>
-                </div>
+
             </div>
             <div class="pt-8 border-t border-gray-100 text-center text-gray-400 dark:text-gray-300 text-xs">
                 © 2026 Gaia Academy. All rights reserved. Designed with ❤️ for the Earth.
